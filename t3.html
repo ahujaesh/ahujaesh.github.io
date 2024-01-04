@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #photo-container {
+      cursor: pointer;
+    }
+  </style>
+  <title>Photo and Iframe System</title>
+</head>
+<body>
+
+<div id="photo-container" onclick="replaceWithIframe('https://www.youtube-nocookie.com/embed/iP0Lq1a6Ouk?playlist=iP0Lq1a6Ouk&autoplay=1&iv_load_policy=3&loop=1&start=')">
+  <img src="photos/Screenshot_2023-11-28_7.08.36_PM-removebg-preview.png" alt="Click me">
+</div>
+
+<script>
+  function replaceWithIframe(link) {
+    // Create an iframe element
+    const iframe = document.createElement('iframe');
+    iframe.src = link;
+    iframe.width = '600'; // Set the width of the iframe (adjust as needed)
+    iframe.height = '400'; // Set the height of the iframe (adjust as needed)
+
+    // Get the photo container
+    const photoContainer = document.getElementById('photo-container');
+
+    // Replace the image with the iframe
+    photoContainer.innerHTML = ''; // Clear the image
+    photoContainer.appendChild(iframe);
+  }
+</script>
+
+</body>
+</html>

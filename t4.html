@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image to ASCII Art Converter</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<body>
+  \
+    <h1>Image to ASCII Art Converter V2</h1>
+  <p>Version 2 generates an image out of a solid square and blank space as well as using colour</p>
+    <label for="imageInput">Select an Image or GIF:</label>
+    <input type="file" id="imageInput" accept="image/*, .gif">
+    <label for="outputWidth">Desired Width for ASCII Art (max 500):</label>
+    <input type="number" id="outputWidth" value="100" min="1" max="500"step="1">
+    <canvas id="outputCanvas" width="400" height="300"></canvas>
+    <button id="convertButton">Convert to ASCII Art</button>
+    <button id="enableWebcam">Enable Webcam</button>
+    <button id="disableWebcam" disabled>Disable Webcam</button>
+    <div id="asciiArtContainer"></div>
+
+    <script src="script.js"></script>
+  
+  <script>
+    const imageInput = document.getElementById('imageInput');
+  const outputCanvas = document.getElementById('outputCanvas');
+  const asciiArtContainer = document.getElementById('asciiArtContainer');
+  const convertButton = document.getElementById('convertButton');
+  const enableWebcamButton = document.getElementById('enableWebcam');
+  const disableWebcamButton = document.getElementById('disableWebcam'); 
+
+  let webcamStream;
+  let webcamEnabled = false;
+
+  enableWebcamButton.addEventListener('click', async () => {
+      try {
+          webcamStream = await navigator.mediaDevices.getUserMedia({ video: true });
+          webcamEnabled = true;
+          disableWebcamButton.disabled = false;
+
+          const video = document.createElement('video');
+          video.srcObject = webcamStream;
+          video.play();
+
+          const webcamCanvas = document.createElement('canvas');
+          document.body.appendChild(webcamCanvas);
+          const webcamCtx = webcamCanvas.getContext('2d');
+
+          function updateWebcam() {
+              if (webcamEnabled) {
+                  webcamCanvas.width = outputCanvas.width;
+                  webcamCanvas.height = outputCanvas.height;
+                  webcamCtx.drawImage(video, 0, 0, outputCanvas.width, outputCanvas.height);
+                  const imageData = webcamCtx.getImageData(0, 0, outputCanvas.width, outputCanvas.height);
+
+                  asciiArtContainer.innerHTML = convertImageDataToASCII(imageData);
+
+                  requestAnimationFrame(updateWebcam);
+              }
+          }
+
+          updateWebcam();
+      } catch (error) {
+          console.error('Error accessing webcam:', error);
+          alert('Error accessing webcam. Please make sure it is properly connected and accessible.');
+      }
+  });
+
+  disableWebcamButton.addEventListener('click', () => {
+      webcamEnabled = false;
+      disableWebcamButton.disabled = true;
+  });
+
+  convertButton.addEventListener('click', () => {
+      const file = imageInput.files[0];
+      const desiredWidth = parseInt(document.getElementById('outputWidth').value, 10);
+
+      if (file) {
+          if (file.type.startsWith('image')) {
+              const img = new Image();
+              const reader = new FileReader();
+
+              reader.onload = function (e) {
+                  img.src = e.target.result;
+                  img.onload = function () {
+                      const aspectRatio = img.width / img.height;
+                      const newHeight = Math.round(desiredWidth / aspectRatio);
+
+                      outputCanvas.width = desiredWidth;
+                      outputCanvas.height = newHeight;
+                      const ctx = outputCanvas.getContext('2d');
+                      ctx.drawImage(img, 0, 0, desiredWidth, newHeight);
+                      const imageData = ctx.getImageData(0, 0, desiredWidth, newHeight);
+
+                      asciiArtContainer.innerHTML = convertImageDataToASCII(imageData);
+                  };
+              };
+
+              reader.readAsDataURL(file);
+          } else if (file.type === 'image/gif') {
+              //Todo: ADD GIF LOGIC
+          } else {
+              alert('Unsupported file format. Please upload an image or GIF.');
+          }
+      }
+  });
+
+  function convertImageDataToASCII(imageData) {
+    const { data, width, height } = imageData;
+    const asciiChars = ['█',  ' '];
+
+    let asciiArt = '';
+    for (let i = 0; i < data.length; i += 4) {
+        const r = data[i];
+        const g = data[i + 1];
+        const b = data[i + 2];
+        const brightness = (r + g + b) / 3;
+
+        const asciiIndex = Math.floor((brightness / 255) * (asciiChars.length - 1));
+        const asciiChar = asciiChars[asciiIndex];
+
+        const color = `rgb(${r}, ${g}, ${b})`;
+
+        asciiArt += `<span style="color:${color};font-family: monospace;">${asciiChar}</span>`;
+
+        if ((i / 4 + 1) % width === 0) {
+            asciiArt += '<br>';
+        }
+    }
+
+    return asciiArt;
+  }
+  </script>
+
+</body>
+</html>

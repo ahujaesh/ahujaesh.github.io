@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Script progress - Daring Dragons DI Team</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Dive into the script progress of Daring Dragons Destination Imagination Team. Follow our creative journey and problem-solving endeavors.">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" type="image/x-icon" href="photos/favicon-removebg-preview.png">
+    <meta name="keywords" content="Destination Imagination, Creative Problem Solving, Daring Dragons, Team, Innovation">
+    <meta name="author" content="Eshaan Ahuja">
+    <meta name="language" content="English">
+    <link rel="apple-touch-icon" href="photos/favicon.jpg">
+    <meta name="theme-color" content="#8DCFEC">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap">
+  <style>
+    .answer {
+      padding: 10px;
+      display: none;
+      background-color: #fff;
+    }
+  </style>
+</head>
+<body>
+    <header>
+        <div id="big">
+            <ul id="u">
+                <li id="hed"> <a href="index.html"> Go to the home page!   </a></li>
+                <li id="hed"> <a href="contact.html"> Contact us! </a></li>
+                <li id="hed"> <a href="sponsorships.html"> Sponsorships! </a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">About our team!</a>
+                    <div class="dropdown-content">
+                        <a id="hd" href="varun_i.html">Varun I</a>
+                        <a id="hd" href="gokul_s.html">Gokul S</a>
+                        <a id="hd" href="eshaan_a.html">Eshaan A</a>
+                        <a id="hd" href="sristi_s.html">Sristi S</a>
+                        <a id="hd" href="sk.html">Sahasra K</a>
+                        <a id="hd" href="sahasra_v.html">Sahasra V</a>
+                        <a id="hd" href="rj.html">Ruchika Joshi - The Team Manager!!</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Team progress & fun games!</a>
+                    <div class="dropdown-content">
+                        <a id="hd" href="script.html">Script Progress!</a>
+                        <a id="hd" href="sets&costumes.html">Sets and Costumes progress!</a>
+                        <a id="hd" href="quiz.html">Take a DI quiz to test your knowledge!</a>
+                        <a id="hd" href="resources.html">Resources/Materials</a>
+                    </div>
+                </li>
+                <li id="long">|</li>
+                <input type="text" id="search" placeholder="Search for info on our page!">
+                <div id="search-results"></div>
+            </ul>
+            <h1>Script progress</h1>
+        </div>
+    </header>
+    <section>
+        <h2>What is the purpose of this page?</h2>
+        <hr>
+        <p>The purpose of this page is to allow verified login holders to sign in to this page with the login credentials they have been given by us to view our most up-to-date script, our archived scripts, and our script urgent information. If you do not have any login credentials given by us, do not enter any other passwords on this page.</p>
+        <h2>Login here</h2>
+        <hr>
+        <p><strong></strong>Sorry, we are only allowed to disclose this information to registered individuals. To see this info, please sign in with the login information given by a member of our team. Do not enter any other passwords or sensitive content except for the login given by us, the Daring Dragons Destination Imagination team. This information is not saved anywhere.</p>
+        <form class="my-form">
+            <input type="text" placeholder="Username" name="Username">
+            <br>
+            <input type="password" placeholder="Password" name="my-input">
+            <br>
+            <br>
+            <button>Log in</button>
+        </form>
+        <h2>Locked information will display here:</h2>
+        <hr>
+        <div id="classified">
+            <!-- locked info will display here once username and password are inputted above-->
+        </div>
+      <hr>
+        <button onclick="lock()">🔒 Lock Page 🔒</button>
+      <br>
+    </section>
+  <section>
+    <hr>
+    <br>
+    <div class="faq-item">
+      <button class="toggle-btn" onclick="toggleAnswer()">Help, I forgot my username/password!</button>
+      <div class="answer" id="answer"><br>Your username is your first name, lowercase no spaces, and you can text Eshaan for the password. <br></div>
+    </div>
+    <br>
+    </section>
+
+    <script>
+      function toggleAnswer() {
+        var answer = document.getElementById("answer");
+        if (answer.style.display === "block") {
+          answer.style.display = "none";
+        } else {
+          answer.style.display = "block";
+        }
+      }
+    </script>
+  </section>
+
+    <a href="index.html" class="button">Back to Main Page</a>
+    <!-- <script src="https://replit.com/public/js/replit-badge-v2.js" theme="dark" position="bottom-right"></script> -->
+    <script>
+      if (document.cookie.includes("isEshaan=true")) {
+        alert("Welcome Master Eshaan, unlocking the site for you sir.");
+        const input = prompt("But we do need you to enter your authentication code sir for security."); // Prompting the user for the password
+
+        if (input == "asdfjkl;" || input == "od" || input == "the password") {
+          alert("Authentication complete, you may now enter the site.");
+          unlock();
+        } else {
+          alert("Incorrect password, please sign in normally on the page to gain acsess to this very secure data.");
+        }
+        
+      }
+  
+      // Function to set a cookie when the user clicks "OK"//
+      function setCookie() {
+        document.cookie = "isEshaan=true; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
+      }
+      function unlock() {
+        classified.innerHTML = `<p>Script writing progress is going well, there are many current documents, but the final one will be here once finished.</p>
+        <p><a href="https://docs.google.com/document/d/16nSAIckEvsOb4Y2V06vTWUbwHBNEwPJhKD9KQ-prIrk/edit" target="_blank">This</a> is our current script as of <strong>12/12/2023</strong>. We keep changing documents, so this might not be up to date.<p>
+        <br>
+        <p><a href="https://docs.google.com/document/d/1iP4MYPHe0nbUpYcOKLLLvW--nIOs1OjZ35Q4yDPD7cQ/edit" target="_blank">This</a> is our current script as of <strong>11/18/2023</strong>. We keep changing documents, so this might not be up to date. Inspiration: <a href="https://www.archpaper.com/2022/09/leah-wulfman-explorations-buildings-digital-garbage/" target="_blank" title="inspiration" alt="inspiration"> here</a>.</p>
+        <br>
+        <br>
+        <p><a href="https://docs.google.com/document/d/1q3oYlRN_FkQnQmVnYWNGKpR9AXxPmie-Mr2tx5EeoTA/edit" target="_blank">This</a> is our current script as of <strong>11/4/2023</strong>. We keep changing documents, so this might not be up to date.<p>
+        <br>
+        <p>If you want to see our scripts from previous seasons, you can go to <a href="https://docs.google.com/document/d/1QVIf4FFdRv8RRuElcoPNe1rXGXcz1pc6Iboib0kiJZE/edit">here</a> to see our script from the 2021 - 2022 season and <a href="https://docs.google.com/document/d/1h9WDSNLww4X41hdqXvIKaBW-eDTWYUVZZBk1Zhxe2Dg/edit">here</a> to see our script for the 2022 - 2023 season.</p>`;
+      }
+      function lock() {
+        classified.innerHTML = `<p>This site is locked. Please sign in again.</p>`;
+      }
+    </script>
+    <script>
+        const classified = document.getElementById('classified');
+        const form = document.querySelector(".my-form");
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault()
+
+            const formdata = new FormData(this);
+            const username = formdata.get("Username");
+            const password = formdata.get("my-input");
+
+            if (username === "eshaan" && (password === "od" || password === "the password" || password === "asdfjkl;")) {
+              setCookie();
+              unlock();
+            } else if (password === "od" || password === "the password" || password === "asdfjkl;") {
+                alert("Correct Username and Password, unlocking all information");
+                classified.innerHTML = `<p>Script writing progress is going well, there are many current documents, but the final one will be here once finished.</p>
+                
+              <p><a href="https://docs.google.com/document/d/16nSAIckEvsOb4Y2V06vTWUbwHBNEwPJhKD9KQ-prIrk/edit" target="_blank">This</a> is our current script as of <strong>12/12/2023</strong>. We keep changing documents, so this might not be up to date.<p>
+              <br>
+              <p><a href="https://docs.google.com/document/d/16nSAIckEvsOb4Y2V06vTWUbwHBNEwPJhKD9KQ-prIrk/edit" target="_blank">This</a> is our current script as of <strong>12/12/2023</strong>. We keep changing documents, so this might not be up to date. Note: Varun has disabled editing for this one. 🙄<p>
+              <br>
+              <p><a href="https://docs.google.com/document/d/1iP4MYPHe0nbUpYcOKLLLvW--nIOs1OjZ35Q4yDPD7cQ/edit" target="_blank">This</a> is our current script as of <strong>11/18/2023</strong>. We keep changing documents, so this might not be up to date. Inspiration: <a href="https://www.archpaper.com/2022/09/leah-wulfman-explorations-buildings-digital-garbage/" target="_blank" title="inspiration" alt="inspiration"> here</a>.</p>
+              <br>
+              <br>
+              <p><a href="https://docs.google.com/document/d/1q3oYlRN_FkQnQmVnYWNGKpR9AXxPmie-Mr2tx5EeoTA/edit" target="_blank">This</a> is our current script as of <strong>11/4/2023</strong>. We keep changing documents, so this might not be up to date.<p>
+              <br>
+              <p>If you want to see our scripts from previous seasons, you can go to <a href="https://docs.google.com/document/d/1QVIf4FFdRv8RRuElcoPNe1rXGXcz1pc6Iboib0kiJZE/edit">here</a> to see our script from the 2021 - 2022 season and <a href="https://docs.google.com/document/d/1h9WDSNLww4X41hdqXvIKaBW-eDTWYUVZZBk1Zhxe2Dg/edit">here</a> to see our script for the 2022 - 2023 season.</p>`;//note this one deosnt update if the username is eshaan- update the other one
+            } else {
+                alert("Incorrect Username or Password");
+            }
+        });
+    </script>
+    <script>
+        const searchInput = document.getElementById("search");
+        const teamMembers = document.querySelectorAll("#u li");
+
+        searchInput.addEventListener("input", () => {
+            const searchTerm = searchInput.value.toLowerCase();
+
+            for (const member of teamMembers) {
+                const memberName = member.textContent.toLowerCase();
+                if (memberName.includes(searchTerm)) {
+                    member.style.display = "block";
+                } else {
+                    member.style.display = "none";
+                }
+            }
+        });
+    </script>
+    
+  <hr>
+  <footer>
+    <p>&copy; 2023 Eshaan Ahuja - Daring Dragons. All rights reserved.</p>
+  </footer>
+  <br>
+  <br>
+</body>
+</html>

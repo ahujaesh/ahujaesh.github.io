@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Varun I - Daring Dragons DI Team</title>
+  <html lang="en">
+  <meta name="description" content="Explore Varun I's journey, contributions, and experiences with the Daring Dragons Destination Imagination Team. Learn about his creative problem-solving skills and how he ignites innovation within the team.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="icon" type="image/x-icon" href="photos/favicon-removebg-preview.png">
+  <meta name="keywords" content="Destination Imagination, Creative Problem Solving, Daring Dragons, Team, Innovation">
+  <meta name="author" content="Eshaan Ahuja">
+  <meta name="language" content="English">
+  <link rel="apple-touch-icon" href="photos/favicon.jpg">
+  <meta name="theme-color" content="#8DCFEC">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap">
+</head>
+<body>
+    <header>
+      <div id="big">
+      <ul id="u">
+        <li id="hed"> <a href="index.html"> Go to the home page!   </a></li>
+        <li id="hed"> <a href="contact.html"> Contact us! </a></li>
+        <li id="hed"> <a href="sponsorships.html"> Sponsorships! </a></li>
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn">About our team!</a>
+          <div class="dropdown-content">
+            <a id="hd" href="varun_i.html">Varun I</a>
+            <a id="hd" href="gokul_s.html">Gokul S</a>
+            <a id="hd" href="eshaan_a.html">Eshaan A</a>
+            <a id="hd" href="sristi_s.html">Sristi S</a>
+            <a id="hd" href="sk.html">Sahasra K</a>
+            <a id="hd" href="sahasra_v.html">Sahasra V</a>
+            <a id="hd" href="rj.html">Ruchika Joshi - The Team Manager!!</a>
+
+            </div>
+            <li class="dropdown">
+              <a href="javascript:void(0)" class="dropbtn">Team progress & fun games!</a>
+              <div class="dropdown-content">
+                <a id="hd" href="script.html">Script Progress!</a>
+                <a id="hd" href="sets&costumes.html">Sets and Costumes progress!</a>
+                <a id="hd" href="quiz.html">Take a DI quiz to test your knowledge!</a>
+                <a id="hd" href="resources.html">Resources/Materials</a>
+              </div>
+          <li id="long">|</li>
+
+          <input type="text" id="search" placeholder="Search for info on our page!">
+          <div id="search-results"></div>
+          <!-- <script src="script.js"></script> -->
+        <li>
+          <div id="google_translate_element"></div>
+
+           <script type="text/javascript">
+            function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+            }
+          </script>
+
+          <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        </li>
+
+
+        </li>
+      </div>
+        </ul>
+        <h1>Varun I</h1>
+    </header>
+
+    <section>
+      <ul id="unfixed">
+        <li><a href="#top" title="go to top">^</a></li>
+      </ul>
+        <h2>Biography</h2>
+        <p>Varun Iyer, a resident of the US, is a true tennis enthusiast, with a racquet almost like an extension of his arm. His love for the sport goes beyond just a hobby; it's a way of life. Whether it's a friendly match with friends or a competitive tournament, Varun's dedication to the game shines through in every swing.
+<br><br>
+        While tennis might be his passion, Varun finds solace in the simple pleasures of life. There's nothing like a comforting bowl of Maggi or a handful of chocolates to brighten his day. It's in these small indulgences that he discovers moments of happiness and contentment.
+<br><br>
+        Music is another essential part of Varun's life. The rhythm and melodies resonate with his soul, offering solace during the quiet moments and pure joy when the volume is turned up. Whether he's listening to classical compositions or grooving to the latest pop hits, music is a constant companion in Varun's daily adventures.
+<br><br>
+        What truly sets Varun apart is his vibrant social calendar. He thrives on spending time with friends, exploring the world of theater, and even, occasionally, embracing the world of education. His outgoing and sociable nature makes him the life of any gathering, and he's the go-to person for planning fun get-togethers.
+<br><br>
+        Just like Sristi and Sahasra, Varun is a dedicated member of Destination Imagination (DI). His passion for creative problem-solving and teamwork aligns perfectly with the DI philosophy. Varun's involvement in this program has not only honed his own skills but has also encouraged countless others to embrace their imaginative potential.
+<br><br>
+        In summary, Varun Iyer, a dedicated tennis enthusiast from the US, lives a life that's a beautiful blend of passion and simplicity. Tennis is not just a sport to him; it's a way of life, and his skill on the court is undeniable. Amid his love for the game, he finds comfort in the small joys of savoring Maggi and chocolates. Music serves as a constant source of solace and joy in his daily routine. Varun's bustling social life, filled with theater, education, and fun with friends, is a testament to his outgoing nature. Just like Sristi and Sahasra, his dedication to Destination Imagination showcases his commitment to creativity and teamwork. In Varun's world, every day is an adventure, making him a cherished and unique member of his community, where the symphony of tennis, comfort food, music, and a vibrant social circle creates a harmonious and exciting life.</p>
+      <h2> Varun on the way to his tennis class</h2>
+      <img src="photos/varun.jpg" alt="a random photo of varun going to his tennis lesson" height="600">
+    </section>
+   <a href="index.html" class="button">Back to Main Page</a>
+  <!-- <script src="https://replit.com/public/js/replit-badge-v2.js" theme="dark" position="bottom-right"></script> -->
+  <script>
+    const searchInput = document.getElementById("search");
+    const teamMembers = document.querySelectorAll("#u li");
+
+    searchInput.addEventListener("input", () => {
+        const searchTerm = searchInput.value.toLowerCase();
+
+        for (const member of teamMembers) {
+            const memberName = member.textContent.toLowerCase();
+            if (memberName.includes(searchTerm)) {
+                member.style.display = "block";
+            } else {
+                member.style.display = "none";
+            }
+        }
+    });
+  </script>
+  <footer>
+    <p>&copy; 2023 Eshaan Ahuja - Daring Dragons. All rights reserved.</p>
+  </footer>
+</body>
+</html>

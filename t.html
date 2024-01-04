@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save form Data in a Text File using JavaScript</title>
+    <style>
+      body {
+          margin: 0;
+          padding: 0;
+          font-family: Arial, sans-serif;
+          text-align: center;
+          overflow: scroll;
+      }
+
+      #stripes-container {
+          height: 100vh;
+          position: fixed;
+          width: 100%;
+          z-index: 0;
+      }
+
+      .stripes {
+          height: 100%;
+          background: linear-gradient(45deg, orange, blue, orange, blue, orange, blue);
+          background-size: 600% 600%;
+          animation: rainbow-stripes 30s linear infinite;
+      }
+
+      @keyframes rainbow-stripes {
+          0% {
+              background-position: 0% 0%;
+          }
+          25% {
+              background-position: 100% 0%;
+          }
+          50% {
+              background-position: 100% 100%;
+          }
+          75% {
+              background-position: 0% 100%;
+          }
+          100% {
+              background-position: 0% 0%;
+          }
+      }
+
+      form {
+          max-width: 400px;
+          margin: 0 auto;
+          background: white;
+          padding: 20px;
+          border-radius: 8px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          position: relative;
+          z-index: 1;
+      }
+
+      label {
+          display: block;
+          margin: 10px 0;
+      }
+
+      input, select {
+          width: 100%;
+          padding: 8px;
+          margin: 5px 0 15px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          box-sizing: border-box;
+      }
+
+      button {
+          background-color: #4CAF50;
+          color: white;
+          padding: 10px 15px;
+          margin: 8px 0;
+          border: none;
+          cursor: pointer;
+          width: 100%;
+      }
+
+    </style>
+</head>
+<body>
+
+    <div id="stripes-container">
+        <div class="stripes"></div>
+    </div>
+
+    <h2>Enter values in the boxes and click Save</h2>
+    
+    <form id="myForm">
+        <div>
+            <label for="txtName">Name:</label>
+            <input type="text" id="txtName" placeholder="Enter your name" />
+        </div>
+        <div>
+            <label for="txtAge">Age:</label>
+            <input type="text" id="txtAge" placeholder="Enter your age" />
+        </div>
+        <div>
+            <label for="txtEmail">Email:</label>
+            <input type="text" id="txtEmail" placeholder="Enter your email address" />
+        </div>
+        <div>
+            <label for="selCountry">Country:</label>
+            <select id="selCountry">
+                <option selected value="">-- Choose the country --</option>
+                <option value="India">India</option>
+                <option value="Japan">Japan</option>
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+
+        <button type="button" onclick="saveFormData()">Save</button>
+    </form>
+
+    <p style="height: 500000px; ">This is a paragraph with a height of 500 pixels.</p>
+
+    <script>
+        function saveFormData() {
+            // Retrieve form data
+            var name = document.getElementById("txtName").value;
+            var age = document.getElementById("txtAge").value;
+            var email = document.getElementById("txtEmail").value;
+            var country = document.getElementById("selCountry").value;
+
+            // Create a string with the form data
+            var formData = "Name: " + name + "\nAge: " + age + "\nEmail: " + email + "\nCountry: " + country;
+
+            // Create a Blob object with the form data
+            var blob = new Blob([formData], { type: "text/plain;charset=utf-8" });
+
+            // Create a link element
+            var link = document.createElement("a");
+
+            // Set the link's properties
+            link.href = window.URL.createObjectURL(blob);
+            link.download = "formData.txt";
+
+            // Append the link to the document
+            document.body.appendChild(link);
+
+            // Trigger a click on the link to initiate the download
+            link.click();
+
+            // Remove the link from the document
+            document.body.removeChild(link);
+        }
+    </script>
+
+</body>
+</html>

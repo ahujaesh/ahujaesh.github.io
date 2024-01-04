@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gokul S - Daring Dragons DI Team</title>
+  <html lang="en">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Discover Gokul S's role and achievements within the Daring Dragons Destination Imagination Team. Dive into his creative problem-solving abilities and how he contributes to the team's success.">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="icon" type="image/x-icon" href="photos/favicon-removebg-preview.png">
+  <meta name="keywords" content="Destination Imagination, Creative Problem Solving, Daring Dragons, Team, Innovation">
+  <meta name="author" content="Eshaan Ahuja">
+  <meta name="language" content="English">
+  <link rel="apple-touch-icon" href="photos/favicon.jpg">
+  <meta name="theme-color" content="#8DCFEC">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap">
+</head>
+<body>
+    <header>
+      <div id="big">
+      <ul id="u">
+        <li id="hed"> <a href="index.html"> Go to the home page!   </a></li>
+        <li id="hed"> <a href="contact.html"> Contact us! </a></li>
+        <li id="hed"> <a href="sponsorships.html"> Sponsorships! </a></li>
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn">About our team!</a>
+          <div class="dropdown-content">
+            <a id="hd" href="varun_i.html">Varun I</a>
+            <a id="hd" href="gokul_s.html">Gokul S</a>
+            <a id="hd" href="eshaan_a.html">Eshaan A</a>
+            <a id="hd" href="sristi_s.html">Sristi S</a>
+            <a id="hd" href="sk.html">Sahasra K</a>
+            <a id="hd" href="sahasra_v.html">Sahasra V</a>
+            <a id="hd" href="rj.html">Ruchika Joshi - The Team Manager!!</a>
+
+            </div>
+            <li class="dropdown">
+              <a href="javascript:void(0)" class="dropbtn">Team progress & fun games!</a>
+              <div class="dropdown-content">
+                <a id="hd" href="script.html">Script Progress!</a>
+                <a id="hd" href="sets&costumes.html">Sets and Costumes progress!</a>
+                <a id="hd" href="quiz.html">Take a DI quiz to test your knowledge!</a>
+                <a id="hd" href="resources.html">Resources/Materials</a>
+              </div>
+          <li id="long">|</li>
+
+          <input type="text" id="search" placeholder="Search for info on our page!">
+          <div id="search-results"></div>
+          <!-- <script src="script.js"></script> -->
+        <li>
+          <div id="google_translate_element"></div>
+
+           <script type="text/javascript">
+            function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+            }
+          </script>
+
+          <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        </li>
+
+
+        </li>
+      </div>
+    </ul>
+          
+    </header>
+
+    <section>
+      <h1>Gokul S</h1>
+        <h2>Biography</h2>
+        <p>Gokul Srinivasan, a resident of the United States, is a unique individual who has carved his own path through life. With a passion for the outdoors, Gokul has always been at home in the lap of nature. Standing tall both in stature and character, he embodies the spirit of adventure and friendship.
+        <br>
+          <br>
+        Gokul is known for his love of the great outdoors, often setting out on thrilling biking journeys that take him through the heart of nature's beauty. Whether it's a leisurely ride through the countryside or an exhilarating mountain biking expedition, Gokul finds solace and excitement in the open air.
+<br>
+          <br>
+        One of Gokul's defining characteristics is his deep appreciation for the vegetarian lifestyle. He recognizes the importance of sustainable and compassionate choices, and his diet reflects this commitment. He's not only an advocate for healthy eating but also a living example of how conscious choices can positively impact the environment.
+<br>
+          <br>
+        Gokul is more than just an adventure enthusiast and environmental advocate; he's also an avid fan of video games. The Legend of Zelda series holds a special place in his heart, offering a perfect escape into the realm of heroic quests and epic adventures. His love for gaming is only rivaled by his love for the great outdoors.
+<br>
+          <br>
+        What truly makes Gokul remarkable is his friendly and welcoming demeanor. He's the kind of person who brightens any room he enters, always ready to lend a helping hand or share a smile. His love for life, friends, and the environment shines through in everything he does.
+<br>
+          <br>
+        In summary, Gokul Srinivasan is a tall figure in more ways than one. His passion for the outdoors, love of video games, and commitment to a vegetarian lifestyle are all woven into the fabric of a great friend and an exceptional human being. In the heart of the United States, Gokul's journey through life is a testament to the harmony he finds in nature, adventure, and the joy of companionship.</p>
+      <br>
+      <h2>
+        Gokul with his father at the DI kansas city global finals competition last year (2022-2023)
+      </h2>
+      <img src="photos/IMG-8009.jpg" alt="Gokul at globals last year" height="600">
+    </section>
+   <a href="index.html" class="button">Back to Main Page</a>
+  <!-- <script src="https://replit.com/public/js/replit-badge-v2.js" theme="dark" position="top-right"></script> -->
+  <ul id="unfixed">
+    <li><a href="#top" title="back to top">^ </a></li>
+  </ul>
+  <script>
+    const searchInput = document.getElementById("search");
+    const teamMembers = document.querySelectorAll("#u li");
+
+    searchInput.addEventListener("input", () => {
+        const searchTerm = searchInput.value.toLowerCase();
+
+        for (const member of teamMembers) {
+            const memberName = member.textContent.toLowerCase();
+            if (memberName.includes(searchTerm)) {
+                member.style.display = "block";
+            } else {
+                member.style.display = "none";
+            }
+        }
+    });
+  </script>
+  <footer>
+    <p>&copy; 2023 Eshaan Ahuja - Daring Dragons. All rights reserved.</p>
+  </footer>
+</body>
+</html>

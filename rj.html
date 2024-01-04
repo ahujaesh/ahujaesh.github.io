@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ruchika Joshi - Team Manager</title>
+  <html lang="en">
+  <meta name="description" content="Get to know Ruchika Joshi, the dedicated Team Manager of the Daring Dragons Destination Imagination Team. Learn about her role in guiding and supporting the team's creative problem-solving journey.">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="icon" type="image/x-icon" href="photos/favicon-removebg-preview.png">
+  <meta name="keywords" content="Destination Imagination, Creative Problem Solving, Daring Dragons, Team, Innovation">
+  <meta name="author" content="Eshaan Ahuja">
+  <meta name="language" content="English">
+  <link rel="apple-touch-icon" href="photos/favicon.jpg">
+  <meta name="theme-color" content="#8DCFEC">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap">
+</head>
+<body>
+    <header>
+      <div id="big">
+      <ul id="u">
+        <li id="hed"> <a href="index.html"> Go to the home page!   </a></li>
+        <li id="hed"> <a href="contact.html"> Contact us! </a></li>
+        <li id="hed"> <a href="sponsorships.html"> Sponsorships! </a></li>
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn">About our team!</a>
+          <div class="dropdown-content">
+            <a id="hd" href="varun_i.html">Varun I</a>
+            <a id="hd" href="gokul_s.html">Gokul S</a>
+            <a id="hd" href="eshaan_a.html">Eshaan A</a>
+            <a id="hd" href="sristi_s.html">Sristi S</a>
+            <a id="hd" href="sk.html">Sahasra K</a>
+            <a id="hd" href="sahasra_v.html">Sahasra V</a>
+            <a id="hd" href="rj.html">Ruchika Joshi - The Team Manager!!</a>
+
+            </div>
+            <li class="dropdown">
+              <a href="javascript:void(0)" class="dropbtn">Team progress & fun games!</a>
+              <div class="dropdown-content">
+                <a id="hd" href="script.html">Script Progress!</a>
+                <a id="hd" href="sets&costumes.html">Sets and Costumes progress!</a>
+                <a id="hd" href="quiz.html">Take a DI quiz to test your knowledge!</a>
+                <a id="hd" href="resources.html">Resources/Materials</a>
+              </div>
+          <li id="long">|</li>
+
+          <input type="text" id="search" placeholder="Search for info on our page!">
+          <div id="search-results"></div>
+          <!-- <script src="script.js"></script> -->
+        <li>
+          <div id="google_translate_element"></div>
+
+           <script type="text/javascript">
+            function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+            }
+          </script>
+
+          <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        </li>
+
+
+        </li>
+      </div>
+        </ul>
+        <h1>Ruchika Joshi - Team Manager</h1>
+    </header>
+
+    <section>
+        <h2>Biography</h2>
+        <p>Our team manager hasn't approved her biography yet. Please come back later to read about her amazing achievements.</p>
+      <!-- <p><strong>Mrs. RJ</strong>, known as Ruchia Joshi, is a dedicated individual with a passion for nurturing young minds. She hails from India and currently resides in the United States, where she has made a significant impact on the world of education and creativity.</p>
+
+      <p>As the team manager of the "Daring Dragons Destination Imagination" team, Mrs. RJ has shown her commitment to fostering innovation and teamwork. Her involvement in Destination Imagination has led to remarkable success, including winning the 2023 Global Finals, a testament to her leadership and dedication.</p>
+
+      <p>Outside of her educational pursuits, Mrs. RJ is an avid gardener, both indoors and outdoors. She has a fondness for cats and shares her home with four feline friends. Her love for spicy food and her great personality make her a joy to be around, and her kindness and generosity are qualities that shine through in all she does.</p>
+
+      <p>With a wealth of experience, Mrs. RJ has spent years teaching and guiding unruly 7th graders, making a positive impact on their lives. Her dedication to education and her ability to connect with students are truly commendable.</p>
+
+      <p>As an Indian by heritage, Mrs. RJ's cultural background has influenced her life and values. Her journey in Destination Imagination, her love for teaching, and her commitment to making the world a better place all come together to define the inspiring person that is Mrs. RJ.</p>
+
+      <p><strong>Keep learning</strong> is the message she imparts to all, a reflection of her belief in the power of knowledge and personal growth. Mrs. RJ's story is one of passion, achievement, and a deep commitment to fostering creativity and innovation in the next generation.</p>
+-->
+      <!-- <img src="photos/cats.jpg" alt="A cat meme" height="600"> -->
+    </section>
+   <a href="index.html" class="button">Back to Main Page</a>
+  <script src="https://replit.com/public/js/replit-badge-v2.js" theme="dark" position="bottom-right"></script>
+  <script>
+    const searchInput = document.getElementById("search");
+    const teamMembers = document.querySelectorAll("#u li");
+
+    searchInput.addEventListener("input", () => {
+        const searchTerm = searchInput.value.toLowerCase();
+
+        for (const member of teamMembers) {
+            const memberName = member.textContent.toLowerCase();
+            if (memberName.includes(searchTerm)) {
+                member.style.display = "block";
+            } else {
+                member.style.display = "none";
+            }
+        }
+    });
+  </script>
+  <footer>
+    <p>&copy; 2023 Eshaan Ahuja - Daring Dragons. All rights reserved.</p>
+  </footer>
+</body>
+</html>

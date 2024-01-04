@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DI Terminology Quiz</title>
+    <html lang="en">
+    <link rel="icon" type="image/x-icon" href="photos/favicon-removebg-preview.png">
+    <meta name="description" content="Challenge your Destination Imagination knowledge on our Quiz page. Test your grasp of DI terminology and concepts through interactive questions. Get ready to showcase your expertise and learn more about the world of Destination Imagination.">
+    <meta name="keywords" content="Destination Imagination, Creative Problem Solving, Daring Dragons, Team, Innovation">
+    <meta name="author" content="Eshaan Ahuja">
+    <meta name="language" content="English">
+    <link rel="apple-touch-icon" href="photos/favicon.jpg">
+    <meta name="theme-color" content="#8DCFEC">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap">
+
+
+
+  <style> 
+    html { /* note this page uses its own style sheet!! */
+      height: 100%;
+      width: 100%;
+      background-color: #8DCFEC;
+    }
+
+    #u {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #CBC3E3;
+      border: 3px solid #1aa7ec;
+      overflow-y: hidden;
+    }
+
+    #hed {
+      float: left;
+    }
+
+    #hed a, .dropbtn {
+      display: inline-block;
+      color: lightcoral;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    #hed #hd:hover, .dropdown:hover .dropbtn {
+      background-color: #9243d9;
+    }
+
+    #hed.dropdown {
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #1aa7ec;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: light lightcoral;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+
+    .dropdown-content #hd:hover {background-color: #9243d9;}
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+      display: flex;
+      justify-content: center;
+    }
+
+    .dropdown {
+      display: inline;
+    }
+
+    body{
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    p {
+      font-size: 25px;
+    }
+    input, #hed {
+      font-size:20px;
+    }
+    .neon-text {
+        font-size: 36px;
+        color: #00ff00;
+        text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
+        animation: neon-glow 1.5s ease-in-out infinite;
+    }
+
+    @keyframes neon-glow {
+        0%, 100% {
+            text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
+        }
+        50% {
+            text-shadow: none;
+        }
+    }
+
+    .button-blue {
+      background-color: #1aa7ec; /* Blue color */
+      color: #fff; /* White text */
+      padding: 10px 20px; /* Adjust padding as needed */
+      border: 2px solid #1aa7ec; /* Border color same as background color */
+      border-radius: 25px; /* Oval border */
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s; /* Smooth transition on hover */
+    }
+
+    .button-blue:hover {
+      background-color: #155a8a; /* Darker blue color on hover */
+      color: #fff; /* White text on hover */
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <div id="big">
+    <ul id="u">
+      <li id="hed"> <a id="hd" href="index.html"> Go to the home page!   </a></li>
+      <li id="hed"> <a id="hd" href="contact.html"> Contact us! </a></li>
+      <li id="hed"> <a id="hd" href="sponsorships.html"> Sponsorships! </a></li>
+      <li class="dropdown">
+        <a href="javascript:void(0)" class="dropbtn">About our team!</a>
+        <div class="dropdown-content">
+          <a id="hd" href="varun_i.html">Varun I</a>
+          <a id="hd" href="gokul_s.html">Gokul S</a>
+          <a id="hd" href="eshaan_a.html">Eshaan A</a>
+          <a id="hd" href="sristi_s.html">Sristi S</a>
+          <a id="hd" href="sk.html">Sahasra K</a>
+          <a id="hd" href="sahasra_v.html">Sahasra V</a>
+          <a id="hd" href="rj.html">Ruchika Joshi - The Team Manager!!</a>
+
+          </div>
+      </li>
+      <li class="dropdown">
+        <a href="javascript:void(0)" class="dropbtn">Team progress & fun games!</a>
+        <div class="dropdown-content">
+          <a id="hd" href="script.html">Script Progress!</a>
+          <a id="hd" href="sets&costumes.html">Sets and Costumes progress!</a>
+          <a id="hd" href="quiz.html">Take a DI quiz to test your knowledge!</a>
+          <a id="hd" href="resources.html">Resources/Materials</a>
+        </div>
+      </li>
+        <li id="long">|</li>
+        <input type="text" id="search" placeholder="Search for info on our page!">
+        <div id="search-results"></div>
+        <!-- <script src="script.js"></script> -->
+        <li>
+          <div id="google_translate_element"></div>
+
+           <script type="text/javascript">
+            function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+            }
+          </script>
+
+          <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        </li>
+      </li>
+    </div>
+  </ul>
+
+  </header>
+    <h1>Destination Imagination Terminology Quiz</h1>
+
+    <form id="quizForm">
+        <ol>
+            <li>
+                <h3>What does "IC" stand for in DI terminology?</h3>
+                <input type="radio" name="q1" value="a">Instant Challenge<br>
+                <input type="radio" name="q1" value="b">International Competition<br>
+                <input type="radio" name="q1" value="c">Innovative Creativity<br>
+            </li>
+            <li>
+                <h3>What is the role of a "Team Manager" in DI?</h3>
+                <input type="radio" name="q2" value="a">Lead performer<br>
+                <input type="radio" name="q2" value="b">Adult supervisor and mentor<br>
+                <input type="radio" name="q2" value="c">Judge for the competition<br>
+            </li>
+            <li>
+                <h3>What is the purpose of "Appraisers" in DI?</h3>
+                <input type="radio" name="q3" value="a">Design submitions<br>
+                <input type="radio" name="q3" value="b">Evaluate and score team performances<br>
+                <input type="radio" name="q3" value="c">Create instant challenges<br>
+            </li>
+            <li>
+                <h3>What is the primary goal of "Instant Challenges" in DI?</h3>
+                <input type="radio" name="q4" value="a">To test problem-solving skills with lots of time to create a solution<br>
+                <input type="radio" name="q4" value="b">To showcase on the spot creativity<br>
+                <input type="radio" name="q4" value="c">To determine the winner<br>
+            </li>
+            <li>
+                <h3>In DI, what does "Central Challenge" refer to?</h3>
+                <input type="radio" name="q5" value="a">The main problem that teams need to solve over the entire season<br>
+                <input type="radio" name="q5" value="b">A challenge that happens at the competition venue that you get on the spot<br>
+                <input type="radio" name="q5" value="c">A challenge based on geography<br>
+            </li>
+            <li>
+                <h3>What do DI teams typically create for their solutions in a DI challenge?</h3>
+                <input type="radio" name="q6" value="a">A detailed report<br>
+                <input type="radio" name="q6" value="b">A skit or performance<br>
+                <input type="radio" name="q6" value="c">A scientific experiment<br>
+            </li>
+            <li>
+                <h3>Who are the "Rising Stars!" in Destination Imagination?</h3>
+                <input type="radio" name="q7" value="a">Younger (K-2 grade) teams<br>
+                <input type="radio" name="q7" value="b">Adult team managers<br>
+                <input type="radio" name="q7" value="c">Top-performing teams<br>
+            </li>
+            <li>
+                <h3>How is creativity encouraged in Destination Imagination challenges?</h3>
+                <input type="radio" name="q8" value="a">By providing detailed instructions for each challenge with no room for creativity<br>
+                <input type="radio" name="q8" value="b"> By requiring teams to follow strict rules with no room for innovation<br>
+                <input type="radio" name="q8" value="c">By allowing teams to interpret the challenges in unique ways<br>
+            </li>
+            <li>
+                <h3>In DI, what do "props" refer to?</h3>
+                <input type="radio" name="q9" value="a">People participating in the challenge<br>
+                <input type="radio" name="q9" value="b">Materials and objects used in the solution<br>
+                <input type="radio" name="q9" value="c">Judges and appraisers<br>
+            </li>
+            <li>
+                <h3>What is the "Spirit of DI"?</h3>
+                <input type="radio" name="q10" value="a">Encouraging unhealthy levels of competition<br>
+                <input type="radio" name="q10" value="b">Promoting teamwork and creativity<br>
+                <input type="radio" name="q10" value="c">Focusing on winning at all costs<br>
+            </li>
+        </ol>
+        <input class="button-blue" type="submit" value="Submit">
+      <br>
+      <br>
+      <button class="button-blue" onclick="a()">If you are stumped, click me to show the awensers</button>
+      <p>Scroll down for your results!</p>
+
+    <div id="results"></div> <!-- div for the results -->
+      <div id="aw"></div> <!-- div for the answers -->
+    </form>
+  <p class="neon-text"><a href="index.html">Click here to go back to the main page after taking the survey!</a></p>
+  
+
+
+  <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          document.getElementById("quizForm").addEventListener("submit", function (e) {
+              e.preventDefault();
+
+              let score = 0;
+              const answers = ["a", "b", "b", "b", "a", "b", "a", "c", "b", "b"];
+
+              for (let i = 1; i <= 10; i++) {
+                  const selectedOption = document.querySelector('input[name="q' + i + '"]:checked');
+                  if (selectedOption) {
+                      if (selectedOption.value === answers[i - 1]) {
+                          score++;
+                      }
+                  }
+              }
+
+              const results = document.getElementById("results");
+              results.innerHTML = `<h2>You scored ${score}/10 correct answers.</h2>`;
+
+              // You can customize the feedback message based on the score.
+              if (score === 10) {
+                  results.innerHTML += "<p>Great job! You're a DI terminology expert.</p>";
+              } else {
+                  results.innerHTML += "<p>Keep learning and exploring the world of Destination Imagination!</p>";
+              }
+          });
+      });
+    function a(){
+      aw.innerHTML += "<p>Awensers- a, b, b, b, a, b, a, c, b, b </p>";
+    }
+  </script>
+  <footer>
+    <p>&copy; 2023 Eshaan Ahuja - Daring Dragons. All rights reserved.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sahasra K - Daring Dragons DI Team</title>
+  <html lang="en">
+  <meta name="description" content="Explore Sahasra K's journey, achievements, and creative problem-solving abilities as a member of the Daring Dragons Destination Imagination Team. Dive into her role in igniting innovation within the team.">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="icon" type="image/x-icon" href="photos/favicon-removebg-preview.png">
+  <meta name="keywords" content="Destination Imagination, Creative Problem Solving, Daring Dragons, Team, Innovation">
+  <meta name="author" content="Eshaan Ahuja">
+  <meta name="language" content="English">
+  <link rel="apple-touch-icon" href="photos/favicon.jpg">
+  <meta name="theme-color" content="#8DCFEC">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap">
+</head>
+<body>
+    <header>
+      <div id="big">
+      <ul id="u">
+        <li id="hed"> <a href="index.html"> Go to the home page!   </a></li>
+        <li id="hed"> <a href="contact.html"> Contact us! </a></li>
+        <li id="hed"> <a href="sponsorships.html"> Sponsorships! </a></li>
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn">About our team!</a>
+          <div class="dropdown-content">
+            <a id="hd" href="varun_i.html">Varun I</a>
+            <a id="hd" href="gokul_s.html">Gokul S</a>
+            <a id="hd" href="eshaan_a.html">Eshaan A</a>
+            <a id="hd" href="sristi_s.html">Sristi S</a>
+            <a id="hd" href="sk.html">Sahasra K</a>
+            <a id="hd" href="sahasra_v.html">Sahasra V</a>
+            <a id="hd" href="rj.html">Ruchika Joshi - The Team Manager!!</a>
+
+            </div>
+            <li class="dropdown">
+              <a href="javascript:void(0)" class="dropbtn">Team progress & fun games!</a>
+              <div class="dropdown-content">
+                <a id="hd" href="script.html">Script Progress!</a>
+                <a id="hd" href="sets&costumes.html">Sets and Costumes progress!</a>
+                <a id="hd" href="quiz.html">Take a DI quiz to test your knowledge!</a>
+                <a id="hd" href="resources.html">Resources/Materials</a>
+              </div>
+          <li id="long">|</li>
+
+          <input type="text" id="search" placeholder="Search for info on our page!">
+          <div id="search-results"></div>
+          <!-- <script src="script.js"></script> -->
+        <li>
+          <div id="google_translate_element"></div>
+
+           <script type="text/javascript">
+            function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+            }
+          </script>
+
+          <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        </li>
+
+
+        </li>
+      </div>
+        </ul>
+        <h1>Sahasra K</h1>
+    </header>
+
+    <section>
+      <ul id="unfixed">
+        <li><a href="#top" title="go to top">^</a></li>
+      </ul>
+        <h2>Biography</h2>
+        <p>Sahasra Katragadda, a US-based hobbyst athelete, finds her true calling on the tennis and volleyball courts, mastering the art of both games. Off the court, her culinary journey is equally remarkable, with Alfredo pasta as her favorite culinary delight. Her culinary expertise matches her prowess in sports. Beyond these pursuits, she channels her energy into her love for DI (Destination Imagination), an endeavor that reflects her commitment to nurturing young minds and fostering creativity. With a life filled with passion for sports, culinary adventures, and education, Sahasra Katragadda embodies a vibrant and multifaceted persona.</p>
+      <h2>
+        Sahasra with her mother at Kansas city global finals, and some other photos
+      </h2>
+      <img src="photos/IMG-8011.jpg" alt="Sahasra K at Kansas City Global Finals last year" height="600">
+      <img src="photos/sk.jpg" alt="More photos of Sahasra K" height="600">
+    </section>
+   <a href="index.html" class="button">Back to Main Page</a>
+  
+  <!-- <script src="https://replit.com/public/js/replit-badge-v2.js" theme="dark" position="bottom-right"></script> -->
+  <script>
+    const searchInput = document.getElementById("search");
+    const teamMembers = document.querySelectorAll("#u li");
+
+    searchInput.addEventListener("input", () => {
+        const searchTerm = searchInput.value.toLowerCase();
+
+        for (const member of teamMembers) {
+            const memberName = member.textContent.toLowerCase();
+            if (memberName.includes(searchTerm)) {
+                member.style.display = "block";
+            } else {
+                member.style.display = "none";
+            }
+        }
+    });
+  </script>
+  <footer>
+    <p>&copy; 2023 Eshaan Ahuja - Daring Dragons. All rights reserved.</p>
+  </footer>
+</body>
+</html>

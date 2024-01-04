@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sets and costumes progress - Daring Dragons DI Team</title>
+    <meta name="description" content="Dive into the sets and costumes progress of Daring Dragons Destination Imagination Team. Follow our creative journey and problem-solving endeavors.">    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" type="image/x-icon" href="photos/favicon-removebg-preview.png">
+    <meta name="keywords" content="Destination Imagination, Creative Problem Solving, Daring Dragons, Team, Innovation">
+    <meta name="author" content="Eshaan Ahuja">
+    <meta name="language" content="English">
+    <link rel="apple-touch-icon" href="photos/favicon.jpg">
+    <meta name="theme-color" content="#8DCFEC">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap">
+    <style>
+      .answer {
+        padding: 10px;
+        display: none;
+        background-color: #fff;
+      }
+    </style>
+</head>
+<body>
+    <header>
+      <div id="big">
+      <ul id="u">
+        <li id="hed"> <a href="index.html"> Go to the home page!   </a></li>
+        <li id="hed"> <a href="contact.html"> Contact us! </a></li>
+        <li id="hed"> <a href="sponsorships.html"> Sponsorships! </a></li>
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn">About our team!</a>
+          <div class="dropdown-content">
+            <a id="hd" href="varun_i.html">Varun I</a>
+            <a id="hd" href="gokul_s.html">Gokul S</a>
+            <a id="hd" href="eshaan_a.html">Eshaan A</a>
+            <a id="hd" href="sristi_s.html">Sristi S</a>
+            <a id="hd" href="sk.html">Sahasra K</a>
+            <a id="hd" href="sahasra_v.html">Sahasra V</a>
+            <a id="hd" href="rj.html">Ruchika Joshi - The Team Manager!!</a>
+
+            </div>
+            <li class="dropdown">
+              <a href="javascript:void(0)" class="dropbtn">Team progress & fun games!</a>
+              <div class="dropdown-content">
+                <a id="hd" href="script.html">Script Progress!</a>
+                <a id="hd" href="sets&costumes.html">Sets and Costumes progress!</a>
+                <a id="hd" href="quiz.html">Take a DI quiz to test your knowledge!</a>
+                <a id="hd" href="resources.html">Resources/Materials</a>
+              </div>
+          <li id="long">|</li>
+
+          <input type="text" id="search" placeholder="Search for info on our page!">
+          <div id="search-results"></div>
+          <!-- <script src="script.js"></script> -->
+        <li>
+          <div id="google_translate_element"></div>
+
+           <script type="text/javascript">
+            function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+            }
+          </script>
+
+          <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        </li>
+
+
+        </li>
+      </div>
+        </ul>
+      
+      <h1>Sets and Costumes progress</h1>
+    </header>
+    <section>
+      </header>
+      <section>
+        <h2>What is the purpose of this page?</h2>
+        <hr>
+        <p>The purpose of this page is to allow verified login holders to sign in to this page with the login credentals thet they havebeen given by us to view our most up to date Sets and Costumes progress, our archived Sets and Costumes progress, and our Sets and Costumes progress urgent information. I you do not have any login credentals given by us, do not enter any other passords pn this page.</p>
+        <h2>Login here</h2>
+        <hr>
+      <p>Sorry, we are only allowed to disclose this information to registered indviduals. To see this info, please sign in with the login information given by a member of our team. Do not enter any other passords or sensitive content exept for the login given by us, the daring dragons destination imgaination team. This information is not saved anywhere.</p>
+      <form class="my-form">
+          <input type="text" placeholder="Username">
+          <br>
+          <input type="password" placeholder="Password" name="my-input">
+          <br>
+          <br>
+          <button>Log in</button>
+      </form>
+        <h2>The locked information will display here once unlocked:</h2>
+        <hr>
+      <div id="classified">
+          <!-- locked info will display here once username and password are inputted above-->
+      </div>
+        <br>
+        <hr>
+        <button onclick="lock()">🔒 Lock Page 🔒</button>
+    </section>
+      <hr>
+      <br>
+    <section>
+      <div class="faq-item">
+        <button class="toggle-btn" onclick="toggleAnswer()">Help, I forgot my username/password!</button>
+        <div class="answer" id="answer">Your username is your first name, lowercase no spaces, and you can text Eshaan for the password.</div>
+      </div>
+    </section>
+
+      <script>
+        function toggleAnswer() {
+          var answer = document.getElementById("answer");
+          if (answer.style.display === "block") {
+            answer.style.display = "none";
+          } else {
+            answer.style.display = "block";
+          }
+        }
+      </script>
+<br>
+   <a href="index.html" class="button">Back to Main Page</a>
+  <script src="https://replit.com/public/js/replit-badge-v2.js" theme="dark" position="bottom-right"></script>
+  <script>
+    
+    const classified = document.getElementById('classified');
+    
+    function lock() {
+      classified.innerHTML = `<p>This site is locked. Please sign in again.</p>`;
+    }
+    
+    let form = document.querySelector(".my-form");
+
+            form.addEventListener("submit", function (e) {
+            e.preventDefault()
+
+            let formdata = new FormData(this);
+              const username = formdata.get("Username");
+              const password = formdata.get("my-input");
+              // if (username === "eshaan" && (password === "od" || password === "the password" || password === "asdfjkl;")) {
+                
+              //     alert("Welcome, Eshaan! You have entered the Correct Username and Password, and we will unlock all information for you sir.");
+              //   classified.innerHTML = `<p><a href="https://docs.google.com/document/d/1cMQn5F2wx_-clnJTISgqxOihLOoJQqIjY_ud9dWS5hY/edit" target="_blank">This</a> is our current document as of 11/20/2023. We keep changing documents, so this might not be up to date.<p> <p>Building and designing is currently waiting for the script to become semi-final. Please come back later.</p>`;
+              // }
+            if (password == "od" || password == "the password" || password == "asdfjkl;" ) {
+                alert("Correct Username and Password, unlocking all information");
+                classified.innerHTML = `<p><a href="https://docs.google.com/document/d/1iP4MYPHe0nbUpYcOKLLLvW--nIOs1OjZ35Q4yDPD7cQ/edit?disco=AAAA_s2zRJc" target="_blank">This</a> is our current document as of 11/20/2023. We keep changing documents, so this might not be up to date.<p> <p>Building and designing is ongoing, but for security, you need to go the above <a href="https://docs.google.com/document/d/1iP4MYPHe0nbUpYcOKLLLvW--nIOs1OjZ35Q4yDPD7cQ/edit?disco=AAAA_s2zRJc" target="_blank">link</a> to view the plans and names.</p>`;
+
+              
+
+            } else {
+                alert("Incorrect Username or Password");
+            }
+            });
+  
+    const searchInput = document.getElementById("search");
+    const teamMembers = document.querySelectorAll("#u li");
+
+    searchInput.addEventListener("input", () => {
+        const searchTerm = searchInput.value.toLowerCase();
+
+        for (const member of teamMembers) {
+            const memberName = member.textContent.toLowerCase();
+            if (memberName.includes(searchTerm)) {
+                member.style.display = "block";
+            } else {
+                member.style.display = "none";
+            }
+        }
+    });
+  </script>
+      <footer>
+        <p>&copy; 2023 Eshaan Ahuja - Daring Dragons. All rights reserved.</p>
+      </footer>
+</body>
+</html>
