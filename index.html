@@ -288,9 +288,16 @@
       <button>or the full version.</button>
     </a>
     <p><strong>States (TX):</strong></p>
-    <p>We also won 2nd place in the Destination Imagination State competition in the 2022 - 2023 season.</p>
-    <p><strong>Reigonals (Txse6):</strong></p>
-    <p>We also won 1st place in the Destination Imagination Regional competition in the 2022 - 2023 season.</p>
+    
+    <p>This year, we will be competing at Texas states on UTC 2024-04-12T00:00:00Z. Our results will be posted here then</p>
+    
+    <p>We also won 2nd place in the Destination Imagination State competition in the 2022 - 2023 season, and advanced to Kansas City Global Finals</p>
+    
+    <p><strong>Reigonals (TXSE6):</strong></p>
+    
+    <p>This year, we won 3st place in the Destination Imagination Regional competition in the 2023 - 2024 season, and advanced to State.</p>
+    
+    <p>We also won 1st place in the Destination Imagination Regional competition in the 2022 - 2023 season, and advanced to State.</p>
 
     <p>We also won 2nd place in the Destination Imagination Regional competition in the 2021 - 2022 season</p>
     <br>
@@ -299,9 +306,9 @@
         <h2>Countdown to Our Next Competition!</h2>
         <div id="countdown" style="font-size: 2em; color: #ff4500;"></div>
       <hr>
-    <input type="radio" id="reigonals" name="comp" value="reigonals" checked>
+    <input type="radio" id="reigonals" name="comp" value="reigonals">
     <label for="reigonals">Regionals - District TXSE6!</label><br>
-    <input type="radio" id="states" name="comp" value="states">
+    <input type="radio" id="states" name="comp" value="states" checked>
     <label for="states">States - Texas!</label><br>
     <input type="radio" id="globals" name="comp" value="globals">
     <label for="globals">Kansas City Global Finals 2023-2024!</label>
@@ -517,7 +524,7 @@
 
     document.addEventListener('DOMContentLoaded', function () {
         // Initial competition date (Regionals) format utc - YYYY-MM-DDTHH:mm:ssZ
-        let competitionDate = new Date('2024-02-24T00:00:00Z').getTime();
+        let competitionDate = new Date('2024-04-12T00:00:00Z').getTime();
 
         // Function to update the competition date based on the selected radio button
         function updateCompetitionDate() {
@@ -553,7 +560,7 @@
             // If the countdown is over, display a message
             if (distance < 0) {
                 clearInterval(countdown);
-                document.getElementById('countdown').innerHTML = 'Competition is happening now!';
+                document.getElementById('countdown').innerHTML = 'This competition has passed, and you can view the results above!';
             }
         }, 1000);
 
