@@ -562,8 +562,7 @@
             //     clearInterval(countdown);
             //     document.getElementById('countdown').innerHTML = 'This competition has passed, and you can view the results above!';
             // }
-
-           if (selectedComp === 'reigonals') {
+           if (document.querySelector('input[name="comp"]:checked').value === 'reigonals') {
                 document.getElementById('countdown').innerHTML = 'This competition has passed, and you can view the results above!';
             }
         }, 1000);
