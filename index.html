@@ -558,8 +558,12 @@
             document.getElementById('countdown').innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
 
             // If the countdown is over, display a message
-            if (distance < 0) {
-                clearInterval(countdown);
+            // if (distance < 0) {
+            //     clearInterval(countdown);
+            //     document.getElementById('countdown').innerHTML = 'This competition has passed, and you can view the results above!';
+            // }
+
+           if (selectedComp === 'reigonals') {
                 document.getElementById('countdown').innerHTML = 'This competition has passed, and you can view the results above!';
             }
         }, 1000);
