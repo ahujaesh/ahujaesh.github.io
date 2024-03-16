@@ -294,68 +294,26 @@ figcaption {
 #form {
   border: 2px solid blueviolet;
 }
-#countdown-box {
-  position: relative;
-}
-
-#countdown-box::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-  background: url("https://ahujaesh.github.io/city-night.jpg") fixed 0 / cover;
-  filter: blur(10px);
-  margin: -30px;
-}
 
 #countdown-box {
-  width: 100%;
-  margin: auto;
-  padding: 59px 29px;
-  border-radius: .3em;
-  text-shadow: 0 1px 1px hsla(0, 0%, 100%, .3);
-  box-shadow: 0 0 0 1px hsla(0, 0%, 100%, .3) inset, 0 .3em 1em rgba(0, 0, 0, 0.12);
-  font: 150%/1.6 Baskerville, Palatino, serif;
+    text-align: center;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #fff;
+    border: 2px solid #1aa7ec;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    color:black;
 }
 
 #countdown-box h2 {
-  font-style: italic;
-  color: #000;
-  padding: 30px 0;
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 15px;
 }
 
 #countdown {
-  font-size: 2em;
-  color: #ff4500;
-}
-
-#countdown-box hr {
-  border: none;
-  border-top: 1px solid #ccc;
-  margin: 20px 0;
-}
-
-#countdown-box input[type="radio"] {
-  display: none;
-}
-
-#countdown-box label {
-  cursor: pointer;
-}
-
-#countdown-box label::before {
-  content: '';
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  margin-right: 10px;
-  border-radius: 50%;
-  border: 1px solid #000;
-}
-
-#countdown-box input[type="radio"]:checked + label::before {
-  background-color: #ff4500;
+    font-size: 2em;
+    color: #ff4500;
 }
