@@ -287,6 +287,28 @@ figcaption {
     }
 }
 
+#mobileBox {
+  width: 100%;
+  height: auto;
+  display: none;
+}
+
+#computerBox {
+  width: 43%;
+  margin: 7px;
+  border: 2px solid black;
+}
+
+@media only screen and (max-width: 767px) {
+    #mobileBox {
+        display: block;
+    }
+
+    #computerBox {
+        display: none;
+    }
+}
+
 #theme-icon {
   font-size: 15px;
 }
