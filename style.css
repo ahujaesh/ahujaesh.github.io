@@ -127,6 +127,9 @@ h1 {
 
 img {
   max-width: 100%;
+}
+
+#coolImg {
   background: radial-gradient(circle at bottom left, transparent 15px, #b4a078 16px) bottom left, 
                 radial-gradient(circle at top left, transparent 15px, #b4a078 16px) top left, 
                 radial-gradient(circle at top right, transparent 15px, #b4a078 16px) top right, 
