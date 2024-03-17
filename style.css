@@ -346,3 +346,33 @@ figcaption {
     filter: blur(10px);
     margin: -30px;
   }
+
+#mobile-countdown-box {
+    width: 100%;
+    margin: auto;
+    padding: 59px 29px;
+    border-radius: .3em;
+    text-shadow: 0 1px 1px hsla(0, 0%, 100%, .3);
+    box-shadow: 0 0 0 1px hsla(0, 0%, 100%, .3) inset, 0 .3em 1em rgba(0, 0, 0, 0.12);
+    font: 150%/1.6 Baskerville, Palatino, serif;
+    color: white !important;
+    text-align: center;
+  }
+
+  #mobile-countdown-box,
+#mobile-countdown-box > div::before {
+  background-color: #8DCFEC;
+}
+
+
+  #mobile-countdown-box > div::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    filter: blur(10px);
+    margin: -30px;
+  }
