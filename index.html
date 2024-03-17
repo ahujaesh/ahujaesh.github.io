@@ -564,7 +564,6 @@
 
             // Display the countdown
             document.getElementById('countdown').innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-            document.getElementById('countdown2').innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
 
             // If the countdown is over, display a message
             // if (distance < 0) {
@@ -573,18 +572,61 @@
             // }
            if (document.querySelector('input[name="comp"]:checked').value === 'reigonals') {
                 document.getElementById('countdown').innerHTML = 'This competition has passed, and you can view the results above!';
-                document.getElementById('countdown2').innerHTML = 'This competition has passed, and you can view the results above!';
-            }
-          if (document.querySelector('input[name="comp2"]:checked').value === 'reigonals') {
-                document.getElementById('countdown').innerHTML = 'This competition has passed, and you can view the results above!';
-                document.getElementById('countdown2').innerHTML = 'This competition has passed, and you can view the results above!';
             }
         }, 1000);
 
         // Event listener to update the competition date when a radio button is clicked
         document.querySelectorAll('input[name="comp"]').forEach(function (radio) {
             radio.addEventListener('change', updateCompetitionDate);
-        }document.querySelectorAll('input[name="comp2"]').forEach(function (radio) {
+        });
+
+      
+      // Initial competition date (Regionals) format utc - YYYY-MM-DDTHH:mm:ssZ
+        let competitionDate2 = new Date('2024-04-12T00:00:00Z').getTime();
+
+        // Function to update the competition date based on the selected radio button
+        function updateCompetitionDate2() {
+            const selectedComp2 = document.querySelector('input[name="comp"2]:checked').value;
+
+            // Set the competition date based on the selected competition
+            if (selectedComp2 === 'reigonals') {
+                competitionDate2 = new Date('2024-02-24T00:00:00Z').getTime();
+            } else if (selectedComp2 === 'states') {
+                competitionDate2 = new Date('2024-04-12T00:00:00Z').getTime();
+            } else if (selectedComp2 === 'globals') {
+                competitionDate2 = new Date('2024-05-22T00:00:00Z').getTime();
+            }
+        }
+
+        // Initial call to update the competition date
+        updateCompetitionDate2();
+
+        // Update the countdown every second
+        const countdown2 = setInterval(function () {
+            const now2 = new Date().getTime();
+            const distance2 = competitionDate - now;
+
+            // Calculate days, hours, minutes, and seconds
+            const days2 = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours2 = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes2 = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds2 = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the countdown
+            document.getElementById('countdown2').innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+            // If the countdown is over, display a message
+            // if (distance < 0) {
+            //     clearInterval(countdown);
+            //     document.getElementById('countdown').innerHTML = 'This competition has passed, and you can view the results above!';
+            // }
+           if (document.querySelector('input[name="comp2"]:checked').value === 'reigonals') {
+                document.getElementById('countdown2').innerHTML = 'This competition has passed, and you can view the results above!';
+            }
+        }, 1000);
+
+        // Event listener to update the competition date when a radio button is clicked
+        document.querySelectorAll('input[name="comp2"]').forEach(function (radio) {
             radio.addEventListener('change', updateCompetitionDate);
         });
     });
