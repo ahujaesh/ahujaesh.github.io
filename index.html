@@ -311,12 +311,12 @@
           <h2 style="color: white;">Countdown to Our Next Competition!</h2>
           <div id="countdown2" style="font-size: 2em; color: #ff4500;"></div>
         <hr>
-      <input type="radio" id="reigonals" name="comp2" value="reigonals">
-      <label for="reigonals">Regionals - District TXSE6!</label><br>
-      <input type="radio" id="states" name="comp2" value="states" checked>
-      <label for="states">States - Texas!</label><br>
-      <input type="radio" id="globals" name="comp2" value="globals">
-      <label for="globals">Kansas City Global Finals 2023-2024!</label>
+      <input type="radio" id="reigonals2" name="comp2" value="reigonals2">
+      <label for="reigonals2">Regionals - District TXSE6!</label><br>
+      <input type="radio" id="states2" name="comp2" value="states2" checked>
+      <label for="states2">States - Texas!</label><br>
+      <input type="radio" id="globals2" name="comp2" value="globals2">
+      <label for="globals2">Kansas City Global Finals 2023-2024!</label>
       </div>
     </div>
 
@@ -589,11 +589,11 @@
             const selectedComp2 = document.querySelector('input[name="comp"2]:checked').value;
 
             // Set the competition date based on the selected competition
-            if (selectedComp2 === 'reigonals') {
+            if (selectedComp2 === 'reigonals2') {
                 competitionDate2 = new Date('2024-02-24T00:00:00Z').getTime();
-            } else if (selectedComp2 === 'states') {
+            } else if (selectedComp2 === 'states2') {
                 competitionDate2 = new Date('2024-04-12T00:00:00Z').getTime();
-            } else if (selectedComp2 === 'globals') {
+            } else if (selectedComp2 === 'globals2') {
                 competitionDate2 = new Date('2024-05-22T00:00:00Z').getTime();
             }
         }
@@ -613,14 +613,14 @@
             const seconds2 = Math.floor((distance % (1000 * 60)) / 1000);
 
             // Display the countdown
-            document.getElementById('countdown2').innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+            document.getElementById('countdown2').innerHTML = `${days2}d ${hours2}h ${minutes2}m ${seconds2}s`;
 
             // If the countdown is over, display a message
             // if (distance < 0) {
             //     clearInterval(countdown);
             //     document.getElementById('countdown').innerHTML = 'This competition has passed, and you can view the results above!';
             // }
-           if (document.querySelector('input[name="comp2"]:checked').value === 'reigonals') {
+           if (document.querySelector('input[name="comp2"]:checked').value === 'reigonals2') {
                 document.getElementById('countdown2').innerHTML = 'This competition has passed, and you can view the results above!';
             }
         }, 1000);
