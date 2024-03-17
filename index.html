@@ -604,13 +604,13 @@
         // Update the countdown every second
         const countdown2 = setInterval(function () {
             const now2 = new Date().getTime();
-            const distance2 = competitionDate - now;
+            const distance2 = competitionDate2 - now2;
 
             // Calculate days, hours, minutes, and seconds
-            const days2 = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours2 = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes2 = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds2 = Math.floor((distance % (1000 * 60)) / 1000);
+            const days2 = Math.floor(distance2 / (1000 * 60 * 60 * 24));
+            const hours2 = Math.floor((distance2 % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes2 = Math.floor((distance2 % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds2 = Math.floor((distance2 % (1000 * 60)) / 1000);
 
             // Display the countdown
             document.getElementById('countdown2').innerHTML = `${days2}d ${hours2}h ${minutes2}m ${seconds2}s`;
