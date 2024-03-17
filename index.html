@@ -309,13 +309,13 @@
     <div id="computerBox">
       <div id="countdown-box">
           <h2 style="color: white;">Countdown to Our Next Competition!</h2>
-          <div id="countdown" style="font-size: 2em; color: #ff4500;"></div>
+          <div id="countdown2" style="font-size: 2em; color: #ff4500;"></div>
         <hr>
-      <input type="radio" id="reigonals" name="comp" value="reigonals">
+      <input type="radio" id="reigonals" name="comp2" value="reigonals">
       <label for="reigonals">Regionals - District TXSE6!</label><br>
-      <input type="radio" id="states" name="comp" value="states" checked>
+      <input type="radio" id="states" name="comp2" value="states" checked>
       <label for="states">States - Texas!</label><br>
-      <input type="radio" id="globals" name="comp" value="globals">
+      <input type="radio" id="globals" name="comp2" value="globals">
       <label for="globals">Kansas City Global Finals 2023-2024!</label>
       </div>
     </div>
@@ -564,6 +564,7 @@
 
             // Display the countdown
             document.getElementById('countdown').innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+            document.getElementById('countdown2').innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
 
             // If the countdown is over, display a message
             // if (distance < 0) {
@@ -572,11 +573,18 @@
             // }
            if (document.querySelector('input[name="comp"]:checked').value === 'reigonals') {
                 document.getElementById('countdown').innerHTML = 'This competition has passed, and you can view the results above!';
+                document.getElementById('countdown2').innerHTML = 'This competition has passed, and you can view the results above!';
+            }
+          if (document.querySelector('input[name="comp2"]:checked').value === 'reigonals') {
+                document.getElementById('countdown').innerHTML = 'This competition has passed, and you can view the results above!';
+                document.getElementById('countdown2').innerHTML = 'This competition has passed, and you can view the results above!';
             }
         }, 1000);
 
         // Event listener to update the competition date when a radio button is clicked
         document.querySelectorAll('input[name="comp"]').forEach(function (radio) {
+            radio.addEventListener('change', updateCompetitionDate);
+        }document.querySelectorAll('input[name="comp2"]').forEach(function (radio) {
             radio.addEventListener('change', updateCompetitionDate);
         });
     });
