@@ -350,7 +350,6 @@ figcaption {
     width: 100%;
     margin: auto;
     padding: 59px 29px;
-    border-radius: .3em;
     text-shadow: 0 1px 1px hsla(0, 0%, 100%, .3);
     box-shadow: 0 0 0 1px hsla(0, 0%, 100%, .3) inset, 0 .3em 1em rgba(0, 0, 0, 0.12);
     font: 150%/1.6 Baskerville, Palatino, serif;
@@ -360,7 +359,7 @@ figcaption {
 
   #mobile-countdown-box,
 #mobile-countdown-box > div::before {
-  background-color: #8DCFEC;
+  background-color: #B4A078;
 }
 
 
