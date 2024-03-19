@@ -119,7 +119,7 @@
             
               <p> - <strong><a href="mailto:daringdragonsdi@gmail.com?subject=Sponsorship Inquiry&body=I am interested in becoming a Bronze Sponsor for the Daring Dragons Destination Imagination Team. I come on behalf of" target="_blank">Bronze Sponsor:</a></strong> Recognition on <strong>our website</strong>, and on <strong>t-shirts</strong> (If we make any for this year).</p>
             
-              <p> - <strong><a href="mailto:daringdragonsdi@gmail.com?subject=Sponsorship Inquiry&body=I am interested in becoming a Custom Sponsor for the Daring Dragons Destination Imagination Team. I come on behalf of" target="_blank">Other Sponsor:</a></strong> Email us for a custom sponsorship plan at <i>daringdragonsdi@gmail.com</i>! We would love to hear from you!</p>
+              <p> - <strong><a href="mailto:daringdragonsdi@gmail.com?subject=Sponsorship Inquiry&body=I am interested in becoming a Custom Sponsor for the Daring Dragons Destination Imagination Team. I come on behalf of" target="_blank">Other Sponsor:</a></strong> Email us for a custom sponsorship plan at <a href="mailto:daringdragonsdi@gmail.com"><i>daringdragonsdi@gmail.com</i></a>! We would love to hear from you!</p>
             
           </div>
       </section>
@@ -130,12 +130,49 @@
           <h2>Become a Sponsor Today!</h2>
         <hr>
           <p>Ready to support creativity and innovation? Contact us to discuss sponsorship opportunities, or click on your plan above:</p>
+        <ul>
+          <li>
           <a href="mailto:daringdragonsdi@gmail.com" class="button" style="display: inline-block; padding: 10px 20px; background-color: #ff6600; color: #fff; text-decoration: none; border-radius: 5px; transition: background-color 0.3s;"
             onmouseover="this.style.backgroundColor='#e55e00'" onmouseout="this.style.backgroundColor='#ff6600'" target="_blank">Email us at <i>daringdragonsdi@gmail.com</i> today!</a>
-        <br>
-        <br>
-        <a href="sms:daringdragonsdi@gmail.com" id="mobile" style=" padding: 10px 20px; background-color: #ff6600; color: #fff; text-decoration: none; border-radius: 5px; transition: background-color 0.3s;"
-          onmouseover="this.style.backgroundColor='#e55e00'" onmouseout="this.style.backgroundColor='#ff6600'" target="_blank">Or text us!</a>
+          </li>
+          <br>
+          <br>
+          <li>
+          <a href="sms:daringdragonsdi@gmail.com" id="mobile" style=" padding: 10px 20px; background-color: #ff6600; color: #fff; text-decoration: none; border-radius: 5px; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#e55e00'" onmouseout="this.style.backgroundColor='#ff6600'" target="_blank">Text us!</a>
+          </li>
+          <br>
+          <br>
+          <li>
+          <button onclick="copyEmail()" style="background-color: #9243d9; color: #fff; padding: 10px 20px; font-size: 21px; border: none; cursor: pointer; border-radius: 5px;">Copy our Email</button>
+          </li>
+        </ul>
+
+      <script>
+          // Function to copy the email to the clipboard
+          function copyEmail() {
+              const emailToCopy = 'daringdragonsdi@gmail.com';
+
+              // Create a temporary input element
+              const tempInput = document.createElement('textarea');
+              tempInput.value = emailToCopy;
+
+              // Append the input element to the document
+              document.body.appendChild(tempInput);
+
+              // Select the text in the input element
+              tempInput.select();
+              tempInput.setSelectionRange(0, 99999); /* For mobile devices */
+
+              // Copy the selected text to the clipboard
+              document.execCommand('copy');
+
+              // Remove the temporary input element
+              document.body.removeChild(tempInput);
+
+              // Provide some visual feedback (optional)
+              alert('Email copied to clipboard: ' + emailToCopy);
+          }
+      </script>
       </section>
 
       
