@@ -1,137 +1,1021 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image to ASCII Art Converter</title>
-    <!-- <link rel="stylesheet" href="style.css"> -->
-</head>
-<body>
-  \
-    <h1>Image to ASCII Art Converter V2</h1>
-  <p>Version 2 generates an image out of a solid square and blank space as well as using colour</p>
-    <label for="imageInput">Select an Image or GIF:</label>
-    <input type="file" id="imageInput" accept="image/*, .gif">
-    <label for="outputWidth">Desired Width for ASCII Art (max 500):</label>
-    <input type="number" id="outputWidth" value="100" min="1" max="500"step="1">
-    <canvas id="outputCanvas" width="400" height="300"></canvas>
-    <button id="convertButton">Convert to ASCII Art</button>
-    <button id="enableWebcam">Enable Webcam</button>
-    <button id="disableWebcam" disabled>Disable Webcam</button>
-    <div id="asciiArtContainer"></div>
+<style>
+html {
+  height: 100%;
+  width: 100%;
+  background-color: #8DCFEC;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
 
-    <script src="script.js"></script>
-  
-  <script>
-    const imageInput = document.getElementById('imageInput');
-  const outputCanvas = document.getElementById('outputCanvas');
-  const asciiArtContainer = document.getElementById('asciiArtContainer');
-  const convertButton = document.getElementById('convertButton');
-  const enableWebcamButton = document.getElementById('enableWebcam');
-  const disableWebcamButton = document.getElementById('disableWebcam'); 
+p {
+  font-size: 25px;
+}
 
-  let webcamStream;
-  let webcamEnabled = false;
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #CBC3E3;
+  border: 3px solid #1aa7ec;
+  overflow-y: hidden;
+}
 
-  enableWebcamButton.addEventListener('click', async () => {
-      try {
-          webcamStream = await navigator.mediaDevices.getUserMedia({ video: true });
-          webcamEnabled = true;
-          disableWebcamButton.disabled = false;
+li {
+  float: left;
+}
 
-          const video = document.createElement('video');
-          video.srcObject = webcamStream;
-          video.play();
+li a, .dropbtn {
+  display: inline-block;
+  color: lightcoral;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
 
-          const webcamCanvas = document.createElement('canvas');
-          document.body.appendChild(webcamCanvas);
-          const webcamCtx = webcamCanvas.getContext('2d');
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: #9243d9;
+}
 
-          function updateWebcam() {
-              if (webcamEnabled) {
-                  webcamCanvas.width = outputCanvas.width;
-                  webcamCanvas.height = outputCanvas.height;
-                  webcamCtx.drawImage(video, 0, 0, outputCanvas.width, outputCanvas.height);
-                  const imageData = webcamCtx.getImageData(0, 0, outputCanvas.width, outputCanvas.height);
+li.dropdown {
+  display: inline-block;
+}
 
-                  asciiArtContainer.innerHTML = convertImageDataToASCII(imageData);
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #1aa7ec;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
 
-                  requestAnimationFrame(updateWebcam);
-              }
-          }
+.dropdown-content a {
+  color: light lightcoral;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
 
-          updateWebcam();
-      } catch (error) {
-          console.error('Error accessing webcam:', error);
-          alert('Error accessing webcam. Please make sure it is properly connected and accessible.');
-      }
-  });
+.dropdown-content a:hover {background-color: #9243d9;}
 
-  disableWebcamButton.addEventListener('click', () => {
-      webcamEnabled = false;
-      disableWebcamButton.disabled = true;
-  });
+.dropdown:hover .dropdown-content {
+  display: block;
+}
 
-  convertButton.addEventListener('click', () => {
-      const file = imageInput.files[0];
-      const desiredWidth = parseInt(document.getElementById('outputWidth').value, 10);
+a {
+  font-size: 25px;
+}
 
-      if (file) {
-          if (file.type.startsWith('image')) {
-              const img = new Image();
-              const reader = new FileReader();
+hr {
+  border: 2px solid #1aa7ec;
+}
 
-              reader.onload = function (e) {
-                  img.src = e.target.result;
-                  img.onload = function () {
-                      const aspectRatio = img.width / img.height;
-                      const newHeight = Math.round(desiredWidth / aspectRatio);
+#unfixed {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  border: 3px solid #1aa7ec;
+  opacity: .5;
+}
 
-                      outputCanvas.width = desiredWidth;
-                      outputCanvas.height = newHeight;
-                      const ctx = outputCanvas.getContext('2d');
-                      ctx.drawImage(img, 0, 0, desiredWidth, newHeight);
-                      const imageData = ctx.getImageData(0, 0, desiredWidth, newHeight);
+h1 {
+  font-size: 45px;
+}
 
-                      asciiArtContainer.innerHTML = convertImageDataToASCII(imageData);
-                  };
-              };
+#gr {
+  border: 3px solid green;
+}
+#search-results {
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    max-height: 200px; 
+    display: none;
+    z-index: 1;
+    width: 100%;
+}
 
-              reader.readAsDataURL(file);
-          } else if (file.type === 'image/gif') {
-              //Todo: ADD GIF LOGIC
-          } else {
-              alert('Unsupported file format. Please upload an image or GIF.');
-          }
-      }
-  });
+/* Styles for individual search result items */
+#search-results a {
+    display: block;
+    padding: 8px;
+    text-decoration: none;
+    color: #333;
+}
 
-  function convertImageDataToASCII(imageData) {
-    const { data, width, height } = imageData;
-    const asciiChars = ['█',  ' '];
+/* Styles for the active (highlighted) search result item */
+#search-results a:hover {
+    background-color: #f2f2f2;
+}
 
-    let asciiArt = '';
-    for (let i = 0; i < data.length; i += 4) {
-        const r = data[i];
-        const g = data[i + 1];
-        const b = data[i + 2];
-        const brightness = (r + g + b) / 3;
+/* Show the results container when there are search results */
+#search-results.show {
+    display: block;
+}
 
-        const asciiIndex = Math.floor((brightness / 255) * (asciiChars.length - 1));
-        const asciiChar = asciiChars[asciiIndex];
+#search {
+  height: 27px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-        const color = `rgb(${r}, ${g}, ${b})`;
+#long {
+  font-size: 55px;
+}
 
-        asciiArt += `<span style="color:${color};font-family: monospace;">${asciiChar}</span>`;
+img {
+  max-width: 100%;
+}
 
-        if ((i / 4 + 1) % width === 0) {
-            asciiArt += '<br>';
-        }
+#coolImg {
+  background: radial-gradient(circle at bottom left, transparent 15px, #b4a078 16px) bottom left, 
+                radial-gradient(circle at top left, transparent 15px, #b4a078 16px) top left, 
+                radial-gradient(circle at top right, transparent 15px, #b4a078 16px) top right, 
+                radial-gradient(circle at bottom right, transparent 15px, #b4a078 16px) bottom right;
+    background-size: 51% 51%;
+    background-repeat: no-repeat;
+}
+
+a:hover {
+  color: darkgoldenrod;
+  background-color: green;
+}
+
+
+#cookie-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 15%;
+  right: 15%;
+  width: 70%;
+  background-color: #333;
+  color: #fff;
+  padding: 1px;
+  text-align: center;
+  opacity: .7;
+  border-radius: 15px;
+}
+
+#ok-button {
+  background-color: #f2f2f2;
+  color: #333;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+#ok-button:hover {
+  background-color: #ddd;
+  color: #333;
+}
+
+body {
+  background-color: #8DCFEC;
+  color: #000;
+  transition: background-color 0.5s;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.dark-theme {
+  background-color: #1a1a1a;
+  color: #fff; 
+  outline: 150px solid #1a1a1a;
+}
+
+.dark-theme a {
+  color: #66b2ff; /* Light blue for links in dark theme */
+}
+
+.dark-theme .dropdown-content {
+  background-color: #1a1a1a;
+  color: white;
+}
+
+.dark-theme figcaption {
+  color: white;
+}
+
+body {
+  transition: background-color 0.5s, color 0.5s;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.neon-text {
+    font-size: 36px;
+    color: #1a1a1a;
+    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
+    animation: neon-glow 3.5s ease-in-out infinite;
+}
+
+.dark-theme .neon-text {
+  font-size: 36px;
+  color: #fff;
+  text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
+  animation: neon-glow 3.5s ease-in-out infinite;
+}
+
+@keyframes neon-glow {
+    0%, 100% {
+        text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
+    }
+    50% {
+        text-shadow: none;
+    }
+}
+
+#center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+#black a{
+  color: #333333;
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+figcaption {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #555;
+}
+
+#u{
+  list-style:none;
+  width:100%;
+}
+
+#mobile img {
+  width: 100%;
+  height: auto;
+  display: none;
+}
+
+#computer img {
+  width: 43%;
+  margin: 7px;
+  border: 2px solid black;
+}
+
+@media only screen and (max-width: 767px) {
+    #mobile img {
+        display: block;
     }
 
-    return asciiArt;
-  }
-  </script>
+    #mobilesmall {
+      font-size: 2px !important;
+      
+    }
 
+    #computer img {
+        display: none;
+    }
+}
+
+#mobileBox {
+  width: 100%;
+  height: auto;
+  display: none;
+}
+
+#computerBox {
+  width: 43%;
+  margin: 7px;
+  border: 2px solid black;
+}
+
+@media only screen and (max-width: 767px) {
+    #mobileBox {
+        display: block;
+    }
+
+    #computerBox {
+        display: none;
+    }
+}
+
+#theme-icon {
+  font-size: 15px;
+}
+
+#form {
+  border: 2px solid blueviolet;
+}
+
+#countdown-box {
+    width: 100%;
+    margin: auto;
+    padding: 59px 29px;
+    text-shadow: 0 1px 1px hsla(0, 0%, 100%, .3);
+    box-shadow: 0 0 0 1px hsla(0, 0%, 100%, .3) inset, 0 .3em 1em rgba(0, 0, 0, 0.12);
+    font: 150%/1.6 Baskerville, Palatino, serif;
+    color: white !important;
+    text-align: center;
+  }
+
+  #countdown-box,
+#countdown-box > div::before {
+    background: url("https://ahujaesh.github.io/city-night.jpg") fixed 0 / cover;
+}
+
+
+  #countdown-box > div::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    filter: blur(10px);
+    margin: -30px;
+  }
+
+#mobile-countdown-box {
+    width: 100%;
+    margin: auto;
+    padding: 59px 29px;
+    text-shadow: 0 1px 1px hsla(0, 0%, 100%, .3);
+    box-shadow: 0 0 0 1px hsla(0, 0%, 100%, .3) inset, 0 .3em 1em rgba(0, 0, 0, 0.12);
+    font: 150%/1.6 Baskerville, Palatino, serif;
+    color: white !important;
+    text-align: center;
+  }
+
+  #mobile-countdown-box,
+#mobile-countdown-box > div::before {
+  background-color: #B4A078;
+}
+
+
+  #mobile-countdown-box > div::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    filter: blur(10px);
+    margin: -30px;
+  }
+  .tooltip {
+  	display: none;
+  }
+  #unfixed:hover .tooltip {
+  display: block;
+	}
+</style>
+  <title>Daring Dragons Destination Imagination Team</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="icon" type="image/x-icon" href="photos/favicon-removebg-preview.png">
+  <meta name="ahrefs-site-verification" content="c5748d7fe1298235a3c44ded62e8e081e12b34fd7c7bc6dc02f026372582a740">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Daring Dragons Destination Imagination Team - Igniting Creativity and Innovation! Explore our journey, achievements, and commitment to creative problem-solving. Get to know our dedicated team members and their unique contributions! Join us in celebrating our victories at Globals, State, and Regionals, and discover the world of Destination Imagination with us.">
+  <meta name="keywords" content="Destination Imagination, Creative Problem Solving, Daring Dragons, Team, Innovation">
+  <meta name="author" content="Eshaan Ahuja">
+  <meta name="language" content="English">
+  <link rel="apple-touch-icon" href="photos/favicon.jpg">
+  <meta name="theme-color" content="#8DCFEC">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap">
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:description" content="Daring Dragons Destination Imagination Team - Igniting Creativity and Innovation! Explore our journey, achievements, and commitment to creative problem-solving. Get to know our dedicated team members and their unique contributions! Join us in celebrating our victories at Globals, State, and Regionals, and discover the world of Destination Imagination with us."/>
+  <meta property="og:site_name" content="Daring Dragons Destination Imagination Team"/>
+  <meta property="og:url" content="https://ahujaesh.github.io/"/>
+  <meta property="og:title" content="Daring Dragons Destination Imagination Team"/>
+    
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [{
+          "@type": "Question",
+          "name": "Who are the Daring Dragons Destination Imagionation team?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We are a team of friends who compete in destination imagionation. Destination imagonation (or DI) is a globaly known theater competition for kids in grades 2 through collage."
+          }
+        }, {
+          "@type": "Question",
+          "name": "How do we contact the Daring Dragons?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To contact us, please email us at daringdragonsdi@gmail.com. We would love to hear from you!"
+          }
+        }]
+      }
+      </script>
+      <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "url": "https://ahujaesh.github.io/",
+          "logo": "https://ahujaesh.github.io//photos/dragon-removebg-preview.png"
+        }
+        </script>
+</head>
+<body>
+  <a target="_blank" href="https://github.com/ahujaesh/ahujaesh.github.io/" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+  <header>
+    <a id="top"></a>
+    <nav>
+      <div id="mobilesmall">
+          <div id="big">
+              <ul id="u">
+                  <li id="hed"><a href="index.html">Go to the home page!</a></li>
+                  <li id="hed"><a href="contact.html">Contact us!</a></li>
+                  <li id="hed"><a href="sponsorships.html">Sponsorships!</a></li>
+                  <li class="dropdown">
+                      <a href="javascript:void(0)" class="dropbtn">About our team!</a>
+                      <div class="dropdown-content">
+                          <a id="hd" href="varun_i.html">Varun Iyer</a>
+                          <a id="hd" href="gokul_s.html">Gokul Srinivasan</a>
+                          <a id="hd" href="eshaan_a.html">Eshaan Ahuja</a>
+                          <a id="hd" href="sristi_s.html">Sristi Shetty</a>
+                          <a id="hd" href="sk.html">Sahasra Katragadra</a>
+                          <a id="hd" href="sahasra_v.html">Sahasra Velore</a>
+                          <a id="hd" href="rj.html">Ruchika Joshi - The Team Manager</a>
+                          
+                          <!-- Add more team members as needed -->
+                      </div>
+                  </li>
+                  <li class="dropdown">
+                      <a href="javascript:void(0)" class="dropbtn">Team progress & fun games!</a>
+                      <div class="dropdown-content">
+                          <a id="hd" href="script.html">Script Progress!</a>
+                          <a id="hd" href="sets&costumes.html">Sets and Costumes progress!</a>
+                          <a id="hd" href="quiz.html">Take a DI quiz to test your knowledge!</a>
+                          <a id="hd" href="resources.html">Resources/Materials</a>
+                      </div>
+                  </li>
+                  <!-- <li id="long">|</li> -->
+                  <li>
+                      <input type="text" id="search" placeholder="🔍 Search">
+                      <div id="search-results"></div>
+                      <button id="theme-toggle" onclick="toggleTheme()">
+                          <span id="theme-icon">☀️ Light Mode</span>
+                      </button>
+                  </li>
+                <li>
+                  <div id="google_translate_element"></div>
+
+                   <script type="text/javascript">
+                    function googleTranslateElementInit() {
+                    new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+                    }
+                  </script>
+
+                  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+                </li>
+              </ul>
+          </div>
+      </div>
+    </nav>
+
+    <ul id="unfixed">
+      <li><a href="#top" title="Return to the top" id="top-button">^</a></li>
+      <li class="tooltip"><p>hi</p></li>
+    </ul>
+    <br>
+    <h1>Welcome to the Daring Dragons Destination Imagination Team!</h1>
+    <img src="photos/dragon-removebg-preview.png" alt="Daring Dragons Destination Imgagination team's Logo" height="100">
+    <br>
+    <hr id="gr">
+      
+  </header>
+  <section><!-- Cookie consent thingy -------- -->
+    <div id="cookie-popup" style="display: none;">
+      <p>We use cookies.</p>
+      <button id="ok-button" style="background-color: #f2f2f2; color: #333; border: none; padding: 5px 10px; cursor: pointer;" onclick="closePopup()">OK</button>
+      <a href="cookies.txt" target="_blank"> <button style="background-color: #f2f2f2; color: #333; border: none; padding: 5px 10px; cursor: pointer;">Cookie Policy</button> </a>
+    </div>
+
+    
+  </section><!-- End cookie consent thingy!! ------- -->
+  <section>
+    <h2>About Us</h2>
+    <hr>
+    <p>We are the Daring Dragons Destination Imagination Team - Igniting Creativity and Innovation! Explore our journey, achievements, and commitment to creative problem-solving. Join us in celebrating our victories at Globals, State, and Regionals in 2022-2023. Get to know our dedicated team members and their unique contributions.</p>
+    <div id="photo-container" onclick="replaceWithIframe('https://www.youtube-nocookie.com/embed/iP0Lq1a6Ouk?playlist=iP0Lq1a6Ouk&autoplay=1&iv_load_policy=3&loop=1&start=')">
+      <img id="coolImg" style="margin: 2px 5px;" src="photos/Screenshot_2023-11-28_7.08.36_PM-removebg-preview.png" alt="Click me to see our performance at Kansas City Global Finals 2023">
+    </div>
+
+    <script>
+      function replaceWithIframe(link) {
+        // Create an iframe element
+        const iframe = document.createElement('iframe');
+        iframe.src = link;
+        iframe.width = '90%'; // Set the width of the iframe (adjust as needed)
+        iframe.height = 'auto'; // Set the height of the iframe (adjust as needed)
+
+        // Get the photo container
+        const photoContainer = document.getElementById('photo-container');
+
+        // Replace the image with the iframe
+        photoContainer.innerHTML = ''; // Clear the image
+        photoContainer.appendChild(iframe);
+      }
+    </script>
+
+    <p>This was our competition entry for the 2022 - 2023 DI competition season!</p>
+    <p>We currently have over 400 views on the official Destination Imagination Youtube channel!</p>
+    <p>If the video doesn't show up, you can go <a href="https://www.youtube.com/embed/iP0Lq1a6Ouk"target="_blank"alt="our preformance"> here</a> to see it on Youtube!</p>
+    <h2>Reading Music</h2>
+    <hr>
+    <p>If you'd like some background music while browsing, hit play for a relaxing soundtrack. Find the music credits <a href="#credits">here</a>.</p>
+    <figure>
+    <figure>
+      <figcaption>Track 1:</figcaption>
+      <br>
+      <audio id="audio1" controls>
+        <source src="audio1-longer.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </figure>
+
+    <figure>
+      <figcaption>Track 2:</figcaption>
+      <br>
+      <audio id="audio2" controls>
+        <source src="audio3.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </figure>
+
+    <figure>
+      <figcaption>Track 3:</figcaption>
+      <br>
+      <audio id="audio3" controls>
+        <source src="audio4.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </figure>
+
+    <br>
+    <h2 style="text-align: center;">What is Destination Imagination (DI)?</h2>
+    
+    <hr>
+    <p>An educational program and competition that encourages creativity, critical thinking, problem-solving, and
+      teamwork among students of all ages. Participants form teams and work together to solve complex challenges that
+      require innovative solutions.</p>
+
+    <h2>Key Points about Destination Imagination:</h2>
+    <p>1. Team-Based Learning: DI promotes collaboration among team members, who come together to tackle a variety of
+      challenges. These challenges encompass multiple disciplines, such as engineering, science, fine arts, and social
+      entrepreneurship.</p>
+    <p>2. Creative Problem-Solving: Participants are presented with open-ended problems and are encouraged to explore
+      creative and imaginative solutions. This fosters thinking outside the box and encourages innovation.</p>
+    <p>3. Diverse Challenges: DI challenges vary from year to year and may include building structures, designing
+      theatrical performances, creating solutions to real-world problems, and more. Each challenge tests a different set
+      of skills.</p>
+    <p>4. Global Competition: Teams have the opportunity to showcase their solutions at local, regional, and
+      international DI tournaments, where they are judged on their creativity, teamwork, and problem-solving abilities.
+    </p>
+    <p>5. Life Skills: DI not only focuses on academic skills but also emphasizes life skills such as communication,
+      time management, and adaptability. These skills are valuable for personal and professional development.</p>
+    <p>6. Student-Led: Teams are student-led, meaning that participants take the initiative in brainstorming, planning,
+      and executing their solutions, with guidance from adult team managers.</p>
+    <p>7. Fun and Learning: DI combines education with fun and encourages a love for learning. It empowers students to
+      take ownership of their projects and fosters a sense of accomplishment.</p>
+    <p>8. Real-World Applications: The skills learned in DI are applicable to real-world challenges and are highly
+      valued in various fields, including science, technology, engineering, arts, and mathematics (STEAM).</p>
+    <p>9. International Participation: DI attracts a diverse range of participants from around the world, making it a
+      globally recognized educational program.</p>
+
+    <p>In summary, Destination Imagination is an educational program that empowers students to develop their creativity,
+      critical thinking, and teamwork skills by solving diverse challenges. It's an excellent platform for fostering
+      innovation and preparing young minds for the challenges of the future.</p>
+  </section>
+  <section>
+    <h2>Our Mission</h2>
+    <hr>
+    <p>We are the Daring Dragons, a Destination Imagination (DI) team dedicated to creativity and creation. We have competed in the 2021 - 2022
+      season, the 2022 - 2023 season, and the 2023 - 2024 DI season. Our mission is to excel in creative problem-solving
+      and innovation.</p>
+  </section>
+  <br>
+  <section>
+    <h2>Our Team Members - you can read more about each one of our members by clicking on their name!</h2>
+    <hr>
+    
+    <p> - <a href="sk.html"> Sahasra K</a></p>
+    <p> - <a href="sahasra_v.html"> Sahasra V</a></p>
+    <p> - <a href="sristi_s.html"> Sristi S</a></p>
+    <p> - <a href="gokul_s.html"> Gokul S</a></p>
+    <p> - <a href="varun_i.html"> Varun I</a></p>
+    <p> - <a href="eshaan_a.html"> Eshaan A</a></p>
+    <p> - <a href="rj.html"> And Ruchika Joshi - the Team Manager</a></p>
+  </section>
+  <br>
+  <section>
+    <h2>Accomplishments</h2>
+    <hr>
+    <img src="photos/trophy.jpg" alt="A photo of our Kansas City Global Finals Third Place 2022-2023 trophy taken in our secret lounge." width="40%" id="center">
+    <p><strong>Globals (Earth):</strong></p>
+    <p>We proudly won 3rd place in the Global Destination Imagination (DI) Competition in the 2022 - 2023 season, showcasing our dedication and
+      creativity.</p>
+    <p>Below ↓ is the offically released results sheet from Destination Imagination showing how well we placed in Destination Imagination Global finals - 3rd in the world! You should be on page 24 of the official scoring docment released by Destination Imagionation, but if not, you can go to page 24 of the full scoring sheet to see us! <br> <br> (Note - if you want to see the full scoring sheet released by Destination Imagination, you can go <a href="GF23-Results.pdf#page=24"target="_blank"alt="our results">here</a> to view the results in a new tab, or download it below.)</p>
+    <embed src="pg24.pdf" type="application/pdf" width="80%" height="550px" alt="Our results (.pdf)">
+    <br>
+    <p>Download our results - </p>
+    <a style="background-color: #1aa7ec;
+      color: #fff;
+      padding: 10px 20px;
+      border: 2px solid #1aa7ec;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;"
+      href="pg24.pdf" download="DI_Results_Page_24.pdf">
+    <button>Short Version</button>
+    </a>
+    <br>
+    <br>
+    <br>
+    <a style="background-color: #1aa7ec;
+      color: #fff;
+      padding: 10px 20px;
+      border: 2px solid #1aa7ec;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;"
+      href="GF23-Results.pdf" download="DI_Results_Page_24.pdf">
+      <button>or the full version.</button>
+    </a>
+    <p><strong>States (TX):</strong></p>
+    
+    <p>This year, we will be competing at Texas states on UTC 2024-04-12T00:00:00Z. Our results will be posted here then.</p>
+    
+    <p>We also won 2nd place in the Destination Imagination State competition in the 2022 - 2023 season, and advanced to Kansas City Global Finals</p>
+    
+    <p><strong>Reigonals (TXSE6):</strong></p>
+    
+    <p>This year, we won 3rd place in the Destination Imagination Regional competition in the 2023 - 2024 season, and advanced to State.</p>
+    
+    <p>We also won 1st place in the Destination Imagination Regional competition in the 2022 - 2023 season, and advanced to State.</p>
+
+    <p>We also won 2nd place in the Destination Imagination Regional competition in the 2021 - 2022 season.</p>
+    <br>
+    <p> And more to come!</p>
+    
+    <div id="mobileBox">
+      <div id="mobile-countdown-box">
+          <h2 style="color: white;">Countdown to Our Next Competition!</h2>
+          <div id="countdown" style="font-size: 2em; color: #ff4500;"></div>
+        <hr>
+      <input type="radio" id="reigonals" name="comp" value="reigonals">
+      <label for="reigonals">Regionals - District TXSE6!</label><br>
+      <input type="radio" id="states" name="comp" value="states" checked>
+      <label for="states">States - Texas!</label><br>
+      <input type="radio" id="globals" name="comp" value="globals">
+      <label for="globals">Kansas City Global Finals 2023-2024!</label>
+      </div>
+    </div>
+    
+    <div id="computerBox">
+      <div id="countdown-box">
+          <h2 style="color: white;">Countdown to Our Next Competition!</h2>
+          <div id="countdown2" style="font-size: 2em; color: #ff4500;"></div>
+        <hr>
+      <input type="radio" id="reigonals2" name="comp2" value="reigonals2">
+      <label for="reigonals2">Regionals - District TXSE6!</label><br>
+      <input type="radio" id="states2" name="comp2" value="states2" checked>
+      <label for="states2">States - Texas!</label><br>
+      <input type="radio" id="globals2" name="comp2" value="globals2">
+      <label for="globals2">Kansas City Global Finals 2023-2024!</label>
+      </div>
+    </div>
+
+    
+  </section>
+  <br>
+  <section>
+    <h2>
+      Keeping up with the Daring Dragons!
+    </h2>
+    <hr>
+    <p>We currently have no information that we can share to the public. Come again later?</p>
+    <p>For this year's competition, we have won 3rd place in the Destination Imagination Regional competition in the 2023 - 2024 season, and advanced to State. you can view the live countdown to Destination Imagination Texas State <a href="#countdown-box">here</a>.</p>
+    <p>If you are a member or a person with credentials given by the Daring Dragons, you can go to the Team progress and fun games" tab in the top menu, and go to the <a href="script.html">"Script progress!"</a> tab, or the <a href="sets&costumes.html">"Sets and costumes progress!"</a> tab, and login with your credentials given by us, to view the most up to date information on each aspect of the team's progress.</p>
+
+  </section>
+  <br>
+  <section>
+    <h2>
+      Photos and videos from last year!!
+    </h2>
+    <hr>
+    <div id="mobile">
+        
+        <!-- Default image for larger screens -->
+        <img src="photos/IMG-8018.jpg" alt="Us at globals last year with our parents at the convention center">
+        <img src="photos/IMG-8023.jpg" alt="Us at globals last year">
+        <img src="photos/IMG-7983.jpg" alt="Us at globals last year, specifically the opening ceremony">
+        <img src="photos/unnamed_Original.jpeg" alt="Us with our trophy">
+    </div>
+    <!-- Computer Images -->
+    <div id="computer">
+        <img src="photos/IMG-8018.jpg" alt="Us at globals last year with our parents at the convention center">
+        <img src="photos/IMG-8023.jpg" alt="Us at globals last year">
+        <img src="photos/IMG-7983.jpg" alt="Us at globals last year, specifically the opening ceremony">
+        <img src="photos/unnamed_Original.jpeg" alt="Us with our trophy">
+    </div>
+
+    <p>This is us at global finals in Kansas City, Missouri, last year.</p>
+    <!-- <iframe width="800" height="450" src="https://www.youtube.com/embed/iP0Lq1a6Ouk" frameborder="0" allowfullscreen
+      alt="our preformance"></iframe>
+
+    <p>And this was our competition entry for the 2022 - 2023 DI competition season!</p>
+    <p>We currently have almost 300 views on the oficial Destination Imagination Youtube channel!</p> -->
+
+  </section>
+  <br>
+  <section>
+    <h2>Photos from this year!</h2>
+    <hr>
+    <img src="photos/di7.jpeg" style="margin: 7px; border: 2px solid black;" alt="Us posing after a meeting" width="43%">
+    <p>This was us after a meeting early in the 2023 - 2024 season.</p>
+  </section>
+  <br>
+  
+  <section>
+    <h2>Fun Facts</h2>
+    <hr>
+    <p> - The average years of DI experince in on our team is 3.428 years!</p>
+    <p> - We traveled almost 11 hours (~716 miles) to get to global finals from the Woodlands, TX, where we are currently
+      based! You can <a href="https://www.google.com/maps/dir/The+Woodlands,+TX/Kansas+City,+MO/" target="_blank">view our route Here</a></p>
+    
+    <p> - We achieved victory at the global finals, surpassing more than 40 competing teams. These teams had previously demonstrated their excellence by triumphing in regionals and states, showcasing their remarkable skills in their own right.</p>
+    <p> - We have appeared on the <span alt="the katy news magazine" class="neon-text">The Katy News magazine</span>, in <a href="https://thekatynews.com/2023/05/27/destination-imagination-global-finals-results/?Daring%20Dragons,%20Conroe%20ISD,%20THE%20WOODLANDS-Coulson%20Tough,%20Texas#:~:text=Daring%20Dragons%2C%20Conroe%20ISD%2C%20THE%20WOODLANDS%2DCoulson%20Tough%2C%20Texas" target="_blank" title="The katy news's magazine on us and our victory" alt="The katy news's magazine on us and our victory">this</a> article about our victories at Kansas City Global Finals 2023!</p>
+    <p> - You can see our scorce code and versions for this webpage <a href="https://github.com/ahujaesh/daringdragonswebpage" target="_blank"> here on Github</a>. It is usually updated weekly with the most recent code.</p>
+  </section>
+  <br>
+  <section>
+    <h2>Learn More</h2>
+    <hr>
+    <p>For more information about Destination Imagination, please visit the <a href="https://ditxse6.org/"target="_blank">official website
+        for our reigon </a> or the <a href="https://www.destinationimagination.org/"target="_blank">offical website for the global DI
+        competition</a></p>
+  </section>
+  <br>
+  <section>
+    <h2>Feedback!</h2>
+    <hr>
+    <p>Kindly take a moment to fill out the feedback form below. Your insights are valuable to us, and we appreciate your time in sharing your thoughts.</p>
+    <p>You can also go <a href="https://docs.google.com/forms/d/e/1FAIpQLScHMwKt4knPIF7iScreE_J-ntGcLuncQaxoSEswJKersJwvQQ/viewform?embedded=true" alt="the feedback form" target="_blank" title="feedback form">here</a> to view it in  new tab.</p>
+    <hr>
+    
+    <!-- <div id="form">
+    <div id="ff-compose"></div>
+    <script async defer src="https://formfacade.com/include/111229248832430727042/form/1FAIpQLScHMwKt4knPIF7iScreE_J-ntGcLuncQaxoSEswJKersJwvQQ/clean.js?div=ff-compose"></script> -->
+
+      <div id="ff-compose"></div>
+      <script async defer src="https://formfacade.com/include/111229248832430727042/form/1FAIpQLScHMwKt4knPIF7iScreE_J-ntGcLuncQaxoSEswJKersJwvQQ/classic.js?div=ff-compose"></script>
+    </div>
+  </section>
+  <br>
+  <hr>
+  <p>Thank you for reading!</p>
+  <br>
+  <h2 id="credits">Credits and Copyright</h2>
+  <hr>
+  <p>
+     - Music by https://www.bensound.com
+  <br>
+    License code: UZBNDAF4GXYGLYQ7
+  </p>
+  
+  <!-- <hr> -->
+  <p> - More music from https://file-examples.com/<wbr>index.php/sample-audio-files<wbr>/sample-mp3-download/</p>
+  <!-- <hr> -->
+    <p> - Memories of Spring by Tokyo Music Walker | https://soundcloud.com/user-356546060 <br>
+    Music promoted by https://www.chosic.com/free-music/all/ <br>
+    Creative Commons CC BY 3.0 <br>
+    https://creativecommons.org/licenses/<wbr>by/3.0/
+</p>
+  <p> - Github corners from <a href="https://tholman.com/github-corners/">here</a>.</p>
+<!-- <hr> -->
+  <p> - Our
+  <a href="cookies.txt" target="_blank" alt="cookie Policy" title="Cookie Policy">Cookie Policy</a>.</p>
+
+  <!-- <hr> -->
+  <p> - Feedback Form by <a href="https://formfacade.com/website/" target="_blank">FormFacade</a></p>
+  <p> - Created by <a href="eshaan_a.html" target="_blank">Eshaan Ahuja</a>, a member of the Destination Imagionation team Daring Dragons.</p>
+  <hr>
+  <footer>
+    <p>&copy; 2023 Eshaan Ahuja - Daring Dragons. All rights reserved.</p>
+    <p>  MIT licence located <a href="ahujaesh.github.io/MIT_LICENCE.txt">here</a>.</p>
+  </footer>
+  <hr>
+  <br>
+  <br>
+  <br>
+  <script> 
+    const searchInput = document.getElementById("search");
+    const teamMembers = document.querySelectorAll("#u li");
+
+    searchInput.addEventListener("input", () => {
+      const searchTerm = searchInput.value.toLowerCase();
+
+      for (const member of teamMembers) {
+        const memberName = member.textContent.toLowerCase();
+        if (memberName.includes(searchTerm)) {
+          member.style.display = "block";
+        } else {
+          member.style.display = "none";
+        }
+      }
+    });
+
+    // Function to toggle the theme
+    function toggleTheme() {
+      const body = document.body;
+      const themeIcon = document.getElementById("theme-icon");
+
+      if (body.classList.contains("dark-theme")) {
+        body.classList.remove("dark-theme");
+        themeIcon.innerText = "☀️ Light Mode";
+      } else {
+        body.classList.add("dark-theme");
+        themeIcon.innerText = "🌙 Dark Mode";
+      }
+    }
+
+    function toggleTheme2() {
+      const body = document.body;
+      const themeIcon = document.getElementById("theme-icon");
+
+      if (body.classList.contains("dark-theme")) {
+        body.classList.remove("dark-theme");
+        themeIcon.innerText = "☀️ Light Mode";
+      } else {
+        body.classList.add("dark-theme");
+        themeIcon.innerText = "🌙 Dark Mode";
+      }
+    }
+
+    const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+    // Function to run when dark mode is detected
+    function runFunctionIfDarkMode() {
+      if (darkModeMediaQuery.matches) {
+        toggleTheme2();  // Call your existing toggleTheme function
+      }
+    }
+
+    // Initial call to check if dark mode is set
+    runFunctionIfDarkMode();
+
+    // Listen for changes in the user's color scheme preference
+    darkModeMediaQuery.addListener(runFunctionIfDarkMode);
+
+    
+    // Function to show the cookie consent popup
+    function showPopup() {
+      const popup = document.getElementById("cookie-popup");
+      popup.style.display = "block";
+    }
+
+    // Function to close the cookie consent popup
+    function closePopup() {
+      const popup = document.getElementById("cookie-popup");
+      popup.style.display = "none";
+    }
+
+    // Check if the user has previously accepted the cookies (e.g., by setting a cookie)
+    if (!document.cookie.includes("cookieConsent=true")) {
+      showPopup();
+    }
+
+    // Function to set a cookie when the user clicks "OK"//
+    function setCookie() {
+      document.cookie = "cookieConsent=true; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
+      closePopup();
+    }
+
+    // Attach the setCookie function to the "OK" button's click event
+    document.getElementById("ok-button").addEventListener("click", setCookie);
+
+    document.addEventListener('DOMContentLoaded', function () {
+        // Initial competition date (Regionals) format utc - YYYY-MM-DDTHH:mm:ssZ
+        let competitionDate = new Date('2024-04-12T00:00:00Z').getTime();
+
+        // Function to update the competition date based on the selected radio button
+        function updateCompetitionDate() {
+            const selectedComp = document.querySelector('input[name="comp"]:checked').value;
+
+            // Set the competition date based on the selected competition
+            if (selectedComp === 'reigonals') {
+                competitionDate = new Date('2024-02-24T00:00:00Z').getTime();
+            } else if (selectedComp === 'states') {
+                competitionDate = new Date('2024-04-12T00:00:00Z').getTime();
+            } else if (selectedComp === 'globals') {
+                competitionDate = new Date('2024-05-22T00:00:00Z').getTime();
+            }
+        }
+
+        // Initial call to update the competition date
+        updateCompetitionDate();
+
+        // Update the countdown every second
+        const countdown = setInterval(function () {
+            const now = new Date().getTime();
+            const distance = competitionDate - now;
+
+            // Calculate days, hours, minutes, and seconds
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the countdown
+            document.getElementById('countdown').innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+            // If the countdown is over, display a message
+            // if (distance < 0) {
+            //     clearInterval(countdown);
+            //     document.getElementById('countdown').innerHTML = 'This competition has passed, and you can view the results above!';
+            // }
+           if (document.querySelector('input[name="comp"]:checked').value === 'reigonals') {
+                document.getElementById('countdown').innerHTML = 'This competition has passed, and you can view the results above!';
+            }
+        }, 1000);
+
+        // Event listener to update the competition date when a radio button is clicked
+        document.querySelectorAll('input[name="comp"]').forEach(function (radio) {
+            radio.addEventListener('change', updateCompetitionDate);
+        });
+
+      
+      // Initial competition date (Regionals) format utc - YYYY-MM-DDTHH:mm:ssZ
+        let competitionDate2 = new Date('2024-04-12T00:00:00Z').getTime();
+
+        // Function to update the competition date based on the selected radio button
+        function updateCompetitionDate2() {
+            const selectedComp2 = document.querySelector('input[name="comp2"]:checked').value;
+
+            // Set the competition date based on the selected competition
+            if (selectedComp2 === 'reigonals2') {
+                competitionDate2 = new Date('2024-02-24T00:00:00Z').getTime();
+            } else if (selectedComp2 === 'states2') {
+                competitionDate2 = new Date('2024-04-12T00:00:00Z').getTime();
+            } else if (selectedComp2 === 'globals2') {
+                competitionDate2 = new Date('2024-05-22T00:00:00Z').getTime();
+            }
+        }
+
+        // Initial call to update the competition date
+        updateCompetitionDate2();
+
+        // Update the countdown every second
+        const countdown2 = setInterval(function () {
+            const now2 = new Date().getTime();
+            const distance2 = competitionDate2 - now2;
+
+            // Calculate days, hours, minutes, and seconds
+            const days2 = Math.floor(distance2 / (1000 * 60 * 60 * 24));
+            const hours2 = Math.floor((distance2 % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes2 = Math.floor((distance2 % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds2 = Math.floor((distance2 % (1000 * 60)) / 1000);
+
+            // Display the countdown
+            document.getElementById('countdown2').innerHTML = `${days2}d ${hours2}h ${minutes2}m ${seconds2}s`;
+
+            // If the countdown is over, display a message
+            // if (distance < 0) {
+            //     clearInterval(countdown);
+            //     document.getElementById('countdown').innerHTML = 'This competition has passed, and you can view the results above!';
+            // }
+           if (document.querySelector('input[name="comp2"]:checked').value === 'reigonals2') {
+                document.getElementById('countdown2').innerHTML = 'This competition has passed, and you can view the results above!';
+            }
+        }, 1000);
+
+        // Event listener to update the competition date when a radio button is clicked
+        document.querySelectorAll('input[name="comp2"]').forEach(function (radio) {
+            radio.addEventListener('change', updateCompetitionDate);
+        });
+    });
+  </script>
 </body>
 </html>
