@@ -374,3 +374,94 @@ figcaption {
     filter: blur(10px);
     margin: -30px;
   }
+  #circle-section {
+    width: 100%; height: 529px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #circle-section a {
+   font-size: 14px;
+  }
+  .path {
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    margin: 100px auto;
+    position: relative;
+    display: flex;
+  }
+  .avatar {
+    width: 50px;
+    position: absolute;
+    top: 124px; left: 124px;
+    animation: circular-smooth-spin 7.5s infinite linear;
+    animation-play-state: running;
+  }
+  .avatar > span {
+    font-weight: 500;
+    position: absolute;
+    white-space: nowrap;
+    top: -50%; left: 50%;
+    padding: 3px 12px;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity, transform .8s;
+    transform-origin: 0 bottom;
+  }
+
+  .avatar > img {
+    width: inherit;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  .path:hover .avatar {
+    animation-play-state: paused;
+  }
+
+  .path:hover .avatar > span {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity, transform .8s;
+  }
+  .avatar:nth-of-type(2){
+    animation-delay: -1.25s;
+  }
+
+  .avatar:nth-of-type(3){
+    animation-delay: -2.5s;
+  }
+
+  .avatar:nth-of-type(4){
+    animation-delay: -3.75s;
+  }
+
+  .avatar:nth-of-type(5){
+    animation-delay: -5s;
+  }
+  .avatar:nth-of-type(6){
+    animation-delay: -6.25s;
+  }
+
+  @keyframes circular-smooth-spin {
+    from {
+      transform: rotate(0turn) translateY(-124px) rotate(1turn)
+    }
+    to {
+      opacity: 1;
+      transform: rotate(1turn) translateY(-124px) rotate(0turn)
+    }
+  }
+  #alt-circle-section {
+    display: none;
+  }
+  @media only screen and (max-width: 767px) {
+    #alt-circle-section {
+        display: block;
+    }
+
+    #circle-section {
+        display: none;
+    }
+}
