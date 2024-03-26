@@ -141,6 +141,35 @@
       <br>
       <br>
     </section>
+    <section>
+      <div id="mobileBox">
+        <div id="mobile-countdown-box">
+          <h2 style="color: white;">2023-2024 Calendar</h2>
+          <div id="countdown" style="font-size: 2em; color: #ff4500;"></div>
+          <hr>
+          <input type="radio" id="reigonals" name="comp" value="reigonals">
+          <label for="reigonals">Regionals</label><br>
+          <input type="radio" id="states" name="comp" value="states" checked>
+          <label for="states">States - Texas</label><br>
+          <input type="radio" id="globals" name="comp" value="globals">
+          <label for="globals">Kansas City Global Finals 2024</label>
+        </div>
+      </div>
+      
+      <div id="computerBox">
+        <div id="countdown-box">
+            <h2 style="color: white;">2023-2024 Calendar</h2>
+            <div id="countdown2" style="font-size: 2em; color: #ff4500;"></div>
+          <hr>
+        <input type="radio" id="reigonals2" name="comp2" value="reigonals2">
+        <label for="reigonals2">Regionals</label><br>
+        <input type="radio" id="states2" name="comp2" value="states2" checked>
+        <label for="states2">States - Texas</label><br>
+        <input type="radio" id="globals2" name="comp2" value="globals2">
+        <label for="globals2">Kansas City Global Finals 2024</label>
+        </div>
+      </div>
+    </section>
    <a href="index.html" class="button">Back to Main Page</a>
   <!-- <script src="https://replit.com/public/js/replit-badge-v2.js" theme="dark" position="top-right"></script> -->
   <ul id="unfixed">
@@ -168,5 +197,108 @@
     <p>&copy; 2023 Eshaan Ahuja - Daring Dragons. All rights reserved.</p>
   </footer>
   <br>
+   <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    let competitionDate = new Date('2024-04-12T00:00:00Z').getTime();
+
+        // Function to update the competition date based on the selected radio button
+        function updateCompetitionDate() {
+            const selectedComp = document.querySelector('input[name="comp"]:checked').value;
+
+            // Set the competition date based on the selected competition
+            if (selectedComp === 'reigonals') {
+                competitionDate = new Date('2024-02-24T00:00:00Z').getTime();
+            } else if (selectedComp === 'states') {
+                competitionDate = new Date('2024-04-12T00:00:00Z').getTime();
+            } else if (selectedComp === 'globals') {
+                competitionDate = new Date('2024-05-22T00:00:00Z').getTime();
+            }
+        }
+
+        // Initial call to update the competition date
+        updateCompetitionDate();
+
+        // Update the countdown every second
+        const countdown = setInterval(function () {
+            const now = new Date().getTime();
+            const distance = competitionDate - now;
+
+            // Calculate days, hours, minutes, and seconds
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the countdown
+            document.getElementById('countdown').innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+            // If the countdown is over, display a message
+            // if (distance < 0) {
+            //     clearInterval(countdown);
+            //     document.getElementById('countdown').innerHTML = 'This competition has passed, and you can view the results above!';
+            // }
+           if (document.querySelector('input[name="comp"]:checked').value === 'reigonals') {
+                document.getElementById('countdown').innerHTML = 'This competition has passed, and you can view the results above!';
+            }
+        }, 1000);
+
+        // Event listener to update the competition date when a radio button is clicked
+        document.querySelectorAll('input[name="comp"]').forEach(function (radio) {
+            radio.addEventListener('change', updateCompetitionDate);
+        });
+
+      
+      // Initial competition date (Regionals) format utc - YYYY-MM-DDTHH:mm:ssZ
+    let competitionDate2 = new Date('2024-04-12T00:00:00Z').getTime();
+
+        // Function to update the competition date based on the selected radio button
+        function updateCompetitionDate2() {
+            const selectedComp2 = document.querySelector('input[name="comp2"]:checked').value;
+
+            // Set the competition date based on the selected competition
+            if (selectedComp2 === 'reigonals2') {
+                competitionDate2 = new Date('2024-02-24T00:00:00Z').getTime();
+            } else if (selectedComp2 === 'states2') {
+                competitionDate2 = new Date('2024-04-12T00:00:00Z').getTime();
+            } else if (selectedComp2 === 'globals2') {
+                competitionDate2 = new Date('2024-05-22T00:00:00Z').getTime();
+            }
+        }
+
+        // Initial call to update the competition date
+        updateCompetitionDate2();
+
+        // Update the countdown every second
+        const countdown2 = setInterval(function () {
+            updateCompetitionDate2();
+
+            const now2 = new Date().getTime();
+            const distance2 = competitionDate2 - now2;
+
+            // Calculate days, hours, minutes, and seconds
+            const days2 = Math.floor(distance2 / (1000 * 60 * 60 * 24));
+            const hours2 = Math.floor((distance2 % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes2 = Math.floor((distance2 % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds2 = Math.floor((distance2 % (1000 * 60)) / 1000);
+
+            // Display the countdown
+            document.getElementById('countdown2').innerHTML = `${days2}d ${hours2}h ${minutes2}m ${seconds2}s`;
+
+            // If the countdown is over, display a message
+            // if (distance < 0) {
+            //     clearInterval(countdown);
+            //     document.getElementById('countdown').innerHTML = 'This competition has passed, and you can view the results above!';
+            // }
+           if (document.querySelector('input[name="comp2"]:checked').value === 'reigonals2') {
+                document.getElementById('countdown2').innerHTML = 'This competition has passed, and you can view the results above!';
+            }
+        }, 1000);
+
+        // Event listener to update the competition date when a radio button is clicked
+        document.querySelectorAll('input[name="comp2"]').forEach(function (radio) {
+            radio.addEventListener('change', updateCompetitionDate);
+        });
+    });
+  </script>
 </body>
 </html>
