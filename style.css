@@ -475,6 +475,7 @@ figcaption {
       width: 55px;
       border-radius: 50%;
       perspective: 800px;
+      display: inline-block;
     }
 
     .orbit-spinner .orbit {
