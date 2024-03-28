@@ -4,6 +4,7 @@ html {
   background-color: #8DCFEC;
   scroll-behavior: smooth;
   overflow-x: hidden;
+  margin-left: 3%;
 }
 
 p {
