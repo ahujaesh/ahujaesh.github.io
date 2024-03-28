@@ -344,8 +344,6 @@ figcaption {
     z-index: -1;
     filter: blur(10px);
     margin: -30px;
-    width: 70%;
-
   }
 
 #mobile-countdown-box {
@@ -375,7 +373,6 @@ figcaption {
     z-index: -1;
     filter: blur(10px);
     margin: -30px;
-    width: 70%;
   }
 
   #circle-section {
