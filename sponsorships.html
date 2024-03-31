@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head lang="en">
   <title>Our sponsors - Daring Dragons DI Team</title>
-  <html lang="en">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Discover how you can support the Daring Dragons Destination Imagination Team through our Sponsorships page. Explore partnership opportunities, sponsor benefits, and how your contribution can fuel creativity and innovation. Join us on our journey!">
@@ -20,10 +19,10 @@
         "@type": "FAQPage",
         "mainEntity": [{
           "@type": "Question",
-          "name": "Who are the Daring Dragons Destination Imagionation team?",
+          "name": "Who are the Daring Dragons Destination Imagination team?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "We are a team of friends who compete in the Destination Imagionation competition. Destination imagonation (or DI) is a globaly known theater competition for kids in grades 2 through collage."
+            "text": "We are a team of friends who compete in the Destination Imagination competition. Destination imagination (or DI) is a globally known theater competition for kids in grades 2 through collage."
           }
         }, {
           "@type": "Question",
@@ -92,7 +91,7 @@
     <li><a href="#top" title="Return to the top" id="top-button">^</a></li>
   </ul>
     <section>
-        <!-- <h2>Currently, we have recieved vouchers from companies such as Stickermule, but currently have no full sponsors, but if you would like to sponsor us, strongail us at <i>daringdragonsdi@gmail.com</i>. We would love to partner with you!</h2>
+        <!-- <h2>Currently, we have received vouchers from companies such as Stickermule, but currently have no full sponsors, but if you would like to sponsor us, email us at <i>daringdragonsdi@gmail.com</i>. We would love to partner with you!</h2>
       <a href="contact.html" style="display: inline-block; padding: 10px 20px; background-color: #ff6600; color: #fff; text-decoration: none; border-radius: 5px; transition: background-color 0.3s;"
           onmouseover="this.style.backgroundColor='#e55e00'" onmouseout="this.style.backgroundColor='#ff6600'">
           Contact Us
@@ -175,18 +174,18 @@
         
    <a href="index.html" class="button">Back to our Main Page</a>
       <script>
-        const searchInput = document.getElstrongentById("search");
-        const teamMstrongbers = document.querySelectorAll("#u li");
+        const searchInput = document.getElementById("search");
+        const teamMembers = document.querySelectorAll("#u li");
 
         searchInput.addEventListener("input", () => {
             const searchTerm = searchInput.value.toLowerCase();
 
-            for (const mstrongber of teamMstrongbers) {
-                const mstrongberName = mstrongber.textContent.toLowerCase();
-                if (mstrongberName.includes(searchTerm)) {
-                    mstrongber.style.display = "block";
+            for (const member of teamMembers) {
+                const memberName = member.textContent.toLowerCase();
+                if (memberName.includes(searchTerm)) {
+                    member.style.display = "block";
                 } else {
-                    mstrongber.style.display = "none";
+                    member.style.display = "none";
                 }
             }
         });
