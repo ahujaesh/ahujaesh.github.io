@@ -25,5 +25,6 @@ jobs:
     - name: Generate output
       run: |
         OUTPUT="<p><a href=\"$LINK\" target=\"_blank\">This</a> is our current script as of <strong>${DATE}</strong>. We keep changing documents, so this might not be up to date. <p><br>"
-        OUTPUT=$(echo "$OUTPUT" | sed "s/\${LINK}/${LINK}/g" | sed "s/\${DATE}/${DATE}/g")
+        OUTPUT=$(echo "$OUTPUT" | sed "s|\\\$LINK|${LINK}|g" | sed "s|\\\$DATE|${DATE}|g")
         echo "Output: $OUTPUT"
+
