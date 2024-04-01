@@ -15,16 +15,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Extract input parameters
-      run: |
-        LINK="${{ github.event.inputs.link }}"
-        DATE="${{ github.event.inputs.date }}"
-        echo "Input link: $LINK"
-        echo "Input date: $DATE"
-
     - name: Generate output
       run: |
-        OUTPUT="<p><a href=\"$LINK\" target=\"_blank\">This</a> is our current script as of <strong>${DATE}</strong>. We keep changing documents, so this might not be up to date. <p><br>"
-        OUTPUT=$(echo "$OUTPUT" | sed "s|\\\$LINK|${LINK}|g" | sed "s|\\\$DATE|${DATE}|g")
+        OUTPUT="<p><a href=\"${{ github.event.inputs.link }}\" target=\"_blank\">This</a> is our current script as of <strong>${{ github.event.inputs.date }}</strong>. We keep changing documents, so this might not be up to date. <p><br>"
         echo "Output: $OUTPUT"
-
