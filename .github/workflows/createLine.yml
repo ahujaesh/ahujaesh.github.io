@@ -1,0 +1,28 @@
+name: Generate HTML script paragraph
+
+on:
+  workflow_dispatch:
+    inputs:
+      link:
+        description: 'Link to the script'
+        required: true
+      date:
+        description: 'Date of the script'
+        required: true
+
+jobs:
+  generate-output:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Extract input parameters
+      run: |
+        LINK="${{ github.event.inputs.link }}"
+        DATE="${{ github.event.inputs.date }}"
+        echo "Input link: $LINK"
+        echo "Input date: $DATE"
+
+    - name: Generate output
+      run: |
+        OUTPUT="<p><a href=\"$LINK\" target=\"_blank\">This</a> is our current script as of <strong>$DATE</strong>. We keep changing documents, so this might not be up to date. <p><br>"
+        echo "Output: $OUTPUT"
