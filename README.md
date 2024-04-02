@@ -34,7 +34,7 @@ _Learn More:_ Find links to official Destination Imagination websites for additi
 
 
 **How to Contribute**
-We welcome contributions to improve and enhance our website. If you have suggestions, found issues, or want to add content, feel free to submit pull requests. Additionally, you can reach out to us via email at [daringdragonsdi@gmail.com](mailto:daringdragonsdi@gmail.com).
+We welcome contributions to improve and enhance our website. If you have suggestions, found issues, or want to add content, feel free to submit pull requests to improve this website. Additionally, you can reach out to us via email at [daringdragonsdi@gmail.com](mailto:daringdragonsdi@gmail.com).
 
 **Contact Us**
 For any inquiries or collaboration opportunities, please email us at daringdragonsdi@gmail.com. We appreciate your interest and support!
@@ -42,4 +42,4 @@ For any inquiries or collaboration opportunities, please email us at daringdrago
 Thank you for exploring our GitHub repository and being part of our Destination Imagination journey!
 
 
-Note: This repository has been migrated from **replit.com**, so everything might not be perfect, and the latest updates can be found on our official website [here](https://ahujaesh.github.io).
+Note: This repository has been migrated from [**replit.com**](https://replit.com), so everything might not be perfect, and the latest updates can be found on our official website [here](https://ahujaesh.github.io).
