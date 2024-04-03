@@ -33,8 +33,8 @@ _Media Gallery:_ View photos and videos from past events, showcasing our perform
 _Learn More:_ Find links to official Destination Imagination websites for additional information.
 
 
-**How to Contribute**
-We welcome contributions to improve and enhance our website. If you have suggestions, found issues, or want to add content, feel free to submit pull requests to improve this website. Additionally, you can reach out to us via email at [daringdragonsdi@gmail.com](mailto:daringdragonsdi@gmail.com).
+**How to Contribute:**
+If you have suggestions, found issues, or want to add content, feel free to submit a pull request to improve this website. Alternately, you can reach out to us via email at [daringdragonsdi@gmail.com](mailto:daringdragonsdi@gmail.com).
 
 **Contact Us**
 For any inquiries or collaboration opportunities, please email us at daringdragonsdi@gmail.com. We appreciate your interest and support!
