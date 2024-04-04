@@ -12,6 +12,7 @@
     <link rel="apple-touch-icon" href="photos/favicon.jpg">
     <meta name="theme-color" content="#8DCFEC">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap">
+    <?php include 'sets.php'; ?>
     <style>
       .answer {
         padding: 10px;
@@ -129,7 +130,7 @@
                     document.getElementById("classified").innerHTML = xhr.responseText;
                 }
             };
-            xhr.open("GET", "scripts.php", true);
+            xhr.open("GET", "sets.php", true);
             xhr.send();
         };
 
@@ -173,7 +174,7 @@
                             document.getElementById("classified").innerHTML = xhr2.responseText; // <-- Corrected variable name
                         }
                     };
-                    xhr2.open("GET", "scripts.php", true); 
+                    xhr2.open("GET", "sets.php", true); 
                     xhr2.send();
     
                     } else {
