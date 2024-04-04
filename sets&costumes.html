@@ -95,7 +95,7 @@
       </div>
         <br>
         <hr>
-        <button onclick="lock()">🔒 Lock Page 🔒</button>
+        <button id="lock" onclick="javascript:(function(){classified.innerHTML = `<p>This site is locked. Please sign in again.</p>`;})()">🔒 Lock Page 🔒</button>
     </section>
       <hr>
       <br>
@@ -119,12 +119,40 @@
 <br>
    <a href="index.html" class="button">Back to Main Page</a>
   <script>
+
+      document.addEventListener("DOMContentLoaded", function() {
+
+         window.unlock = function() {
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById("classified").innerHTML = xhr.responseText;
+                }
+            };
+            xhr.open("GET", "scripts.php", true);
+            xhr.send();
+        };
+
+
+        
+          if (document.cookie.includes("isEshaan=true")) {
+            alert("Welcome Master Eshaan, unlocking the site for you sir.");
+            const input = prompt("But we do need you to enter your authentication code sir for security."); // Prompting the user for the password
+    
+            if (input == "asdfjkl;" || input == "od" || input == "the password") {
+              alert("Authentication complete, you may now enter the site.");
+              unlock();
+            } else {
+              alert("Incorrect password, please sign in normally on the page to gain acsess to this very secure data.");
+            }
+            
+          }
+      
+          
+      });
     
     const classified = document.getElementById('classified');
     
-    function lock() {
-      classified.innerHTML = `<p>This site is locked. Please sign in again.</p>`;
-    }
     
     let form = document.querySelector(".my-form");
 
@@ -134,20 +162,23 @@
             let formdata = new FormData(this);
               const username = formdata.get("Username");
               const password = formdata.get("my-input");
-              // if (username === "eshaan" && (password === "od" || password === "the password" || password === "asdfjkl;")) {
-                
-              //     alert("Welcome, Eshaan! You have entered the Correct Username and Password, and we will unlock all information for you sir.");
-              //   classified.innerHTML = `<p><a href="https://docs.google.com/document/d/1cMQn5F2wx_-clnJTISgqxOihLOoJQqIjY_ud9dWS5hY/edit" target="_blank">This</a> is our current document as of 11/20/2023. We keep changing documents, so this might not be up to date.<p> <p>Building and designing is currently waiting for the script to become semi-final. Please come back later.</p>`;
-              // }
-            if (password == "od" || password == "the password" || password == "asdfjkl;" ) {
-                alert("Correct Username and Password, unlocking all information");
-                classified.innerHTML = `<p><a href="https://docs.google.com/document/d/1iP4MYPHe0nbUpYcOKLLLvW--nIOs1OjZ35Q4yDPD7cQ/edit?disco=AAAA_s2zRJc" target="_blank">This</a> is our current document as of 11/20/2023. We keep changing documents, so this might not be up to date.<p> <p>Building and designing is ongoing, but for security, you need to go the above <a href="https://docs.google.com/document/d/1iP4MYPHe0nbUpYcOKLLLvW--nIOs1OjZ35Q4yDPD7cQ/edit?disco=AAAA_s2zRJc" target="_blank">link</a> to view the plans and names.</p>`;
-
-              
-
-            } else {
-                alert("Incorrect Username or Password");
-            }
+              if (username === "eshaan" && (password === "od" || password === "the password" || password === "asdfjkl;")) {
+                  document.cookie = "isEshaan=true; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/"; // replaces "set cookie" function
+                  unlock();
+                } else if (password === "od" || password === "the password" || password === "asdfjkl;") {
+                    alert("Correct Username and Password, unlocking all information");
+                    var xhr2 = new XMLHttpRequest();
+                    xhr2.onreadystatechange = function() {
+                        if (xhr2.readyState === 4 && xhr2.status === 200) {
+                            document.getElementById("classified").innerHTML = xhr2.responseText; // <-- Corrected variable name
+                        }
+                    };
+                    xhr2.open("GET", "scripts.php", true); 
+                    xhr2.send();
+    
+                    } else {
+                    alert("Incorrect Username or Password");
+                }
             });
   
     const searchInput = document.getElementById("search");
