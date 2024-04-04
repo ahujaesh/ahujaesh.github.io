@@ -18,6 +18,4 @@ function unlock() {
         <p><a href="https://docs.google.com/document/d/1q3oYlRN_FkQnQmVnYWNGKpR9AXxPmie-Mr2tx5EeoTA/edit" target="_blank">This</a> is our current script as of <strong>11/4/2023</strong>. We keep changing documents, so this might not be up to date.<p>
         <br>
         <p>If you want to see our scripts from previous seasons, you can go to <a href="https://docs.google.com/document/d/1QVIf4FFdRv8RRuElcoPNe1rXGXcz1pc6Iboib0kiJZE/edit">here</a> to see our script from the 2021 - 2022 season and <a href="https://docs.google.com/document/d/1h9WDSNLww4X41hdqXvIKaBW-eDTWYUVZZBk1Zhxe2Dg/edit">here</a> to see our script for the 2022 - 2023 season.
-    </div>';
-}
-?>
+    </div>
