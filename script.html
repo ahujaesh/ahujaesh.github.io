@@ -106,6 +106,11 @@
     <!-- <script src="https://replit.com/public/js/replit-badge-v2.js" theme="dark" position="bottom-right"></script> -->
     <script>
       document.addEventListener("DOMContentLoaded", function() {
+
+          window.unlock = function() {
+            <?php unlock(); ?>
+        };
+        
           if (document.cookie.includes("isEshaan=true")) {
             alert("Welcome Master Eshaan, unlocking the site for you sir.");
             const input = prompt("But we do need you to enter your authentication code sir for security."); // Prompting the user for the password
