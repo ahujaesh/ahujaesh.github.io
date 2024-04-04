@@ -77,7 +77,7 @@
             <!-- locked info will display here once username and password are inputted above-->
         </div>
       <hr>
-        <button id="lock" onclick="lock()">🔒 Lock Page 🔒</button>
+<button id="lock" onclick="javascript:(function(){classified.innerHTML = `<p>This site is locked. Please sign in again.</p>`;})()">🔒 Lock Page 🔒</button>
       <br>
     </section>
   <section>
@@ -133,9 +133,7 @@
             
           }
       
-          function lock() {
-            classified.innerHTML = `<p>This site is locked. Please sign in again.</p>`;
-          }
+          
       });
     </script>
     <script>
