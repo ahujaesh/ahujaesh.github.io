@@ -105,27 +105,29 @@
     <a href="index.html" class="button">Back to Main Page</a>
     <!-- <script src="https://replit.com/public/js/replit-badge-v2.js" theme="dark" position="bottom-right"></script> -->
     <script>
-      if (document.cookie.includes("isEshaan=true")) {
-        alert("Welcome Master Eshaan, unlocking the site for you sir.");
-        const input = prompt("But we do need you to enter your authentication code sir for security."); // Prompting the user for the password
-
-        if (input == "asdfjkl;" || input == "od" || input == "the password") {
-          alert("Authentication complete, you may now enter the site.");
-          unlock();
-        } else {
-          alert("Incorrect password, please sign in normally on the page to gain acsess to this very secure data.");
-        }
-        
-      }
-  
-      // Function to set a cookie when the user clicks "OK"//
-      function setCookie() {
-        document.cookie = "isEshaan=true; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
-      }
+      document.addEventListener("DOMContentLoaded", function() {
+          if (document.cookie.includes("isEshaan=true")) {
+            alert("Welcome Master Eshaan, unlocking the site for you sir.");
+            const input = prompt("But we do need you to enter your authentication code sir for security."); // Prompting the user for the password
+    
+            if (input == "asdfjkl;" || input == "od" || input == "the password") {
+              alert("Authentication complete, you may now enter the site.");
+              unlock();
+            } else {
+              alert("Incorrect password, please sign in normally on the page to gain acsess to this very secure data.");
+            }
+            
+          }
       
-      function lock() {
-        classified.innerHTML = `<p>This site is locked. Please sign in again.</p>`;
-      }
+          // Function to set a cookie when the user clicks "OK"//
+          function setCookie() {
+            document.cookie = "isEshaan=true; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
+          }
+          
+          function lock() {
+            classified.innerHTML = `<p>This site is locked. Please sign in again.</p>`;
+          }
+      });
     </script>
     <script>
         const classified = document.getElementById('classified');
