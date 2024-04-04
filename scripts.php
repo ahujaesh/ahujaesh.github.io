@@ -21,10 +21,3 @@ function unlock() {
     </div>';
 }
 ?>
-
-<script>
-    // Attaching the unlock function to the window object
-    window.unlock = function() {
-        <?php unlock(); ?>
-    };
-</script>
