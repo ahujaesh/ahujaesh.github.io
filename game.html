@@ -486,7 +486,6 @@ figcaption {
 
 .context {
     width: 100%;
-    position: absolute;
     top:5vh;
 
 }
@@ -544,7 +543,7 @@ figcaption {
   z-index: 10;
 }
 .confetti {
-  position: fixed;
+  position: absolute;
   left: 0;
   right: 0;
   display: none;
@@ -714,108 +713,6 @@ figcaption {
 </head>
 
 <body>
-<header>
-    <div id="big" style="display:block;">
-        <ul id="u">
-            <li id="hed"> <a href="index.html"> Go to the home page! </a></li>
-            <li id="hed"> <a href="contact.html"> Contact us! </a></li>
-            <li id="hed"> <a href="sponsorships.html"> Sponsorships! </a></li>
-            <li class="dropdown">
-                <a href="javascript:void(0)" class="dropbtn">About our team!</a>
-                <div class="dropdown-content">
-                    <a id="hd" href="varun_i.html">Varun Iyer</a>
-                    <a id="hd" href="gokul_s.html">Gokul S</a>
-                    <a id="hd" href="eshaan_a.html">Eshaan Ahuja</a>
-                    <a id="hd" href="sristi_s.html">Sristi S</a>
-                    <a id="hd" href="sk.html">Sahasra K</a>
-                    <a id="hd" href="sahasra_v.html">Sahasra V</a>
-                    <a id="hd" href="rj.html">Ruchika Joshi - The Team Manager!!</a>
-
-                </div>
-            <li class="dropdown">
-                <a href="javascript:void(0)" class="dropbtn">Team progress & fun games!</a>
-                <div class="dropdown-content">
-                    <a id="hd" href="script.html">Script Progress!</a>
-                    <a id="hd" href="sets&costumes.html">Sets and Costumes progress!</a>
-                    <a id="hd" href="quiz.html">Take a DI quiz to test your knowledge!</a>
-                    <a id="hd" href="resources.html">Resources/Materials</a>
-                </div>
-            <li id="long">|</li>
-
-            <input type="text" id="search" placeholder="🔍 Search">
-            <div id="search-results"></div>
-
-
-            </li>
-            <li>
-                <div id="google_translate_element"></div>
-
-                <script type="text/javascript">
-              function googleTranslateElementInit() {
-              new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-              }
-            </script>
-
-                <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-            </li>
-            </li>
-    </div>
-    </ul>
-</header>
-<div class="context">
-    <div>
-        <br><br><br><br><br><br><br><br>
-        <h2 id="maintitle"> DI Two Truths and a Lie </h2>
-        <br>
-        <p>Instructions: Select the lie fom the three options, and if you are correct, it will advance you to the next set. There are three sets - good luck :)</p>
-        <br>
-        <br>
-        <div>
-            <h2>Set 1</h2>
-            <form id="setOne">
-                <input type="radio" id="set1-1" name="set1" value="1">
-                <label for="set1-1">The average years of DI experience in on our team is 3.428 years.</label>
-                <br>
-                <input type="radio" id="set1-2" name ="set1" value="2">
-                <label for="set1-2">We have appeared in a magazine</label>
-                <br>
-                <input type="radio" id="set1-3" name ="set1" value="3">
-                <label for="set1-3">Sristi is the tallest member of the team</label>
-                <br>
-                <input type="submit" value="Submit">
-            </form>
-            <h2>Set 2</h2>
-            <form id="setTwo" style="display: none;">
-                <input type="radio" id="set2-1" name="set2" value="1">
-                <label for="set2-1">The average years of DI experience in on our team is 3.428 years.</label>
-                <br>
-                <input type="radio" id="set2-2" name ="set2" value="2">
-                <label for="set2-2">We have appeared in a magazine</label>
-                <br>
-                <input type="radio" id="set2-3" name ="set2" value="3">
-                <label for="set2-3">Sristi is the tallest member of the team</label>
-                <br>
-                <input type="submit" value="Submit">
-            </form>
-            <h2>Set 3</h2>
-            <form id="setThree" style="display: none;">
-                <input type="radio" id="set3-1" name="set3" value="1">
-                <label for="set3-1">The average years of DI experience in on our team is 3.428 years.</label>
-                <br>
-                <input type="radio" id="set3-2" name ="set3" value="2">
-                <label for="set3-2">We have appeared in a magazine</label>
-                <br>
-                <input type="radio" id="set3-3" name ="set3" value="3">
-                <label for="set3-3">Sristi is the tallest member of the team</label>
-                <br>
-                <input type="submit" value="Submit">
-            </form>
-        </div>
-        <div id="results"></div>
-        <p id="won" style="display:none;">You won! <br> You can go back to the main page <a href="ahujaesh.github.io">here</a>.</p>
-    </div>
-</div>
-
 <div class="confetti-container">
     <div class="confetti">
         <i style="--speed: 10; --bg: yellow" class="square"></i>
@@ -924,6 +821,105 @@ figcaption {
         <i style="--speed: 49; --bg: yellow" class="dodecagram"></i>
         <i style="--speed: 19; --bg: purple" class="wavy-line"></i>
         <i style="--speed: 15; --bg: cyan" class="square"></i>
+    </div>
+</div>
+<header>
+    <div id="big" style="display:block;">
+        <ul id="u">
+            <li id="hed"> <a href="index.html"> Go to the home page! </a></li>
+            <li id="hed"> <a href="contact.html"> Contact us! </a></li>
+            <li id="hed"> <a href="sponsorships.html"> Sponsorships! </a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">About our team!</a>
+                <div class="dropdown-content">
+                    <a id="hd" href="varun_i.html">Varun Iyer</a>
+                    <a id="hd" href="gokul_s.html">Gokul S</a>
+                    <a id="hd" href="eshaan_a.html">Eshaan Ahuja</a>
+                    <a id="hd" href="sristi_s.html">Sristi S</a>
+                    <a id="hd" href="sk.html">Sahasra K</a>
+                    <a id="hd" href="sahasra_v.html">Sahasra V</a>
+                    <a id="hd" href="rj.html">Ruchika Joshi - The Team Manager!!</a>
+
+                </div>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Team progress & fun games!</a>
+                <div class="dropdown-content">
+                    <a id="hd" href="script.html">Script Progress!</a>
+                    <a id="hd" href="sets&costumes.html">Sets and Costumes progress!</a>
+                    <a id="hd" href="quiz.html">Take a DI quiz to test your knowledge!</a>
+                    <a id="hd" href="resources.html">Resources/Materials</a>
+                </div>
+            <li id="long">|</li>
+
+            <input type="text" id="search" placeholder="🔍 Search">
+            <div id="search-results"></div>
+
+
+            </li>
+            <li>
+                <div id="google_translate_element"></div>
+
+                <script type="text/javascript">
+              function googleTranslateElementInit() {
+              new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+              }
+            </script>
+
+                <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+            </li>
+            </li>
+    </div>
+    </ul>
+</header>
+<div class="context">
+    <div>
+        <h2 id="maintitle"> DI Two Truths and a Lie </h2>
+        <p>Instructions: Select the lie fom the three options, and if you are correct, it will advance you to the next set. There are three sets - good luck :)</p>
+        <br>
+        <br>
+        <div>
+            <h2>Set 1</h2>
+            <form id="setOne">
+                <input type="radio" id="set1-1" name="set1" value="1">
+                <label for="set1-1">The average years of DI experience in on our team is 3.428 years.</label>
+                <br>
+                <input type="radio" id="set1-2" name ="set1" value="2">
+                <label for="set1-2">We have appeared in a magazine</label>
+                <br>
+                <input type="radio" id="set1-3" name ="set1" value="3">
+                <label for="set1-3">Sristi is the tallest member of the team</label>
+                <br>
+                <input type="submit" value="Submit">
+            </form>
+            <h2>Set 2</h2>
+            <form id="setTwo" style="display: none;">
+                <input type="radio" id="set2-1" name="set2" value="1">
+                <label for="set2-1">The average years of DI experience in on our team is 3.428 years.</label>
+                <br>
+                <input type="radio" id="set2-2" name ="set2" value="2">
+                <label for="set2-2">We have appeared in a magazine</label>
+                <br>
+                <input type="radio" id="set2-3" name ="set2" value="3">
+                <label for="set2-3">Sristi is the tallest member of the team</label>
+                <br>
+                <input type="submit" value="Submit">
+            </form>
+            <h2>Set 3</h2>
+            <form id="setThree" style="display: none;">
+                <input type="radio" id="set3-1" name="set3" value="1">
+                <label for="set3-1">The average years of DI experience in on our team is 3.428 years.</label>
+                <br>
+                <input type="radio" id="set3-2" name ="set3" value="2">
+                <label for="set3-2">We have appeared in a magazine</label>
+                <br>
+                <input type="radio" id="set3-3" name ="set3" value="3">
+                <label for="set3-3">Sristi is the tallest member of the team</label>
+                <br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        <div id="results"></div>
+        <p id="won" style="display:none;">You won! <br> You can go back to the main page <a href="ahujaesh.github.io">here</a>.</p>
     </div>
 </div>
 <script>
