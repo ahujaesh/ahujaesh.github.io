@@ -42,4 +42,4 @@ For any inquiries or collaboration opportunities, please email us at daringdrago
 Thank you for exploring our GitHub repository and being part of our Destination Imagination journey!
 
 
-Note: This repository has been migrated from [**replit.com**](https://replit.com), so everything might not be perfect, and the latest updates can be found on our official website [here](https://ahujaesh.github.io).
+Note: This repository has been migrated from [**replit.com**](https://replit.com), so everything might not be perfect, and the latest updates can be found on our official website [here](https://ahujaesh.github.io). If you see a discrepancy or issue, please send me a PR or issue to tell me. Thanks! 
