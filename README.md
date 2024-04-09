@@ -1,12 +1,8 @@
 # Daring Dragons Destination Imagination Team Website
-<p align="center">
-  <a href="https://github.com/ahujaesh/ahujaesh.github.io/pulls">
-    <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?longCache=true" alt="Pull Requests">
-  </a>
-  <a href="https://github.com/ahujaesh/ahujaesh.github.io/blob/main/LICENSE">
-    <img src="https://img.shields.io/badge/License-MIT-lightgrey.svg?longCache=true" alt="MIT License">
-  </a>
-</p>
+
+  <a href="https://github.com/ahujaesh/ahujaesh.github.io/pulls"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?longCache=true" alt="Pull Requests"></a>
+  <a href="https://github.com/ahujaesh/ahujaesh.github.io/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-lightgrey.svg?longCache=true" alt="MIT License"></a>
+  
 Welcome to the official GitHub repository of the Daring Dragons Destination Imagination Team! Our team, consisting of enthusiastic 7th-grade members, competes in the global Destination Imagination (DI) competition, showcasing creativity, innovation, and problem-solving skills. Check out our website [here](https://ahujaesh.github.io) to learn more about us. Previous versions and backups can be found [here](https://github.com/ahujaesh/daringdragonswebpage).
 
 ![A team photo](https://ahujaesh.github.io/photos/di7.jpeg)
