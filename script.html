@@ -56,6 +56,7 @@
             <h1>Script progress</h1>
         </div>
     </header>
+    <div id="dialog"></div>
     <section>
         <h2>What is the purpose of this page?</h2>
         <hr>
@@ -162,7 +163,7 @@
                 xhr2.send();
 
                 } else {
-                alert("Incorrect Username or Password");
+                    document.getElementById("dialog").innerHTML = "<dialog open><p>Incorrect Username or Password</p><form method="dialog"><button>OK</button></form></dialog>";
             }
         });
     </script>
