@@ -2,7 +2,7 @@
 function unlock() {
     echo '<div id="classified">
         <p>Script writing progress is going well, there are many current documents, but the final one will be here once finished.</p>
-        <p><a href="https://docs.google.com/document/d/1xqHA-H1fZqalz8aySLGv5I6OZ1IOh2PHt-CH-RqJlwY/edit" target="_blank">This</a> is our current script as of <strong>3/31/2024</strong>. We keep changing documents, so this might not be up to date. (This is the current Pre-states one)<p>
+        <p><a href="https://docs.google.com/document/d/1xqHA-H1fZqalz8aySLGv5I6OZ1IOh2PHt-CH-RqJlwY/edit" target="_blank">This</a> is our current script as of <strong>3/31/2024</strong>. We keep changing documents, so this might not be up to date. (This is the current Pre-states script and will only change if we go to Kansas City Global Finals 2024)<p>
         <br>
         <p><a href="https://docs.google.com/document/d/171QXSXwrPgYnH1qeM2JlP3HFqsiCaHxaelqEYhbW2KQ/edit#heading=h.tutk6vhew98r" target="_blank">This</a> is our current script as of <strong>3/14/2024</strong>. We keep changing documents, so this might not be up to date. Note: <a href="https://docs.google.com/document/d/16nSAIckEvsOb4Y2V06vTWUbwHBNEwPJhKD9KQ-prIrk/edit" target="_blank">this</a> is now archived and a backup for reference.<p>
         <br>
