@@ -283,8 +283,8 @@
     <hr>
     <img src="photos/trophy.jpg" alt="A photo of our Kansas City Global Finals Third Place 2022-2023 trophy taken in our secret lounge." width="40%" id="center">
     <p><strong>Globals (Earth):</strong></p>
-    <p>We proudly won <strong>3rd place</strong> in the Global Destination Imagination (DI) Competition in the 2022 - 2023 season, showcasing our dedication and
-      creativity.</p>
+    <p>This year, we will be competing at Global Finals 2024 on May 22-25, 2024! Our results will be posted here then.</p>
+    <p>We proudly won <strong>3rd place</strong> in the Global Destination Imagination (DI) Competition in the 2022 - 2023 season beating teams from <strong>around the world</strong>.</p>
     <p>Below ↓ is the officially released results sheet from Destination Imagination showing how well we placed in Destination Imagination Global finals - 3rd in the world! You should be on page 24 of the official scoring document released by Destination Imagination, but if not, you can go to page 24 of the full scoring sheet to see us! <br> <br> (Note - if you want to see the full scoring sheet released by Destination Imagination, you can go <a href="GF23-Results.pdf#page=24"target="_blank"alt="our results">here</a> to view the results in a new tab, or download it below.)</p>
     <embed src="pg24.pdf" type="application/pdf" width="80%" height="550px" alt="Our results (.pdf)">
     <br>
@@ -314,7 +314,7 @@
     </a>
     <p><strong>States (TX):</strong></p>
     
-    <p>This year, we will be competing at Texas states on UTC 2024-04-12T00:00:00Z. Our results will be posted here then.</p>
+    <p>We also won <strong>1st place</strong> in the Destination Imagination States competition in the 2023 - 2024 season, advanced to Globals, and got the <strong>"Davinci"</strong> special award along with the <strong>"High IC"</strong> special award. (Which is the most awards you can get in one competition, which is really difficult. Also, getting special awards at State and Globals is much harder than at Region.)</p>
     
     <p>We also won <strong>2nd place</strong> in the Destination Imagination State competition in the 2022 - 2023 season and advanced to the Kansas City Global Finals</p>
     
@@ -330,7 +330,7 @@
     
     <div id="mobileBox">
       <div id="mobile-countdown-box">
-          <h2 style="color: white;">Countdown to Our Next Competition - Texas States!</h2>
+          <h2 style="color: white;">Countdown to Our Next Competition - Global Finals!</h2>
           <div id="countdown" style="font-size: 2em; color: #ff4500; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;"></div>
         <hr>
         <h2 style="color: white;">Other Competitions this year:</h2>
@@ -344,7 +344,7 @@
     
     <div id="computerBox">
       <div id="countdown-box">
-          <h2 style="color: white;">Countdown to Our Next Competition - Texas States!</h2>
+          <h2 style="color: white;">Countdown to Our Next Competition - Global Finals!</h2>
           <div id="countdown2" style="font-size: 2em; color: #ff4500;"></div>
         <hr>
         <h2 style="color: white;">Other Competitions this year:</h2>
@@ -366,7 +366,7 @@
     </h2>
     <hr>
 <!--     <p>We currently have no information that we can share with the public. Come again later?</p> -->
-    <p>For this year's competition, we have won 3rd place in the Destination Imagination Regional competition in the 2023 - 2024 season and advanced to State. you can view the live countdown to Destination Imagination Texas State <a href="#countdown-box">here</a>.</p>
+    <p>For this year's competition, we have won 3rd place in the Destination Imagination Regional competition in the 2023 - 2024 season and got 1st place in State. We will be at Kansas City Global Finals on May 22-25, 2024, and you can view the live countdown to Destination Imagination Global Finals 2024 <a href="#countdown-box">here</a>.</p>
     <p>If you are a member or a person with credentials given by the Daring Dragons, you can go to the Team Progress and Fun Games" tab in the top menu, and go to the <a href="script.html">"Script progress!"</a> tab, or the <a href="sets&costumes.html">"Sets and costumes progress!"</a> tab, and login with your credentials given by us, to view the most up to date information on each aspect of the team's progress.</p>
 
   </section>
@@ -591,13 +591,8 @@
 
             // Display the countdown
             document.getElementById('insStates').innerHTML = `This competition has passed, and you can view the results above!`;
-            
-            document.getElementById('countdown').innerHTML = `This competition has passed, and you can view the results above!`;
-            
-            document.getElementById('insStates2').innerHTML = `This competition has passed, and you can view the results above!`;
-            
-            document.getElementById('countdown2').innerHTML = `This competition has passed, and you can view the results above!`;
 
+            document.getElementById('insStates2').innerHTML = `This competition has passed, and you can view the results above!`;
 
             // If the countdown is over, display a message
             // if (distance < 0) {
@@ -619,6 +614,9 @@
             
             document.getElementById('insGlobals2').innerHTML = `${days2}d ${hours2}h ${minutes2}m ${seconds2}s`;
 
+            document.getElementById('countdown').innerHTML = `${days2}d ${hours2}h ${minutes2}m ${seconds2}s`;
+            
+            document.getElementById('countdown2').innerHTML = `${days2}d ${hours2}h ${minutes2}m ${seconds2}s`;
 
         }, 1000);
 
