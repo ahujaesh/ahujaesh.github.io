@@ -154,9 +154,9 @@
           <hr>
           <input type="radio" id="reigonals" name="comp" value="reigonals">
           <label for="reigonals">Regionals</label><br>
-          <input type="radio" id="states" name="comp" value="states" checked>
+          <input type="radio" id="states" name="comp" value="states">
           <label for="states">States - Texas</label><br>
-          <input type="radio" id="globals" name="comp" value="globals">
+          <input type="radio" id="globals" name="comp" value="globals" checked>
           <label for="globals">Kansas City Global Finals 2024</label>
         </div>
       </div>
@@ -168,9 +168,9 @@
           <hr>
         <input type="radio" id="reigonals2" name="comp2" value="reigonals2">
         <label for="reigonals2">Regionals</label><br>
-        <input type="radio" id="states2" name="comp2" value="states2" checked>
+        <input type="radio" id="states2" name="comp2" value="states2">
         <label for="states2">States - Texas</label><br>
-        <input type="radio" id="globals2" name="comp2" value="globals2">
+        <input type="radio" id="globals2" name="comp2" value="globals2" checked>
         <label for="globals2">Kansas City Global Finals 2024</label>
         </div>
       </div>
@@ -243,6 +243,9 @@
             //     document.getElementById('countdown').innerHTML = 'This competition has passed, and you can view the results above!';
             // }
            if (document.querySelector('input[name="comp"]:checked').value === 'reigonals') {
+                document.getElementById('countdown').innerHTML = 'This competition has passed.';
+            }
+            if (document.querySelector('input[name="comp"]:checked').value === 'states') {
                 document.getElementById('countdown').innerHTML = 'This competition has passed.';
             }
         }, 1000);
