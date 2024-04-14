@@ -19,7 +19,10 @@ This repository hosts the source code for our team's website, providing informat
 _About Us:_ Learn about the Daring Dragons, and our mission.
 
 
-_Team Members:_ Get to know each member of our team by exploring individual profiles.
+_Team Scores:_ Stay up to date with our competition scores
+
+
+_Team Members:_ Get to know each member of our team by exploring their individual profiles.
 
 
 _Accomplishments:_ Discover our achievements at Globals, State, and Regionals, including official results and trophies.
