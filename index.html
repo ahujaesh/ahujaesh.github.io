@@ -137,19 +137,7 @@
     <div id="photo-container" onclick="replaceWithIframe('https://www.youtube-nocookie.com/embed/iP0Lq1a6Ouk?playlist=iP0Lq1a6Ouk&autoplay=1&iv_load_policy=3&loop=1&start=')">
       <img id="coolImg" style="margin: 2px 5px;" src="photos/Screenshot_2023-11-28_7.08.36_PM-removebg-preview.png" alt="Click me to see our performance at Kansas City Global Finals 2023">
     </div>
-
-    <script>
-      function replaceWithIframe(link) {
-        const iframe = document.createElement('iframe');
-        iframe.src = link;
-        iframe.width = '90%';
-        iframe.height = 'auto';
-        const photoContainer = document.getElementById('photo-container');
-        photoContainer.innerHTML = '';
-        photoContainer.appendChild(iframe);
-      }
-    </script>
-
+    
     <p>This was our competition entry for the 2022 - 2023 DI competition season!</p>
     <p>We currently have over <strong>1,000 views</strong> on the official Destination Imagination Youtube channel!</p>
     <p>If the video doesn't show up, you can go <a href="https://www.youtube.com/embed/iP0Lq1a6Ouk" target="_blank" alt="our performance"> here</a> to see it on Youtube!</p>
@@ -608,6 +596,16 @@
 
         
     });
+
+    function replaceWithIframe(link) {
+        const iframe = document.createElement('iframe');
+        iframe.src = link;
+        iframe.width = '90%';
+        iframe.height = 'auto';
+        const photoContainer = document.getElementById('photo-container');
+        photoContainer.innerHTML = '';
+        photoContainer.appendChild(iframe);
+      }
   </script>
 </body>
 </html>
