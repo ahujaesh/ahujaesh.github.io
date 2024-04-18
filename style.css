@@ -157,6 +157,7 @@ a:hover {
   text-align: center;
   opacity: .7;
   border-radius: 15px;
+  z-index: 1000;
 }
 
 #ok-button {
