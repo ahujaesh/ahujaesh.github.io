@@ -400,6 +400,7 @@ figcaption {
     top: 124px; left: 124px;
     animation: circular-smooth-spin 7.5s infinite linear;
     animation-play-state: running;
+    z-index: 500;
   }
   .avatar > span {
     font-weight: 500;
