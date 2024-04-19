@@ -4,14 +4,28 @@
     <a href="https://github.com/ahujaesh/ahujaesh.github.io/issues"><img src="https://img.shields.io/badge/Issues-welcome-brightgreen.svg?longCache=true" alt="Pull Requests"></a>
   <a href="https://github.com/ahujaesh/ahujaesh.github.io/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-lightgrey.svg?longCache=true" alt="MIT License"></a>
   
-Welcome to the official GitHub repository of the Daring Dragons Destination Imagination Team! Our team, consisting of enthusiastic 7th-grade members, competes in the global Destination Imagination (DI) competition, showcasing creativity, innovation, and problem-solving skills. Check out our website [here](https://ahujaesh.github.io) to learn more about us. Previous versions (v11 - v1) can be found in a different GitHub repository located [here](https://github.com/ahujaesh/daringdragonswebpage).
+Welcome to the official GitHub repository of the Daring Dragons Destination Imagination Team! Our team, consisting of enthusiastic 7th-grade members, competes in the global Destination Imagination (DI) competition, showcasing creativity, innovation, and problem-solving skills. Check out our website [here](https://ahujaesh.github.io) to learn more about us.
 
 ![A team photo](https://ahujaesh.github.io/photos/di7.jpeg)
 
-**Overview**:
+**Understanding Repositories**:
 
 
-This repository hosts the source code for our team's website, providing information about our journey, achievements, team members, and more. The website is designed to share our DI experience and engage with our audience.
+Our team has decided to split all of its data across **two** GitHub repositories. Below is a table that we have created to outline the differences.
+
+[https://github.com/ahujaesh/ahujaesh.github.io](https://github.com/ahujaesh/ahujaesh.github.io) (This repository)| [https://github.com/ahujaesh/daringdragonswebpage](https://github.com/ahujaesh/daringdragonswebpage)
+---|---
+All the website files (Images, robot.txt, ect.) | Website backups (v11 - v1)
+All of the website's data | Website Changelog (What we changed in each version)
+Hosts the website through GitHub pages | X
+Follow for up to date website information | Follow for notifications on website releases
+
+**Why?**
+
+The reason why we have two repositories is because previously, we used a service called repl.it for hosting, and we only used GitHub for website backups. Eventually, repl.it ended its free hosting (Leading to the loss of all our GSC data), so we had to use GitHub pages (Which is objectively better). To use GitHub pages, we needed to have a repository called <username>.github.io or <orginisation>.github.io, so we had to create a new repository.
+
+---
+
 
 **This website contains**:
 
