@@ -549,7 +549,29 @@
     document.getElementById("ok-button").addEventListener("click", setCookie);
 
     document.addEventListener('DOMContentLoaded', function () {
+ document.addEventListener('DOMContentLoaded', function () {
+        // Initial competition date (Regionals) format utc - YYYY-MM-DDTHH:mm:ssZ
+        let states = new Date('2024-04-12T00:00:00Z').getTime();
         const countdown = setInterval(function () {
+            const now = new Date().getTime();
+            const distance = states - now;
+
+            // Calculate days, hours, minutes, and seconds
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the countdown
+            //document.getElementById('insStates').innerHTML = `This competition has passed, and you can view the results above!`;
+
+            //document.getElementById('insStates2').innerHTML = `This competition has passed, and you can view the results above!`;
+
+            // If the countdown is over, display a message
+            // if (distance < 0) {
+            //     clearInterval(countdown);
+            //     document.getElementById('countdown').innerHTML = 'This competition has passed, and you can view the results above!';
+            // }
           let globals = new Date('2024-05-22T00:00:00Z').getTime();
           
           const distance2 = globals - now;
