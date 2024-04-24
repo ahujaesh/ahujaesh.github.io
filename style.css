@@ -186,7 +186,7 @@ body {
   outline: 150px solid #1a1a1a;
 }
 
-.dark-theme a {
+.dark-theme a, .github-corner {
   color: #66b2ff; /* Light blue for links in dark theme */
 }
 
