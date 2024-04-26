@@ -2,7 +2,9 @@
 function unlock() {
     echo '<div id="classified">
         <p>Script writing progress is going well, there are many current documents, but the final one will be here once finished.</p>
-        <p><a href="https://docs.google.com/document/d/1xT72BCC5ZUmmMRvFADZTZ7nxNCStVjw_MfBtzeMrht8/edit" target="_blank">This</a> is our current Globals to-do list as of <strong>4/19/2024</strong>. We keep changing documents, so this might not be up to date. <p>
+        <p><a href="https://docs.google.com/document/d/1xqHA-H1fZqalz8aySLGv5I6OZ1IOh2PHt-CH-RqJlwY/edit" target="_blank">This</a> is still our current script as of <strong>4/26/2024</strong>, which we will use for Global Finals 2024. Note: It is still titled "Pre-States Script", so don't think you are on the wrong one. We keep changing documents, so this might not be up to date. <p>
+        <br>
+        <p><a href="https://docs.google.com/document/d/1xT72BCC5ZUmmMRvFADZTZ7nxNCStVjw_MfBtzeMrht8/edit" target="_blank">This</a> is our current Globals to-do list as of <strong>4/19/2024</strong>. We keep changing documents, so this might not be up to date.<p>
         <br>
         <p><a href="https://docs.google.com/document/d/1xqHA-H1fZqalz8aySLGv5I6OZ1IOh2PHt-CH-RqJlwY/edit" target="_blank">This</a> is our current script as of <strong>3/31/2024</strong>. We keep changing documents, so this might not be up to date. (This is the current Pre-states script and will only change if we go to Kansas City Global Finals 2024)<p>
         <br>
