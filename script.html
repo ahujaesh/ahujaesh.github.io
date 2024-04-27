@@ -78,7 +78,7 @@
             <!-- locked info will display here once username and password are inputted above-->
         </div>
       <hr>
-<button id="lock" onclick="javascript:(function(){classified.innerHTML = `<p>This site is locked. Please sign in again.</p>`;})()">🔒 Lock Page 🔒</button>
+      <button id="lock" onclick="javascript:(function(){classified.innerHTML = `<p>This site is locked. Please sign in again.</p>`;})()">🔒 Lock Page 🔒</button>
       <br>
     </section>
   <section>
@@ -104,7 +104,6 @@
   </section>
 
     <a href="index.html" class="button">Back to Main Page</a>
-    <!-- <script src="https://replit.com/public/js/replit-badge-v2.js" theme="dark" position="bottom-right"></script> -->
     <script>
       document.addEventListener("DOMContentLoaded", function() {
 
@@ -119,8 +118,6 @@
             xhr.send();
         };
 
-
-        
           if (document.cookie.includes("isEshaan=true")) {
             alert("Welcome Master Eshaan, unlocking the site for you sir.");
             const input = prompt("But we do need you to enter your authentication code sir for security."); // Prompting the user for the password
@@ -129,15 +126,11 @@
               alert("Authentication complete, you may now enter the site.");
               unlock();
             } else {
-              alert("Incorrect password, please sign in normally on the page to gain acsess to this very secure data.");
+              alert("Incorrect password, please sign in normally on the page to gain access to this very secure data.");
             }
-            
           }
-      
-          
       });
-    </script>
-    <script>
+
         const classified = document.getElementById('classified');
         const form = document.querySelector(".my-form");
 
@@ -166,8 +159,7 @@
                 alert("Incorrect Username or Password");
             }
         });
-    </script>
-    <script>
+
         const searchInput = document.getElementById("search");
         const teamMembers = document.querySelectorAll("#u li");
 
@@ -183,8 +175,7 @@
                 }
             }
         });
-    </script>
-    
+  </script>
   <hr>
   <footer>
       <p>&copy; 2024 Eshaan Ahuja - Daring Dragons. All rights reserved.</p>
