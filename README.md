@@ -16,7 +16,7 @@ Our team has decided to split all of its data across **two** GitHub repositories
 
 | [https://github.com/ahujaesh/ahujaesh.github.io](https://github.com/ahujaesh/ahujaesh.github.io) (This repository) | [https://github.com/ahujaesh/daringdragonswebpage](https://github.com/ahujaesh/daringdragonswebpage) |
 |--------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------|
-| All the website files (Images, robot.txt, ect.)                                                                    | Website backups (v11 - v1)                                                                           |
+| All the website files (Images, robot.txt, ect.)                                                                    | Website backups (v12 - v1)                                                                           |
 | All of the website's data                                                                                          | Website Changelog (What we changed in each version)                                                  |
 | Hosts the website through GitHub pages                                                                             | X                                                                                                    |
 | Follow for up to date website information                                                                          | Follow for notifications on website releases                                                         |
