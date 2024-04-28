@@ -1,1034 +1,560 @@
 <!DOCTYPE html>
-<head>
 <html lang="en">
-<link rel="icon" type="image/x-icon" href="photos/favicon-removebg-preview.png">
-<meta name="keywords" content="Destination Imagination, Creative Problem Solving, Daring Dragons, Team, Innovation, Game">
-<meta name="author" content="Eshaan Ahuja">
-<meta name="language" content="English">
-<link rel="apple-touch-icon" href="photos/favicon.jpg">
-<meta name="theme-color" content="#8DCFEC">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
-<link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
-<link href="http://fonts.googleapis.com/css?family=Nobile" rel="stylesheet" type="text/css">
-    
-<title>2 Truths and a Lie - Daring Dragons DI team</title>
-	
-<style> // full file css
-html {
-  height: 100%;
-  width: 100%;
-  background-color: #8DCFEC;
-  scroll-behavior: smooth;
-  overflow-x: hidden;
-}
-
-p {
-  font-size: 25px;
-}
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #CBC3E3;
-  border: 3px solid #1aa7ec;
-  overflow-y: hidden;
-}
-
-li {
-  float: left;
-}
-
-li a, .dropbtn {
-  display: inline-block;
-  color: lightcoral;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-li a:hover, .dropdown:hover .dropbtn {
-  background-color: #9243d9;
-}
-
-li.dropdown {
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #1aa7ec;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: light lightcoral;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-.dropdown-content a:hover {background-color: #9243d9;}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-a {
-  font-size: 25px;
-}
-
-hr {
-  border: 2px solid #1aa7ec;
-}
-
-#unfixed {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  border: 3px solid #1aa7ec;
-  opacity: .5;
-}
-
-h1 {
-  font-size: 45px;
-}
-
-#gr {
-  border: 3px solid green;
-}
-#search-results {
-    position: absolute;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    max-height: 200px;
-    display: none;
-    z-index: 1;
-    width: 100%;
-}
-
-/* Styles for individual search result items */
-#search-results a {
-    display: block;
-    padding: 8px;
-    text-decoration: none;
-    color: #333;
-}
-
-/* Styles for the active (highlighted) search result item */
-#search-results a:hover {
-    background-color: #f2f2f2;
-}
-
-/* Show the results container when there are search results */
-#search-results.show {
-    display: block;
-}
-
-#search {
-  height: 27px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#long {
-  font-size: 55px;
-}
-
-img {
-  max-width: 100%;
-}
-
-#coolImg {
-  background: radial-gradient(circle at bottom left, transparent 15px, #b4a078 16px) bottom left,
-                radial-gradient(circle at top left, transparent 15px, #b4a078 16px) top left,
-                radial-gradient(circle at top right, transparent 15px, #b4a078 16px) top right,
-                radial-gradient(circle at bottom right, transparent 15px, #b4a078 16px) bottom right;
-    background-size: 51% 51%;
-    background-repeat: no-repeat;
-}
-
-a:hover {
-  color: darkgoldenrod;
-  background-color: green;
-}
-
-
-#cookie-popup {
-  display: none;
-  position: fixed;
-  bottom: 0;
-  left: 15%;
-  right: 15%;
-  width: 70%;
-  background-color: #333;
-  color: #fff;
-  padding: 1px;
-  text-align: center;
-  opacity: .7;
-  border-radius: 15px;
-}
-
-#ok-button {
-  background-color: #f2f2f2;
-  color: #333;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-}
-
-#ok-button:hover {
-  background-color: #ddd;
-  color: #333;
-}
-
-body {
-  background-color: #8DCFEC;
-  color: #000;
-  transition: background-color 0.5s;
-  font-family: 'Quicksand', sans-serif;
-}
-
-.dark-theme {
-  background-color: #1a1a1a;
-  color: #fff;
-  outline: 150px solid #1a1a1a;
-}
-
-.dark-theme a {
-  color: #66b2ff; /* Light blue for links in dark theme */
-}
-
-.dark-theme .dropdown-content {
-  background-color: #1a1a1a;
-  color: white;
-}
-
-.dark-theme figcaption {
-  color: white;
-}
-
-body {
-  transition: background-color 0.5s, color 0.5s;
-}
-
-button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 24px;
-}
-
-.neon-text {
-    font-size: 36px;
-    color: #1a1a1a;
-    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
-    animation: neon-glow 3.5s ease-in-out infinite;
-}
-
-.dark-theme .neon-text {
-  font-size: 36px;
-  color: #fff;
-  text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
-  animation: neon-glow 3.5s ease-in-out infinite;
-}
-
-@keyframes neon-glow {
-    0%, 100% {
-        text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
-    }
-    50% {
-        text-shadow: none;
-    }
-}
-
-#center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
-
-#black a{
-  color: #333333;
-}
-
-figure {
-  margin: 0;
-  padding: 0;
-  text-align: center;
-}
-
-figcaption {
-  margin-top: 10px;
-  font-size: 14px;
-  color: #555;
-}
-
-#u{
-  list-style:none;
-  width:100%;
-}
-
-#mobile img {
-  width: 100%;
-  height: auto;
-  display: none;
-}
-
-#computer img {
-  width: 43%;
-  margin: 7px;
-  border: 2px solid black;
-}
-
-@media only screen and (max-width: 767px) {
-    #mobile img {
-        display: block;
-    }
-
-    #mobilesmall {
-      font-size: 2px !important;
-
-    }
-
-    #computer img {
-        display: none;
-    }
-}
-
-#mobileBox {
-  width: 100%;
-  height: auto;
-  display: none;
-}
-
-#computerBox {
-  width: 43%;
-  margin: 7px;
-  border: 2px solid black;
-}
-
-@media only screen and (max-width: 767px) {
-    #mobileBox {
-        display: block;
-    }
-
-    #computerBox {
-        display: none;
-    }
-}
-
-#theme-icon {
-  font-size: 15px;
-}
-
-#form {
-  border: 2px solid blueviolet;
-}
-
-#countdown-box {
-    width: 100%;
-    margin: auto;
-    padding: 59px 29px;
-    text-shadow: 0 1px 1px hsla(0, 0%, 100%, .3);
-    box-shadow: 0 0 0 1px hsla(0, 0%, 100%, .3) inset, 0 .3em 1em rgba(0, 0, 0, 0.12);
-    font: 150%/1.6 Baskerville, Palatino, serif;
-    color: white !important;
-    text-align: center;
-  }
-
-  #countdown-box,
-#countdown-box > div::before {
-    background: url("https://ahujaesh.github.io/city-night.jpg") fixed 0 / cover;
-}
-
-
-  #countdown-box > div::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-    filter: blur(10px);
-    margin: -30px;
-  }
-
-#mobile-countdown-box {
-    width: 100%;
-    margin: auto;
-    padding: 59px 29px;
-    text-shadow: 0 1px 1px hsla(0, 0%, 100%, .3);
-    box-shadow: 0 0 0 1px hsla(0, 0%, 100%, .3) inset, 0 .3em 1em rgba(0, 0, 0, 0.12);
-    font: 150%/1.6 Baskerville, Palatino, serif;
-    color: white !important;
-    text-align: center;
-  }
-
-  #mobile-countdown-box,
-#mobile-countdown-box > div::before {
-  background-color: #B4A078;
-}
-
-
-  #mobile-countdown-box > div::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-    filter: blur(10px);
-    margin: -30px;
-  }
-  #circle-section {
-    width: 100%; height: 529px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  #circle-section a {
-   font-size: 14px;
-  }
-  .path {
-    width: 300px; height: 300px;
-    border-radius: 50%;
-    margin: 100px auto;
-    position: relative;
-    display: flex;
-  }
-  .avatar {
-    width: 50px;
-    position: absolute;
-    top: 124px; left: 124px;
-    animation: circular-smooth-spin 7.5s infinite linear;
-    animation-play-state: running;
-  }
-  .avatar > span {
-    font-weight: 500;
-    position: absolute;
-    white-space: nowrap;
-    top: -50%; left: 50%;
-    padding: 3px 12px;
-    opacity: 0;
-    transform: scale(0);
-    transition: opacity, transform .8s;
-    transform-origin: 0 bottom;
-  }
-
-  .avatar > img {
-    width: inherit;
-    border-radius: 50%;
-    overflow: hidden;
-  }
-
-  .path:hover .avatar {
-    animation-play-state: paused;
-  }
-
-  .path:hover .avatar > span {
-    opacity: 1;
-    transform: scale(1);
-    transition: opacity, transform .8s;
-  }
-  .avatar:nth-of-type(2){
-    animation-delay: -1.25s;
-  }
-
-  .avatar:nth-of-type(3){
-    animation-delay: -2.5s;
-  }
-
-  .avatar:nth-of-type(4){
-    animation-delay: -3.75s;
-  }
-
-  .avatar:nth-of-type(5){
-    animation-delay: -5s;
-  }
-  .avatar:nth-of-type(6){
-    animation-delay: -6.25s;
-  }
-
-  @keyframes circular-smooth-spin {
-    from {
-      transform: rotate(0turn) translateY(-124px) rotate(1turn)
-    }
-    to {
-      opacity: 1;
-      transform: rotate(1turn) translateY(-124px) rotate(0turn)
-    }
-  }
-  #alt-circle-section {
-    display: none;
-  }
-  @media only screen and (max-width: 767px) {
-    #alt-circle-section {
-        display: block;
-    }
-
-    #circle-section {
-        display: none;
-    }
-}
-
-
-	
-<!-- this file only css ------------------------------------------------------------------------------------------------------------------ -->
-
-
-*{
-    margin: 0px;
-    padding: 0px;
-}
-
-.context {
-    width: 100%;
-    top:5vh;
-
-}
-
-.context h1{
-    text-align: center;
-    color: #fff;
-    font-size: 50px;
-}
-
-
-.area{
-    background: rgba(243,244,251,0.5);
-    width: 100%;
-    height:100vh;
-}
-
-@keyframes animate {
-
-    0%{
-        transform: translateY(0) rotate(0deg);
-        opacity: 1;
-        border-radius: 0;
-    }
-
-    100%{
-        transform: translateY(-1000px) rotate(720deg);
-        opacity: 0;
-        border-radius: 50%;
-    }
-
-}
-
-* {
-    font-family: 'Quicksand', sans-serif !important;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Bangers', Georgia, Times, serif;
-    text-shadow: 2px 2px #FF0000, 4px 4px cyan;
-    letter-spacing: 1.5px;
-}
-
-
-  ul li {
-      margin-top: 10px;
-      margin-bottom: 10px;
-      font-size: 20px;
-  }
-
-  #maintitle {
-    font-size: 45pt;
-  }
-
-.confetti-container {
-  user-select: none;
-  z-index: 10;
-}
-.confetti {
-  position: absolute;
-  left: 0;
-  right: 0;
-  display: none;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.confetti .square {
-  width: 1rem;
-  height: 1rem;
-  background-color: var(--bg);
-  transform: rotate(-140deg);
-}
-
-.confetti .rectangle {
-  width: 1rem;
-  height: 0.5rem;
-  background-color: var(--bg);
-}
-
-.confetti .hexagram {
-  width: 0;
-  height: 0;
-  border-left: 0.5rem solid transparent;
-  border-right: 0.5rem solid transparent;
-  border-bottom: 1rem solid var(--bg);
-  position: relative;
-}
-
-.confetti .hexagram:after {
-  content: "";
-  width: 0;
-  height: 0;
-  border-left: 0.5rem solid transparent;
-  border-right: 0.5rem solid transparent;
-  border-top: 1rem solid var(--bg);
-  position: absolute;
-  top: 0.33rem;
-  left: -0.5rem;
-}
-
-.confetti .pentagram {
-  width: 0rem;
-  height: 0rem;
-  display: block;
-  margin: 0.5rem 0;
-  border-right: 1rem solid transparent;
-  border-bottom: 0.7rem solid var(--bg);
-  border-left: 1rem solid transparent;
-  transform: rotate(35deg);
-  position: relative;
-}
-.confetti .pentagram:before {
-  content: "";
-  width: 0;
-  height: 0;
-  display: block;
-  border-bottom: 0.8rem solid var(--bg);
-  border-left: 0.3rem solid transparent;
-  border-right: 0.3rem solid transparent;
-  transform: rotate(-35deg);
-  position: absolute;
-  top: -0.45rem;
-  left: -0.65rem;
-}
-.confetti .pentagram:after {
-  content: "";
-  width: 0rem;
-  height: 0rem;
-  display: block;
-  border-right: 1rem solid transparent;
-  border-bottom: 0.7rem solid var(--bg);
-  border-left: 1rem solid transparent;
-  transform: rotate(-70deg);
-  position: absolute;
-  top: 0.03rem;
-  left: -1.05rem;
-}
-
-.confetti .dodecagram {
-  background: var(--bg);
-  width: 0.8rem;
-  height: 0.8rem;
-  position: relative;
-}
-
-.confetti .dodecagram:before {
-  content: "";
-  height: 0.8rem;
-  width: 0.8rem;
-  background: var(--bg);
-  transform: rotate(30deg);
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-.confetti .dodecagram:after {
-  content: "";
-  height: 0.8rem;
-  width: 0.8rem;
-  background: var(--bg);
-  transform: rotate(60deg);
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.confetti .wavy-line {
-  position: relative;
-}
-.confetti .wavy-line::after,
-.confetti .wavy-line::before {
-  content: "";
-  height: 1rem;
-  width: 8rem;
-  background-size: 2rem 1rem;
-  position: absolute;
-  left: -9rem;
-  transform: rotate(90deg);
-}
-
-.confetti .wavy-line::before {
-  background-image: linear-gradient(
-    45deg,
-    transparent,
-    transparent 50%,
-    var(--bg) 50%,
-    transparent 60%
-  );
-  top: 1rem;
-}
-.confetti .wavy-line::after {
-  background-image: linear-gradient(
-    -45deg,
-    transparent,
-    transparent 50%,
-    var(--bg) 50%,
-    transparent 60%
-  );
-}
-
-.confetti i {
-  width: 3rem;
-  height: 3rem;
-  margin: 0 0.2rem;
-  animation-name: confetti;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-duration: calc(70s / var(--speed));
-}
-
-.confetti i:nth-child(even) {
-  transform: rotate(90deg);
-}
-
-@keyframes confetti {
-  0% {
-    transform: translateY(-100vh);
-  }
-
-  100% {
-    transform: translateY(100vh);
-  }
-}
-  </style>
-</head>
-
-<body>
-<header>
-    <div id="big" style="display:block;">
-        <ul id="u">
-            <li id="hed"> <a href="index.html"> Go to the home page! </a></li>
-            <li id="hed"> <a href="contact.html"> Contact us! </a></li>
-            <li id="hed"> <a href="sponsorships.html"> Sponsorships! </a></li>
-            <li class="dropdown">
-                <a href="javascript:void(0)" class="dropbtn">About our team!</a>
-                <div class="dropdown-content">
-                    <a id="hd" href="varun_i.html">Varun Iyer</a>
-                    <a id="hd" href="gokul_s.html">Gokul S</a>
-                    <a id="hd" href="eshaan_a.html">Eshaan Ahuja</a>
-                    <a id="hd" href="sristi_s.html">Sristi S</a>
-                    <a id="hd" href="sk.html">Sahasra K</a>
-                    <a id="hd" href="sahasra_v.html">Sahasra V</a>
-                    <a id="hd" href="rj.html">Ruchika Joshi - The Team Manager!!</a>
-
-                </div>
-            <li class="dropdown">
-                <a href="javascript:void(0)" class="dropbtn">Team progress & fun games!</a>
-                <div class="dropdown-content">
-                    <a id="hd" href="script.html">Script Progress!</a>
-                    <a id="hd" href="sets&costumes.html">Sets and Costumes progress!</a>
-                    <a id="hd" href="quiz.html">Take a DI quiz to test your knowledge!</a>
-                    <a id="hd" href="resources.html">Resources/Materials</a>
-                </div>
-            <li id="long">|</li>
-
-            <input type="text" id="search" placeholder="🔍 Search">
-            <div id="search-results"></div>
-
-
-            </li>
-            <li>
-                <div id="google_translate_element"></div>
-
-                <script type="text/javascript">
-              function googleTranslateElementInit() {
-              new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-              }
-            </script>
-
-                <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-            </li>
-            </li>
-    </div>
-    </ul>
-</header>
-<div class="confetti-container">
-    <div class="confetti">
-        <i style="--speed: 10; --bg: yellow" class="square"></i>
-        <i style="--speed: 18; --bg: white" class="pentagram"></i>
-        <i style="--speed: 29; --bg: green" class="rectangle"></i>
-        <i style="--speed: 17; --bg: blue" class="hexagram"></i>
-        <i style="--speed: 33; --bg: red" class="pentagram"></i>
-        <i style="--speed: 26; --bg: yellow" class="dodecagram"></i>
-        <i style="--speed: 24; --bg: pink" class="wavy-line"> </i>
-        <i style="--speed: 5; --bg: blue" class="wavy-line"></i>
-        <i style="--speed: 40; --bg: white" class="square"></i>
-        <i style="--speed: 17; --bg: green" class="rectangle"></i>
-        <i style="--speed: 25; --bg: white" class="square"></i>
-        <i style="--speed: 18; --bg: green" class="rectangle"></i>
-        <i style="--speed: 15; --bg: yellow" class="wavy-line"> </i>
-        <i style="--speed: 32; --bg: yellow" class="pentagram"></i>
-        <i style="--speed: 25; --bg: white" class="square"></i>
-        <i style="--speed: 18; --bg: green" class="rectangle"></i>
-        <i style="--speed: 37; --bg: yellow" class="dodecagram"></i>
-        <i style="--speed: 23; --bg: pink" class="wavy-line"></i>
-        <i style="--speed: 37; --bg: red" class="dodecagram"></i>
-        <i style="--speed: 37; --bg: pink" class="wavy-line"></i>
-        <i style="--speed: 36; --bg: white" class="hexagram"></i>
-        <i style="--speed: 32; --bg: green" class="wavy-line"></i>
-        <i style="--speed: 32; --bg: yellow" class="pentagram"></i>
-        <i style="--speed: 29; --bg: white" class="square"></i>
-        <i style="--speed: 18; --bg: green" class="rectangle"></i>
-        <i style="--speed: 37; --bg: red" class="dodecagram"></i>
-        <i style="--speed: 23; --bg: pink" class="wavy-line"> </i>
-        <i style="--speed: 30; --bg: pink" class="rectangle"></i>
-        <i style="--speed: 30; --bg: red" class="square"></i>
-        <i style="--speed: 18; --bg: red" class="pentagram"></i>
-        <i style="--speed: 19; --bg: green" class="rectangle"></i>
-        <i style="--speed: 16; --bg: blue" class="hexagram"></i>
-        <i style="--speed: 23; --bg: red" class="pentagram"></i>
-        <i style="--speed: 34; --bg: yellow" class="dodecagram"></i>
-        <i style="--speed: 39; --bg: pink" class="wavy-line"></i>
-        <i style="--speed: 40; --bg: purple" class="square"></i>
-        <i style="--speed: 21; --bg: green" class="rectangle"></i>
-        <i style="--speed: 14; --bg: white" class="square"></i>
-        <i style="--speed: 38; --bg: green" class="rectangle"></i>
-        <i style="--speed: 19; --bg: red" class="dodecagram"></i>
-        <i style="--speed: 29; --bg: pink" class="wavy-line"> </i>
-        <i style="--speed: 21; --bg: white" class="hexagram"></i>
-        <i style="--speed: 17; --bg: purple" class="wavy-line"></i>
-        <i style="--speed: 32; --bg: yellow" class="pentagram"></i>
-        <i style="--speed: 23; --bg: white" class="square"></i>
-        <i style="--speed: 18; --bg: green" class="rectangle"></i>
-        <i style="--speed: 37; --bg: red" class="dodecagram"></i>
-        <i style="--speed: 48; --bg: pink" class="wavy-line"> </i>
-        <i style="--speed: 38; --bg: pink" class="rectangle"></i>
-        <i style="--speed: 13; --bg: red" class="pentagram"></i>
-        <i style="--speed: 49; --bg: yellow" class="dodecagram"></i>
-        <i style="--speed: 19; --bg: cyan" class="wavy-line"></i>
-        <i style="--speed: 15; --bg: steelblue" class="square"></i>
-        <i style="--speed: 10; --bg: yellow" class="square"></i>
-        <i style="--speed: 18; --bg: white" class="pentagram"></i>
-        <i style="--speed: 29; --bg: green" class="rectangle"></i>
-        <i style="--speed: 17; --bg: blue" class="hexagram"></i>
-        <i style="--speed: 10; --bg: yellow" class="square"></i>
-        <i style="--speed: 18; --bg: white" class="pentagram"></i>
-        <i style="--speed: 29; --bg: green" class="rectangle"></i>
-        <i style="--speed: 17; --bg: blue" class="hexagram"></i>
-        <i style="--speed: 33; --bg: red" class="pentagram"></i>
-        <i style="--speed: 26; --bg: yellow" class="dodecagram"></i>
-        <i style="--speed: 24; --bg: pink" class="wavy-line"> </i>
-        <i style="--speed: 5; --bg: blue" class="wavy-line"></i>
-        <i style="--speed: 40; --bg: white" class="square"></i>
-        <i style="--speed: 17; --bg: green" class="rectangle"></i>
-        <i style="--speed: 25; --bg: white" class="square"></i>
-        <i style="--speed: 18; --bg: green" class="rectangle"></i>
-        <i style="--speed: 15; --bg: yellow" class="wavy-line"> </i>
-        <i style="--speed: 32; --bg: yellow" class="pentagram"></i>
-        <i style="--speed: 25; --bg: white" class="square"></i>
-        <i style="--speed: 18; --bg: green" class="rectangle"></i>
-        <i style="--speed: 37; --bg: yellow" class="dodecagram"></i>
-        <i style="--speed: 23; --bg: pink" class="wavy-line"></i>
-        <i style="--speed: 37; --bg: red" class="dodecagram"></i>
-        <i style="--speed: 37; --bg: pink" class="wavy-line"></i>
-        <i style="--speed: 36; --bg: white" class="hexagram"></i>
-        <i style="--speed: 32; --bg: green" class="wavy-line"></i>
-        <i style="--speed: 32; --bg: yellow" class="pentagram"></i>
-        <i style="--speed: 29; --bg: white" class="square"></i>
-        <i style="--speed: 18; --bg: green" class="rectangle"></i>
-        <i style="--speed: 37; --bg: red" class="dodecagram"></i>
-        <i style="--speed: 23; --bg: pink" class="wavy-line"> </i>
-        <i style="--speed: 30; --bg: pink" class="rectangle"></i>
-        <i style="--speed: 30; --bg: red" class="square"></i>
-        <i style="--speed: 18; --bg: red" class="pentagram"></i>
-        <i style="--speed: 19; --bg: green" class="rectangle"></i>
-        <i style="--speed: 16; --bg: blue" class="hexagram"></i>
-        <i style="--speed: 23; --bg: red" class="pentagram"></i>
-        <i style="--speed: 34; --bg: yellow" class="dodecagram"></i>
-        <i style="--speed: 39; --bg: pink" class="wavy-line"></i>
-        <i style="--speed: 40; --bg: purple" class="square"></i>
-        <i style="--speed: 21; --bg: green" class="rectangle"></i>
-        <i style="--speed: 14; --bg: white" class="square"></i>
-        <i style="--speed: 38; --bg: green" class="rectangle"></i>
-        <i style="--speed: 19; --bg: red" class="dodecagram"></i>
-        <i style="--speed: 29; --bg: pink" class="wavy-line"> </i>
-        <i style="--speed: 21; --bg: white" class="hexagram"></i>
-        <i style="--speed: 17; --bg: purple" class="wavy-line"></i>
-        <i style="--speed: 32; --bg: yellow" class="pentagram"></i>
-        <i style="--speed: 23; --bg: white" class="square"></i>
-        <i style="--speed: 18; --bg: green" class="rectangle"></i>
-        <i style="--speed: 37; --bg: red" class="dodecagram"></i>
-        <i style="--speed: 48; --bg: pink" class="wavy-line"> </i>
-        <i style="--speed: 38; --bg: pink" class="rectangle"></i>
-        <i style="--speed: 13; --bg: red" class="pentagram"></i>
-        <i style="--speed: 49; --bg: yellow" class="dodecagram"></i>
-        <i style="--speed: 19; --bg: cyan" class="wavy-line"></i>
-        <i style="--speed: 15; --bg: steelblue" class="square"></i>
-        <i style="--speed: 33; --bg: red" class="pentagram"></i>
-        <i style="--speed: 26; --bg: yellow" class="dodecagram"></i>
-        <i style="--speed: 24; --bg: pink" class="wavy-line"> </i>
-        <i style="--speed: 5; --bg: white" class="wavy-line"></i>
-        <i style="--speed: 40; --bg: purple" class="square"></i>
-        <i style="--speed: 17; --bg: green" class="rectangle"></i>
-        <i style="--speed: 25; --bg: white" class="square"></i>
-        <i style="--speed: 18; --bg: green" class="rectangle"></i>
-        <i style="--speed: 15; --bg: cyan" class="wavy-line"> </i>
-        <i style="--speed: 32; --bg: yellow" class="pentagram"></i>
-        <i style="--speed: 45; --bg: white" class="square"></i>
-        <i style="--speed: 18; --bg: green" class="rectangle"></i>
-        <i style="--speed: 37; --bg: red" class="dodecagram"></i>
-        <i style="--speed: 23; --bg: pink" class="wavy-line"> </i>
-        <i style="--speed: 37; --bg: red" class="dodecagram"></i>
-        <i style="--speed: 37; --bg: pink" class="wavy-line"> </i>
-        <i style="--speed: 26; --bg: white" class="hexagram"></i>
-        <i style="--speed: 32; --bg: cyan" class="wavy-line"></i>
-        <i style="--speed: 32; --bg: yellow" class="pentagram"></i>
-        <i style="--speed: 45; --bg: white" class="square"></i>
-        <i style="--speed: 18; --bg: green" class="rectangle"></i>
-        <i style="--speed: 37; --bg: red" class="dodecagram"></i>
-        <i style="--speed: 23; --bg: pink" class="wavy-line"> </i>
-        <i style="--speed: 50; --bg: pink" class="rectangle"></i>
-        <i style="--speed: 30; --bg: red" class="square"></i>
-        <i style="--speed: 18; --bg: red" class="pentagram"></i>
-        <i style="--speed: 19; --bg: green" class="rectangle"></i>
-        <i style="--speed: 16; --bg: blue" class="hexagram"></i>
-        <i style="--speed: 23; --bg: red" class="pentagram"></i>
-        <i style="--speed: 33; --bg: yellow" class="dodecagram"></i>
-        <i style="--speed: 39; --bg: white" class="wavy-line"></i>
-        <i style="--speed: 40; --bg: orange" class="square"></i>
-        <i style="--speed: 21; --bg: green" class="rectangle"></i>
-        <i style="--speed: 14; --bg: white" class="square"></i>
-        <i style="--speed: 38; --bg: green" class="rectangle"></i>
-        <i style="--speed: 19; --bg: red" class="dodecagram"></i>
-        <i style="--speed: 29; --bg: pink" class="wavy-line"> </i>
-        <i style="--speed: 34; --bg: white" class="hexagram"></i>
-        <i style="--speed: 17; --bg: indigo" class="wavy-line"></i>
-        <i style="--speed: 32; --bg: yellow" class="pentagram"></i>
-        <i style="--speed: 23; --bg: white" class="square"></i>
-        <i style="--speed: 18; --bg: green" class="rectangle"></i>
-        <i style="--speed: 37; --bg: red" class="dodecagram"></i>
-        <i style="--speed: 48; --bg: pink" class="wavy-line"> </i>
-        <i style="--speed: 38; --bg: pink" class="rectangle"></i>
-        <i style="--speed: 13; --bg: red" class="pentagram"></i>
-        <i style="--speed: 49; --bg: yellow" class="dodecagram"></i>
-        <i style="--speed: 19; --bg: purple" class="wavy-line"></i>
-        <i style="--speed: 15; --bg: cyan" class="square"></i>
-    </div>
-</div>
-<div class="context">
-    <div>
-        <h1>This is a UNFINISHED file, if you are seeing this, please email me <a href="mailto:daringdragonsdi@gmail.com?subject=Website Error&body=There is an error in your site. I found your testing page. Please fix.">here</a>, because there is an error that I must fix. Thank you.</h1>
-        <h2 id="maintitle"> DI Two Truths and a Lie </h2>
-        <p>Instructions: Select the lie fom the three options, and if you are correct, it will advance you to the next set. There are three sets - good luck :)</p>
-        <br>
-        <br>
-        <div>
-            <h2>Set 1</h2>
-            <form id="setOne">
-                <input type="radio" id="set1-1" name="set1" value="1">
-                <label for="set1-1">The average years of DI experience in on our team is 3.428 years.</label>
-                <br>
-                <input type="radio" id="set1-2" name ="set1" value="2">
-                <label for="set1-2">We have appeared in a magazine.</label>
-                <br>
-                <input type="radio" id="set1-3" name ="set1" value="3">
-                <label for="set1-3">Sristi is the tallest member of the team.</label>
-                <br>
-                <input type="submit" value="Submit">
-            </form>
-            <h2>Set 2</h2>
-            <form id="setTwo" style="display: none;">
-                <input type="radio" id="set2-1" name="set2" value="1">
-                <label for="set2-1">We traveled ~716 miles to get to Kansas City Global Finals 2023.</label>
-                <br>
-                <input type="radio" id="set2-2" name ="set2" value="2">
-                <label for="set2-2">There were over 500 (estimate) teams at Texas States 2024!</label>
-                <br>
-                <input type="radio" id="set2-3" name ="set2" value="3">
-                <label for="set2-3">We have 7 members, each of which provide an equal contribution to the team.</label>
-                <br>
-                <input type="submit" value="Submit">
-            </form>
-            <h2>Set 3</h2>
-            <form id="setThree" style="display: none;">
-                <input type="radio" id="set3-1" name="set3" value="1">
-                <label for="set3-1">The average years of DI experience in on our team is 3.428 years.</label>
-                <br>
-                <input type="radio" id="set3-2" name ="set3" value="2">
-                <label for="set3-2">We have appeared in a magazine</label>
-                <br>
-                <input type="radio" id="set3-3" name ="set3" value="3">
-                <label for="set3-3">Sristi is the tallest member of the team</label>
-                <br>
-                <input type="submit" value="Submit">
-            </form>
-        </div>
-        <div id="results"></div>
-        <p id="won" style="display:none;">You won! <br> You can go back to the main page <a href="ahujaesh.github.io">here</a>.</p>
-    </div>
-</div>
-<script>
-      document.addEventListener("DOMContentLoaded", function () {
-          document.getElementById("setOne").addEventListener("submit", function (e) {
-              e.preventDefault();
-
-            const results = document.getElementById("results");
-            const selectedOption = document.querySelector('input[name="set1"]:checked');
-			if (selectedOption) {
-              if (selectedOption.value == 3) {
-                document.getElementById("setTwo").style.display = "block";
-              }
+    <head>
+        <link rel="icon" type="image/x-icon" href="photos/favicon-removebg-preview.png">
+        <meta name="keywords" content="Destination Imagination, Creative Problem Solving, Daring Dragons, Team, Innovation, Game">
+        <meta name="author" content="Eshaan Ahuja">
+        <meta name="language" content="English">
+        <link rel="apple-touch-icon" href="photos/favicon.jpg">
+        <meta name="theme-color" content="#8DCFEC">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+        <link href="http://fonts.googleapis.com/css?family=Nobile" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <title>2 Truths and a Lie - Daring Dragons DI team</title>
+
+        <style>
+            <!-- this file only css ------------------------------------------------------------------------------------------------------------------ -->
+            *{
+                margin: 0px;
+                padding: 0px;
             }
 
-          });
-        document.getElementById("setTwo").addEventListener("submit", function (f) {
-          f.preventDefault();
-            const selectedOption2 = document.querySelector('input[name="set2"]:checked');
-			if (selectedOption2) {
-              if (selectedOption2.value == 3) {
-                document.getElementById("setThree").style.display = "block";
+            .context {
+                width: 100%;
+                top:5vh;
+
+            }
+
+            .context h1{
+                text-align: center;
+                color: #fff;
+                font-size: 50px;
+            }
+
+
+            .area{
+                background: rgba(243,244,251,0.5);
+                width: 100%;
+                height:100vh;
+            }
+
+            @keyframes animate {
+
+                0%{
+                    transform: translateY(0) rotate(0deg);
+                    opacity: 1;
+                    border-radius: 0;
+                }
+
+                100%{
+                    transform: translateY(-1000px) rotate(720deg);
+                    opacity: 0;
+                    border-radius: 50%;
+                }
+
+            }
+
+            * {
+                font-family: 'Quicksand', sans-serif !important;
+            }
+
+            h1, h2, h3, h4, h5, h6 {
+                font-family: 'Bangers', Georgia, Times, serif;
+                text-shadow: 2px 2px #FF0000, 4px 4px cyan;
+                letter-spacing: 1.5px;
+            }
+
+
+              ul li {
+                  margin-top: 10px;
+                  margin-bottom: 10px;
+                  font-size: 20px;
               }
-           }
-          });
 
-          document.getElementById("setThree").addEventListener("submit", function (g) {
-          g.preventDefault();
-            const selectedOption2 = document.querySelector('input[name="set3"]:checked');
-			if (selectedOption2) {
-              if (selectedOption2.value == 3) {
-                document.getElementById("won").style.display = "block";
-                const confetti = document.querySelector('.confetti');
-                confetti.style.display = 'flex';
-
+              #maintitle {
+                font-size: 45pt;
               }
-           }
-          });
 
-      });
-  </script>
-<footer>
-    <p>&copy; 2024 Eshaan Ahuja - Daring Dragons. All rights reserved.</p>
-</footer>
-</body>
+            .confetti-container {
+              user-select: none;
+              z-index: 10;
+            }
+            .confetti {
+              position: absolute;
+              left: 0;
+              right: 0;
+              display: none;
+              width: 100%;
+              height: 100%;
+              overflow: hidden;
+            }
+
+            .confetti .square {
+              width: 1rem;
+              height: 1rem;
+              background-color: var(--bg);
+              transform: rotate(-140deg);
+            }
+
+            .confetti .rectangle {
+              width: 1rem;
+              height: 0.5rem;
+              background-color: var(--bg);
+            }
+
+            .confetti .hexagram {
+              width: 0;
+              height: 0;
+              border-left: 0.5rem solid transparent;
+              border-right: 0.5rem solid transparent;
+              border-bottom: 1rem solid var(--bg);
+              position: relative;
+            }
+
+            .confetti .hexagram:after {
+              content: "";
+              width: 0;
+              height: 0;
+              border-left: 0.5rem solid transparent;
+              border-right: 0.5rem solid transparent;
+              border-top: 1rem solid var(--bg);
+              position: absolute;
+              top: 0.33rem;
+              left: -0.5rem;
+            }
+
+            .confetti .pentagram {
+              width: 0rem;
+              height: 0rem;
+              display: block;
+              margin: 0.5rem 0;
+              border-right: 1rem solid transparent;
+              border-bottom: 0.7rem solid var(--bg);
+              border-left: 1rem solid transparent;
+              transform: rotate(35deg);
+              position: relative;
+            }
+            .confetti .pentagram:before {
+              content: "";
+              width: 0;
+              height: 0;
+              display: block;
+              border-bottom: 0.8rem solid var(--bg);
+              border-left: 0.3rem solid transparent;
+              border-right: 0.3rem solid transparent;
+              transform: rotate(-35deg);
+              position: absolute;
+              top: -0.45rem;
+              left: -0.65rem;
+            }
+            .confetti .pentagram:after {
+              content: "";
+              width: 0rem;
+              height: 0rem;
+              display: block;
+              border-right: 1rem solid transparent;
+              border-bottom: 0.7rem solid var(--bg);
+              border-left: 1rem solid transparent;
+              transform: rotate(-70deg);
+              position: absolute;
+              top: 0.03rem;
+              left: -1.05rem;
+            }
+
+            .confetti .dodecagram {
+              background: var(--bg);
+              width: 0.8rem;
+              height: 0.8rem;
+              position: relative;
+            }
+
+            .confetti .dodecagram:before {
+              content: "";
+              height: 0.8rem;
+              width: 0.8rem;
+              background: var(--bg);
+              transform: rotate(30deg);
+              position: absolute;
+              top: 0;
+              left: 0;
+            }
+            .confetti .dodecagram:after {
+              content: "";
+              height: 0.8rem;
+              width: 0.8rem;
+              background: var(--bg);
+              transform: rotate(60deg);
+              position: absolute;
+              top: 0;
+              left: 0;
+            }
+
+            .confetti .wavy-line {
+              position: relative;
+            }
+            .confetti .wavy-line::after,
+            .confetti .wavy-line::before {
+              content: "";
+              height: 1rem;
+              width: 8rem;
+              background-size: 2rem 1rem;
+              position: absolute;
+              left: -9rem;
+              transform: rotate(90deg);
+            }
+
+            .confetti .wavy-line::before {
+              background-image: linear-gradient(
+                45deg,
+                transparent,
+                transparent 50%,
+                var(--bg) 50%,
+                transparent 60%
+              );
+              top: 1rem;
+            }
+            .confetti .wavy-line::after {
+              background-image: linear-gradient(
+                -45deg,
+                transparent,
+                transparent 50%,
+                var(--bg) 50%,
+                transparent 60%
+              );
+            }
+
+            .confetti i {
+              width: 3rem;
+              height: 3rem;
+              margin: 0 0.2rem;
+              animation-name: confetti;
+              animation-timing-function: linear;
+              animation-iteration-count: infinite;
+              animation-duration: calc(70s / var(--speed));
+            }
+
+            .confetti i:nth-child(even) {
+              transform: rotate(90deg);
+            }
+
+            @keyframes confetti {
+              0% {
+                transform: translateY(-100vh);
+              }
+
+              100% {
+                transform: translateY(100vh);
+              }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div id="big" style="display:block;">
+                <ul id="u">
+                    <li id="hed"> <a href="index.html"> Go to the home page! </a></li>
+                    <li id="hed"> <a href="contact.html"> Contact us! </a></li>
+                    <li id="hed"> <a href="sponsorships.html"> Sponsorships! </a></li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropbtn">About our team!</a>
+                        <div class="dropdown-content">
+                            <a id="hd" href="varun_i.html">Varun Iyer</a>
+                            <a id="hd" href="gokul_s.html">Gokul S</a>
+                            <a id="hd" href="eshaan_a.html">Eshaan Ahuja</a>
+                            <a id="hd" href="sristi_s.html">Sristi S</a>
+                            <a id="hd" href="sk.html">Sahasra K</a>
+                            <a id="hd" href="sahasra_v.html">Sahasra V</a>
+                            <a id="hd" href="rj.html">Ruchika Joshi - The Team Manager!!</a>
+                        </div>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropbtn">Team progress & fun games!</a>
+                        <div class="dropdown-content">
+                            <a id="hd" href="script.html">Script Progress!</a>
+                            <a id="hd" href="sets&costumes.html">Sets and Costumes progress!</a>
+                            <a id="hd" href="quiz.html">Take a DI quiz to test your knowledge!</a>
+                            <a id="hd" href="resources.html">Resources/Materials</a>
+                        </div>
+                    <li id="long">|</li>
+
+                    <input type="text" id="search" placeholder="🔍 Search">
+                    <div id="search-results"></div>
+
+
+                    </li>
+                    <li>
+                        <div id="google_translate_element"></div>
+
+                        <script type="text/javascript">
+                      function googleTranslateElementInit() {
+                      new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+                      }
+                    </script>
+
+                        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+                    </li>
+                    </li>
+            </div>
+            </ul>
+        </header>
+        <div class="confetti-container">
+            <div class="confetti">
+                <i style="--speed: 10; --bg: yellow" class="square"></i>
+                <i style="--speed: 18; --bg: white" class="pentagram"></i>
+                <i style="--speed: 29; --bg: green" class="rectangle"></i>
+                <i style="--speed: 17; --bg: blue" class="hexagram"></i>
+                <i style="--speed: 33; --bg: red" class="pentagram"></i>
+                <i style="--speed: 26; --bg: yellow" class="dodecagram"></i>
+                <i style="--speed: 24; --bg: pink" class="wavy-line"> </i>
+                <i style="--speed: 5; --bg: blue" class="wavy-line"></i>
+                <i style="--speed: 40; --bg: white" class="square"></i>
+                <i style="--speed: 17; --bg: green" class="rectangle"></i>
+                <i style="--speed: 25; --bg: white" class="square"></i>
+                <i style="--speed: 18; --bg: green" class="rectangle"></i>
+                <i style="--speed: 15; --bg: yellow" class="wavy-line"> </i>
+                <i style="--speed: 32; --bg: yellow" class="pentagram"></i>
+                <i style="--speed: 25; --bg: white" class="square"></i>
+                <i style="--speed: 18; --bg: green" class="rectangle"></i>
+                <i style="--speed: 37; --bg: yellow" class="dodecagram"></i>
+                <i style="--speed: 23; --bg: pink" class="wavy-line"></i>
+                <i style="--speed: 37; --bg: red" class="dodecagram"></i>
+                <i style="--speed: 37; --bg: pink" class="wavy-line"></i>
+                <i style="--speed: 36; --bg: white" class="hexagram"></i>
+                <i style="--speed: 32; --bg: green" class="wavy-line"></i>
+                <i style="--speed: 32; --bg: yellow" class="pentagram"></i>
+                <i style="--speed: 29; --bg: white" class="square"></i>
+                <i style="--speed: 18; --bg: green" class="rectangle"></i>
+                <i style="--speed: 37; --bg: red" class="dodecagram"></i>
+                <i style="--speed: 23; --bg: pink" class="wavy-line"> </i>
+                <i style="--speed: 30; --bg: pink" class="rectangle"></i>
+                <i style="--speed: 30; --bg: red" class="square"></i>
+                <i style="--speed: 18; --bg: red" class="pentagram"></i>
+                <i style="--speed: 19; --bg: green" class="rectangle"></i>
+                <i style="--speed: 16; --bg: blue" class="hexagram"></i>
+                <i style="--speed: 23; --bg: red" class="pentagram"></i>
+                <i style="--speed: 34; --bg: yellow" class="dodecagram"></i>
+                <i style="--speed: 39; --bg: pink" class="wavy-line"></i>
+                <i style="--speed: 40; --bg: purple" class="square"></i>
+                <i style="--speed: 21; --bg: green" class="rectangle"></i>
+                <i style="--speed: 14; --bg: white" class="square"></i>
+                <i style="--speed: 38; --bg: green" class="rectangle"></i>
+                <i style="--speed: 19; --bg: red" class="dodecagram"></i>
+                <i style="--speed: 29; --bg: pink" class="wavy-line"> </i>
+                <i style="--speed: 21; --bg: white" class="hexagram"></i>
+                <i style="--speed: 17; --bg: purple" class="wavy-line"></i>
+                <i style="--speed: 32; --bg: yellow" class="pentagram"></i>
+                <i style="--speed: 23; --bg: white" class="square"></i>
+                <i style="--speed: 18; --bg: green" class="rectangle"></i>
+                <i style="--speed: 37; --bg: red" class="dodecagram"></i>
+                <i style="--speed: 48; --bg: pink" class="wavy-line"> </i>
+                <i style="--speed: 38; --bg: pink" class="rectangle"></i>
+                <i style="--speed: 13; --bg: red" class="pentagram"></i>
+                <i style="--speed: 49; --bg: yellow" class="dodecagram"></i>
+                <i style="--speed: 19; --bg: cyan" class="wavy-line"></i>
+                <i style="--speed: 15; --bg: steelblue" class="square"></i>
+                <i style="--speed: 10; --bg: yellow" class="square"></i>
+                <i style="--speed: 18; --bg: white" class="pentagram"></i>
+                <i style="--speed: 29; --bg: green" class="rectangle"></i>
+                <i style="--speed: 17; --bg: blue" class="hexagram"></i>
+                <i style="--speed: 10; --bg: yellow" class="square"></i>
+                <i style="--speed: 18; --bg: white" class="pentagram"></i>
+                <i style="--speed: 29; --bg: green" class="rectangle"></i>
+                <i style="--speed: 17; --bg: blue" class="hexagram"></i>
+                <i style="--speed: 33; --bg: red" class="pentagram"></i>
+                <i style="--speed: 26; --bg: yellow" class="dodecagram"></i>
+                <i style="--speed: 24; --bg: pink" class="wavy-line"> </i>
+                <i style="--speed: 5; --bg: blue" class="wavy-line"></i>
+                <i style="--speed: 40; --bg: white" class="square"></i>
+                <i style="--speed: 17; --bg: green" class="rectangle"></i>
+                <i style="--speed: 25; --bg: white" class="square"></i>
+                <i style="--speed: 18; --bg: green" class="rectangle"></i>
+                <i style="--speed: 15; --bg: yellow" class="wavy-line"> </i>
+                <i style="--speed: 32; --bg: yellow" class="pentagram"></i>
+                <i style="--speed: 25; --bg: white" class="square"></i>
+                <i style="--speed: 18; --bg: green" class="rectangle"></i>
+                <i style="--speed: 37; --bg: yellow" class="dodecagram"></i>
+                <i style="--speed: 23; --bg: pink" class="wavy-line"></i>
+                <i style="--speed: 37; --bg: red" class="dodecagram"></i>
+                <i style="--speed: 37; --bg: pink" class="wavy-line"></i>
+                <i style="--speed: 36; --bg: white" class="hexagram"></i>
+                <i style="--speed: 32; --bg: green" class="wavy-line"></i>
+                <i style="--speed: 32; --bg: yellow" class="pentagram"></i>
+                <i style="--speed: 29; --bg: white" class="square"></i>
+                <i style="--speed: 18; --bg: green" class="rectangle"></i>
+                <i style="--speed: 37; --bg: red" class="dodecagram"></i>
+                <i style="--speed: 23; --bg: pink" class="wavy-line"> </i>
+                <i style="--speed: 30; --bg: pink" class="rectangle"></i>
+                <i style="--speed: 30; --bg: red" class="square"></i>
+                <i style="--speed: 18; --bg: red" class="pentagram"></i>
+                <i style="--speed: 19; --bg: green" class="rectangle"></i>
+                <i style="--speed: 16; --bg: blue" class="hexagram"></i>
+                <i style="--speed: 23; --bg: red" class="pentagram"></i>
+                <i style="--speed: 34; --bg: yellow" class="dodecagram"></i>
+                <i style="--speed: 39; --bg: pink" class="wavy-line"></i>
+                <i style="--speed: 40; --bg: purple" class="square"></i>
+                <i style="--speed: 21; --bg: green" class="rectangle"></i>
+                <i style="--speed: 14; --bg: white" class="square"></i>
+                <i style="--speed: 38; --bg: green" class="rectangle"></i>
+                <i style="--speed: 19; --bg: red" class="dodecagram"></i>
+                <i style="--speed: 29; --bg: pink" class="wavy-line"> </i>
+                <i style="--speed: 21; --bg: white" class="hexagram"></i>
+                <i style="--speed: 17; --bg: purple" class="wavy-line"></i>
+                <i style="--speed: 32; --bg: yellow" class="pentagram"></i>
+                <i style="--speed: 23; --bg: white" class="square"></i>
+                <i style="--speed: 18; --bg: green" class="rectangle"></i>
+                <i style="--speed: 37; --bg: red" class="dodecagram"></i>
+                <i style="--speed: 48; --bg: pink" class="wavy-line"> </i>
+                <i style="--speed: 38; --bg: pink" class="rectangle"></i>
+                <i style="--speed: 13; --bg: red" class="pentagram"></i>
+                <i style="--speed: 49; --bg: yellow" class="dodecagram"></i>
+                <i style="--speed: 19; --bg: cyan" class="wavy-line"></i>
+                <i style="--speed: 15; --bg: steelblue" class="square"></i>
+                <i style="--speed: 33; --bg: red" class="pentagram"></i>
+                <i style="--speed: 26; --bg: yellow" class="dodecagram"></i>
+                <i style="--speed: 24; --bg: pink" class="wavy-line"> </i>
+                <i style="--speed: 5; --bg: white" class="wavy-line"></i>
+                <i style="--speed: 40; --bg: purple" class="square"></i>
+                <i style="--speed: 17; --bg: green" class="rectangle"></i>
+                <i style="--speed: 25; --bg: white" class="square"></i>
+                <i style="--speed: 18; --bg: green" class="rectangle"></i>
+                <i style="--speed: 15; --bg: cyan" class="wavy-line"> </i>
+                <i style="--speed: 32; --bg: yellow" class="pentagram"></i>
+                <i style="--speed: 45; --bg: white" class="square"></i>
+                <i style="--speed: 18; --bg: green" class="rectangle"></i>
+                <i style="--speed: 37; --bg: red" class="dodecagram"></i>
+                <i style="--speed: 23; --bg: pink" class="wavy-line"> </i>
+                <i style="--speed: 37; --bg: red" class="dodecagram"></i>
+                <i style="--speed: 37; --bg: pink" class="wavy-line"> </i>
+                <i style="--speed: 26; --bg: white" class="hexagram"></i>
+                <i style="--speed: 32; --bg: cyan" class="wavy-line"></i>
+                <i style="--speed: 32; --bg: yellow" class="pentagram"></i>
+                <i style="--speed: 45; --bg: white" class="square"></i>
+                <i style="--speed: 18; --bg: green" class="rectangle"></i>
+                <i style="--speed: 37; --bg: red" class="dodecagram"></i>
+                <i style="--speed: 23; --bg: pink" class="wavy-line"> </i>
+                <i style="--speed: 50; --bg: pink" class="rectangle"></i>
+                <i style="--speed: 30; --bg: red" class="square"></i>
+                <i style="--speed: 18; --bg: red" class="pentagram"></i>
+                <i style="--speed: 19; --bg: green" class="rectangle"></i>
+                <i style="--speed: 16; --bg: blue" class="hexagram"></i>
+                <i style="--speed: 23; --bg: red" class="pentagram"></i>
+                <i style="--speed: 33; --bg: yellow" class="dodecagram"></i>
+                <i style="--speed: 39; --bg: white" class="wavy-line"></i>
+                <i style="--speed: 40; --bg: orange" class="square"></i>
+                <i style="--speed: 21; --bg: green" class="rectangle"></i>
+                <i style="--speed: 14; --bg: white" class="square"></i>
+                <i style="--speed: 38; --bg: green" class="rectangle"></i>
+                <i style="--speed: 19; --bg: red" class="dodecagram"></i>
+                <i style="--speed: 29; --bg: pink" class="wavy-line"> </i>
+                <i style="--speed: 34; --bg: white" class="hexagram"></i>
+                <i style="--speed: 17; --bg: indigo" class="wavy-line"></i>
+                <i style="--speed: 32; --bg: yellow" class="pentagram"></i>
+                <i style="--speed: 23; --bg: white" class="square"></i>
+                <i style="--speed: 18; --bg: green" class="rectangle"></i>
+                <i style="--speed: 37; --bg: red" class="dodecagram"></i>
+                <i style="--speed: 48; --bg: pink" class="wavy-line"> </i>
+                <i style="--speed: 38; --bg: pink" class="rectangle"></i>
+                <i style="--speed: 13; --bg: red" class="pentagram"></i>
+                <i style="--speed: 49; --bg: yellow" class="dodecagram"></i>
+                <i style="--speed: 19; --bg: purple" class="wavy-line"></i>
+                <i style="--speed: 15; --bg: cyan" class="square"></i>
+            </div>
+        </div>
+        <div class="context">
+            <div>
+                <h1>This is a UNFINISHED file, if you are seeing this, please email me <a href="mailto:daringdragonsdi@gmail.com?subject=Website Error&body=There is an error in your site. I found your testing page. Please fix.">here</a>, because there is an error that I must fix. Thank you.</h1>
+                <h2 id="maintitle"> DI Two Truths and a Lie </h2>
+                <p>Instructions: Select the lie fom the three options, and if you are correct, it will advance you to the next set. There are three sets - good luck :)</p>
+                <br>
+                <br>
+                <div>
+                    <h2>Set 1</h2>
+                    <form id="setOne">
+                        <input type="radio" id="set1-1" name="set1" value="1">
+                        <label for="set1-1">The average years of DI experience in on our team is 3.428 years.</label>
+                        <br>
+                        <input type="radio" id="set1-2" name ="set1" value="2">
+                        <label for="set1-2">We have appeared many magazines.</label>
+                        <br>
+                        <input type="radio" id="set1-3" name ="set1" value="3">
+                        <label for="set1-3">Sristi is the tallest member of the team.</label>
+                        <br>
+                        <input type="submit" value="Submit">
+                    </form>
+                    <h2>Set 2</h2>
+                    <form id="setTwo" style="display: none;">
+                        <input type="radio" id="set2-1" name="set2" value="1">
+                        <label for="set2-1">We traveled ~716 miles to get to Kansas City Global Finals 2023.</label>
+                        <br>
+                        <input type="radio" id="set2-2" name ="set2" value="2">
+                        <label for="set2-2">There were over 500 (estimate) teams at Texas States 2024!</label>
+                        <br>
+                        <input type="radio" id="set2-3" name ="set2" value="3">
+                        <label for="set2-3">We have 7 members, each of which provide an equal contribution to the team.</label>
+                        <br>
+                        <input type="submit" value="Submit">
+                    </form>
+                    <h2>Set 3</h2>
+                    <form id="setThree" style="display: none;">
+                        <input type="radio" id="set3-1" name="set3" value="1">
+                        <label for="set3-1">Wrong</label>
+                        <br>
+                        <input type="radio" id="set3-2" name ="set3" value="2">
+                        <label for="set3-2">Right</label>
+                        <br>
+                        <input type="radio" id="set3-3" name ="set3" value="3">
+                        <label for="set3-3">Right</label>
+                        <br>
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+                <div id="results"></div>
+                <p id="won" style="display:none;">You won! <br> You can go back to the main page <a href="ahujaesh.github.io">here</a>.</p>
+            </div>
+        </div>
+        <script>
+              document.addEventListener("DOMContentLoaded", function () {
+                  document.getElementById("setOne").addEventListener("submit", function (e) {
+                      e.preventDefault();
+
+                    const results = document.getElementById("results");
+                    const selectedOption = document.querySelector('input[name="set1"]:checked');
+                    if (selectedOption) {
+                      if (selectedOption.value == 3) {
+                        document.getElementById("setTwo").style.display = "block";
+                      }
+                    }
+
+                  });
+                document.getElementById("setTwo").addEventListener("submit", function (f) {
+                  f.preventDefault();
+                    const selectedOption2 = document.querySelector('input[name="set2"]:checked');
+                    if (selectedOption2) {
+                      if (selectedOption2.value == 3) {
+                        document.getElementById("setThree").style.display = "block";
+                      }
+                   }
+                  });
+
+                  document.getElementById("setThree").addEventListener("submit", function (g) {
+                  g.preventDefault();
+                    const selectedOption2 = document.querySelector('input[name="set3"]:checked');
+                    if (selectedOption2) {
+                      if (selectedOption2.value == 1) {
+                        document.getElementById("won").style.display = "block";
+                        const confetti = document.querySelector('.confetti');
+                        confetti.style.display = 'flex';
+
+                      }
+                   }
+                  });
+
+              });
+          </script>
+        <footer>
+            <p>&copy; 2024 Eshaan Ahuja - Daring Dragons. All rights reserved.</p>
+        </footer>
+    </body>
 </html>
