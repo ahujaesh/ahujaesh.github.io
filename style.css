@@ -541,16 +541,16 @@ figcaption {
 
 
 .button-blue {
-      background-color: #1aa7ec; /* Blue color */
-      color: #fff; /* White text */
-      padding: 10px 20px; /* Adjust padding as needed */
-      border: 2px solid #1aa7ec; /* Border color same as background color */
-      border-radius: 25px; /* Oval border */
-      cursor: pointer;
-      transition: background-color 0.3s, color 0.3s; /* Smooth transition on hover */
-    }
+  background-color: #1aa7ec;
+  color: #fff;
+  padding: 10px 20px;
+  border: 2px solid #1aa7ec;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
 
-    .button-blue:hover {
-      background-color: #155a8a; /* Darker blue color on hover */
-      color: #fff; /* White text on hover */
-    }
+.button-blue:hover {
+  background-color: #155a8a;
+  color: #fff;
+}
