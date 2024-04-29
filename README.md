@@ -23,7 +23,7 @@ Our team has decided to split all of its data across **two** GitHub repositories
 
 **Why?**
 
-The reason why we have two repositories is because previously, we used a service called repl.it for hosting, and we only used GitHub for website backups. Eventually, repl.it ended its free hosting (Leading to the loss of all our GSC data), so we had to use GitHub pages (Which is objectively better). To use GitHub pages, we needed to have a repository called <username>.github.io or <orginisation>.github.io, so we had to create a new repository.
+The reason why we have two repositories is because previously, we used a service called repl.it for hosting, and we only used GitHub for website backups. Eventually, repl.it ended its free hosting (Leading to the loss of all our GSC data), so we had to use GitHub pages (Which is objectively better). To use GitHub pages, we needed to have a repository called (username).github.io or (organisation).github.io, so we had to create a new repository.
 
 ---
 
