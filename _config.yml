@@ -7,10 +7,10 @@ redirects:
     to: /index.html
   - from: /sets.php
     to: /index.html
-  - from: /sitemap.xml
+  - from: /README.md
     to: /index.html
-  - from: /sitemap_index.xml
-    to: /index.html
+   - from: /readme.md
+    to: /index.html   
   - from: /style.css
     to: /index.html
   - from: /redirects.md
