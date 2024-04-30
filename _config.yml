@@ -1,19 +1,19 @@
-redirects:
-  - from: /google82308700cb8bfa5a.html
-    to: /index.html
-  - from: /replit.nix
-    to: /index.html
-  - from: /scripts.php
-    to: /index.html
-  - from: /sets.php
-    to: /index.html
-  - from: /README.md
-    to: /index.html
-  - from: /readme.md
-    to: /index.html
-  - from: /style.css
-    to: /index.html
-  - from: /redirects.md
-    to: /index.html
-  - from: /_config.yml
-    to: /index.html
+# redirects:
+#   - from: /google82308700cb8bfa5a.html
+#     to: /index.html
+#   - from: /replit.nix
+#     to: /index.html
+#   - from: /scripts.php
+#     to: /index.html
+#   - from: /sets.php
+#     to: /index.html
+#   - from: /README.md
+#     to: /index.html
+#   - from: /readme.md
+#     to: /index.html
+#   - from: /style.css
+#     to: /index.html
+#   - from: /redirects.md
+#     to: /index.html
+#   - from: /_config.yml
+#     to: /index.html
