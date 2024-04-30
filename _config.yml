@@ -9,8 +9,8 @@ redirects:
     to: /index.html
   - from: /README.md
     to: /index.html
-   - from: /readme.md
-    to: /index.html   
+  - from: /readme.md
+    to: /index.html
   - from: /style.css
     to: /index.html
   - from: /redirects.md
