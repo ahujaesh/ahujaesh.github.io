@@ -23,13 +23,18 @@
     <title>Daring Dragons Destination Imagination Team - 404 error page</title>
 </head>
 <body>
-    <h1>The page that you were trying to access was not found on the Daring Dragons Destination Imagination team's website. You will be automatically redirected to our home page in 5 seconds.</h1>
+    <h1>The page that you were trying to access was not found on the Daring Dragons Destination Imagination team's website, so you were redirected to this custom error page. You will be automatically redirected to our home page in 5 seconds.</h1>
     <p>If you are not redirected, <a href="https://ahujaesh.github.io">please click here</a>.</p>
+    <p>If this is an error on our part, such as a broken link, please contact us by email so we can fix it. Thank you!</p>
+    <p> - Email:  <a href="mailto:daringdragonsdi@gmail.com?subject=404 Error" class="button" style="display: inline-block; padding: 10px 20px; background-color: #ff6600; color: #fff; text-decoration: none; border-radius: 5px; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#e55e00'" onmouseout="this.style.backgroundColor='#ff6600'" target="_blank"><i>daringdragonsdi@gmail.com</i></a></p>
+   <p> - Text: <a href="sms:daringdragonsdi@gmail.com" id="mobile" style=" padding: 10px 20px; background-color: #ff6600; color: #fff; text-decoration: none; border-radius: 5px; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#e55e00'" onmouseout="this.style.backgroundColor='#ff6600'" target="_blank">Text us (Mobile only)</a></p>
     <script>
         // JavaScript redirect if the browser does not support meta refresh
+        setTimeout(function() {
         if (window.location.href !== 'https://ahujaesh.github.io') {
             window.location.href = 'https://ahujaesh.github.io';
         }
+    }, 5000);
     </script>
 </body>
 </html>
