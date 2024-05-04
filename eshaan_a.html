@@ -101,9 +101,9 @@
     - The calendar shows the past year of activity, and refreshes at ~8:00 CDT (± 30 min because of server lag) every day.<br>
     - Note: if you view this on GitHub with dark mode on, the colors flip for increased contrast, and if you view it near Halloween, the colors are shades of orange :) .<br><br>
     Example days: <br>
-    - November 12, 2023 had 47 contributions, so therefore was colored dark green (<img src="https://github.com/ahujaesh/ahujaesh.github.io/blob/main/photos/darkgreen.png?raw=true" alt="A dark green square">). <br>
-    - January 3, 2024 had 10 contributions, so therefore, it was colored as medium green (<img src="https://github.com/ahujaesh/ahujaesh.github.io/blob/main/photos/midgreen.png?raw=true" alt="A medium green square">).<br>
-    - January 11, 2023 had 0 contributions, so therefore was colored as white.
+    - November 12, 2023, had 47 contributions, so therefore was colored dark green (<img src="https://github.com/ahujaesh/ahujaesh.github.io/blob/main/photos/darkgreen.png?raw=true" alt="A dark green square">). <br>
+    - January 3, 2024, had 10 contributions, so therefore, it was colored as medium green (<img src="https://github.com/ahujaesh/ahujaesh.github.io/blob/main/photos/midgreen.png?raw=true" alt="A medium green square">).<br>
+    - January 11, 2023, had 0 contributions, so therefore was colored as white.
     </p>
     <br>
     <br>
@@ -121,11 +121,11 @@
   <h3>Since I'm a programmer, I decided to use an API to implement a random <i>Programming Joke Generator</i> for the other programmers out there. Warning - this might have some sensitive content.</h3>
     <hr>
   <p id="jokeText2">Loading...</p>
-  <button onclick="getJoke2()">Get Joke</button>
+  <button onclick="getJoke2()">Load the Joke</button>
   <h3>Or go for a Random (normal) Joke</h3>
   <p id="jokeText">Loading...</p>
-  <button onclick="getJoke()">Get Joke</button>
-    <h3>I am also a big Star Wars fan, so I used an API from <i>https://swapi.dev/</i> to integrate facts about random Star Wars ship: </h3>
+  <button onclick="getJoke()">Load the Joke</button>
+    <h3>I am also a big Star Wars fan, so I used an API from <i>https://swapi.dev/</i> to integrate facts about a random Star Wars ship: </h3>
     <hr>
     <div id="starshipInfo"></div>
   <script>
@@ -175,9 +175,7 @@
   </section>
   <hr>
   <br>
-  
-  <!-- <script src="https://replit.com/public/js/replit-badge-v2.js" theme="dark" position="top-right"></script> -->
-  <script>
+    <script>
     const searchInput = document.getElementById("search");
     const teamMembers = document.querySelectorAll("#u li");
 
