@@ -1,0 +1,13 @@
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    ignore:
+      - dependency-name: "crazy-max/ghaction-github-pages"
+        versions: ["3.1.0"]
+        schedules: ["Apr 03, 2024"]
+      - dependency-name: "Platane/snk/svg-only"
+        versions: ["3.2.0"]
+        schedules: ["Apr 03, 2024"]
