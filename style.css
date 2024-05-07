@@ -332,7 +332,7 @@ figcaption {
 
   #countdown-box,
 #countdown-box > div::before {
-    background: url("https://ahujaesh.github.io/photos/city-night.webp") fixed 0 / cover;
+    background: url("https://raw.githubusercontent.com/ahujaesh/ahujaesh.github.io/main/photos/city-night.webp") fixed 0 / cover;
 }
 
 
