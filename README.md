@@ -7,7 +7,7 @@
   
 Welcome to the official GitHub repository of the Daring Dragons Destination Imagination Team! Our team, consisting of enthusiastic 7th-grade members, competes in the global Destination Imagination (DI) competition, showcasing creativity, innovation, and problem-solving skills. Check out our website [here](https://ahujaesh.github.io) to learn more about us.
 
-![A team photo](https://ahujaesh.github.io/photos/di7.jpeg)
+![A team photo](https://ahujaesh.github.io/photos/di7.webp)
 
 **Understanding Repositories**:
 
