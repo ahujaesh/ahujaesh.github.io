@@ -50,8 +50,8 @@ li.dropdown {
   z-index: 1;
 }
 
-.dropdown-content a {
-  color: light lightcoral;
+.dropdown-content a { /**#hed (For when I ctrl+f)**/
+  color: light #ec5f5f;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
