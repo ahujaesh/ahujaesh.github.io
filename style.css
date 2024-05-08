@@ -58,7 +58,9 @@ li.dropdown {
   text-align: left;
 }
 
-.dropdown-content a:hover {background-color: #9243d9;}
+.dropdown-content a:hover {
+  background-color: #9243d9;
+}
 
 .dropdown:hover .dropdown-content {
   display: block;
@@ -87,6 +89,7 @@ h1 {
 #gr {
   border: 3px solid green;
 }
+
 #search-results {
     position: absolute;
     background-color: #fff;
@@ -97,7 +100,6 @@ h1 {
     width: 100%;
 }
 
-/* Styles for individual search result items */
 #search-results a {
     display: block;
     padding: 8px;
@@ -105,12 +107,10 @@ h1 {
     color: #333;
 }
 
-/* Styles for the active (highlighted) search result item */
 #search-results a:hover {
     background-color: #f2f2f2;
 }
 
-/* Show the results container when there are search results */
 #search-results.show {
     display: block;
 }
@@ -188,7 +188,7 @@ body {
 }
 
 .dark-theme a{
-  color: #66b2ff; /* Light blue for links in dark theme */
+  color: #66b2ff;
 }
 
 .dark-theme .dropdown-content {
@@ -257,7 +257,7 @@ figcaption {
   color: #555;
 }
 
-#u{
+#u {
   list-style:none;
   width:100%;
 }
@@ -330,10 +330,9 @@ figcaption {
     text-align: center;
   }
 
-  #countdown-box,
-#countdown-box > div::before {
+  #countdown-box, #countdown-box > div::before {
     background: url("https://raw.githubusercontent.com/ahujaesh/ahujaesh.github.io/main/photos/city-night.webp") fixed 0 / cover;
-}
+  }
 
 
   #countdown-box > div::before {
@@ -348,7 +347,7 @@ figcaption {
     margin: -30px;
   }
 
-#mobile-countdown-box {
+  #mobile-countdown-box {
     width: 70%;
     margin: auto;
     padding: 59px 29px;
@@ -359,11 +358,9 @@ figcaption {
     text-align: center;
   }
 
-  #mobile-countdown-box,
-#mobile-countdown-box > div::before {
-  background-color: #B4A078;
-}
-
+  #mobile-countdown-box, #mobile-countdown-box > div::before {
+    background-color: #B4A078;
+  }
 
   #mobile-countdown-box > div::before {
     content: "";
@@ -388,6 +385,7 @@ figcaption {
   #circle-section a {
    font-size: 14px;
   }
+
   .path {
     width: 300px; height: 300px;
     border-radius: 50%;
@@ -395,6 +393,7 @@ figcaption {
     position: relative;
     display: flex;
   }
+
   .avatar {
     width: 50px;
     position: absolute;
@@ -403,6 +402,7 @@ figcaption {
     animation-play-state: running;
     z-index: 500;
   }
+
   .avatar > span {
     font-weight: 500;
     position: absolute;
@@ -458,9 +458,11 @@ figcaption {
       transform: rotate(1turn) translateY(-124px) rotate(0turn)
     }
   }
+
   #alt-circle-section {
     display: none;
   }
+
   @media only screen and (max-width: 767px) {
     #alt-circle-section {
         display: block;
@@ -469,88 +471,87 @@ figcaption {
     #circle-section {
         display: none;
     }
-}
+  }
 
-.orbit-spinner, .orbit-spinner * {
-      box-sizing: border-box;
+  .orbit-spinner, .orbit-spinner * {
+    box-sizing: border-box;
+  }
+
+  .orbit-spinner {
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+    perspective: 800px;
+    display: inline-block;
+  }
+
+  .orbit-spinner .orbit {
+    position: absolute;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+
+  .orbit-spinner .orbit:nth-child(1) {
+    left: 0%;
+    top: 0%;
+    animation: orbit-spinner-orbit-one-animation 1200ms linear infinite;
+    border-bottom: 3px solid #ff1d5e;
+  }
+
+  .orbit-spinner .orbit:nth-child(2) {
+    right: 0%;
+    top: 0%;
+    animation: orbit-spinner-orbit-two-animation 1200ms linear infinite;
+    border-right: 3px solid #ff1d5e;
+  }
+
+  .orbit-spinner .orbit:nth-child(3) {
+    right: 0%;
+    bottom: 0%;
+    animation: orbit-spinner-orbit-three-animation 1200ms linear infinite;
+    border-top: 3px solid #ff1d5e;
+  }
+
+  @keyframes orbit-spinner-orbit-one-animation {
+    0% {
+      transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
     }
-
-    .orbit-spinner {
-      height: 55px;
-      width: 55px;
-      border-radius: 50%;
-      perspective: 800px;
-      display: inline-block;
+    100% {
+      transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
     }
+  }
 
-    .orbit-spinner .orbit {
-      position: absolute;
-      box-sizing: border-box;
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
+  @keyframes orbit-spinner-orbit-two-animation {
+    0% {
+      transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
     }
-
-    .orbit-spinner .orbit:nth-child(1) {
-      left: 0%;
-      top: 0%;
-      animation: orbit-spinner-orbit-one-animation 1200ms linear infinite;
-      border-bottom: 3px solid #ff1d5e;
+    100% {
+      transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
     }
+  }
 
-    .orbit-spinner .orbit:nth-child(2) {
-      right: 0%;
-      top: 0%;
-      animation: orbit-spinner-orbit-two-animation 1200ms linear infinite;
-      border-right: 3px solid #ff1d5e;
+  @keyframes orbit-spinner-orbit-three-animation {
+    0% {
+      transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
     }
-
-    .orbit-spinner .orbit:nth-child(3) {
-      right: 0%;
-      bottom: 0%;
-      animation: orbit-spinner-orbit-three-animation 1200ms linear infinite;
-      border-top: 3px solid #ff1d5e;
+    100% {
+      transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
     }
+  }
 
-    @keyframes orbit-spinner-orbit-one-animation {
-      0% {
-        transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
-      }
-      100% {
-        transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
-      }
-    }
+  .button-blue {
+    background-color: #1aa7ec;
+    color: #fff;
+    padding: 10px 20px;
+    border: 2px solid #1aa7ec;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
 
-    @keyframes orbit-spinner-orbit-two-animation {
-      0% {
-        transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
-      }
-      100% {
-        transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
-      }
-    }
-
-    @keyframes orbit-spinner-orbit-three-animation {
-      0% {
-        transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
-      }
-      100% {
-        transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
-      }
-    }
-
-
-.button-blue {
-  background-color: #1aa7ec;
-  color: #fff;
-  padding: 10px 20px;
-  border: 2px solid #1aa7ec;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.button-blue:hover {
-  background-color: #155a8a;
-  color: #fff;
-}
+  .button-blue:hover {
+    background-color: #155a8a;
+    color: #fff;
+  }
