@@ -22,4 +22,9 @@ Ex:
 Ex: https://example.com
 
 **Images/Screenshots/Recordings:**
-Insert any images you have here, so I can more accurately fix the issue,
+Insert any images you have here, so I can more accurately fix the issue.
+
+**Additional context**
+Add any other context or screenshots about the it here.
+
+Thank you for conributing, and I should repond soon.
