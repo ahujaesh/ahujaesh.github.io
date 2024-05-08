@@ -1,8 +1,10 @@
 ---
 name: Error
-about: Report an Error found in this project
+about: Use this to report an error found in this project
 title: Error
-labels: 'Bug'
+labels: [
+  "bug"
+]
 assignees: ahujaesh
 
 ---
