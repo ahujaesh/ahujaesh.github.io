@@ -9,7 +9,7 @@ Welcome to the official GitHub repository of the Daring Dragons Destination Imag
 
 ![A team photo](https://ahujaesh.github.io/photos/di7.webp)
 
-**Understanding Repositories**:
+**Understanding our Repositories**:
 
 
 Our team has decided to split all of its data across **two** GitHub repositories. Below is a table that we have created to outline the differences.
@@ -64,7 +64,7 @@ _Ways To Learn More:_ Find links to official Destination Imagination websites fo
 
 
 **How to Contribute:**
-If you have suggestions, found issues, or want to add content, feel free to submit a pull request to improve this website. Alternately, you can reach out to us via email at [daringdragonsdi@gmail.com](mailto:daringdragonsdi@gmail.com).
+If you have suggestions, found issues, or want to add content, feel free to submit a pull request, or issue, to improve this website. Alternately, you can reach out to us via email at [daringdragonsdi@gmail.com](mailto:daringdragonsdi@gmail.com).
 
 **Contact Us**
 For any inquiries or collaboration opportunities, please email us at daringdragonsdi@gmail.com. We appreciate your interest and support!
@@ -72,4 +72,4 @@ For any inquiries or collaboration opportunities, please email us at daringdrago
 Thank you for exploring our GitHub repository and being part of our Destination Imagination journey!
 
 
-Note: This repository has been migrated from [**replit.com**](https://replit.com), so everything might not be perfect, and the latest updates can be found on our official website [here](https://ahujaesh.github.io). If you see a discrepancy or issue, please send me a PR or issue to tell me. Thanks! 
+Note: This repository has been migrated from [**replit.com**](https://replit.com), so everything might not be perfect, and the latest updates can be found on our official website [here](https://ahujaesh.github.io). If you see a discrepancy or issue, which might have occured while converting the site from replit, please create a PR or issue to tell me. Thanks! 
