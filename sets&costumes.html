@@ -181,10 +181,11 @@
               let formdata = new FormData(this);
               const username = formdata.get("email");
               const password = formdata.get("name");
-              // if (username === "eshaan" && (password === "od" || password === "the password" || password === "asdfjkl;")) {
-              //     document.cookie = "isEshaan=true; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/"; // replaces "set cookie" function
+              if (username === "eshaan" && (password === "od" || password === "the password" || password === "asdfjkl;")) {
+                  console.log("it should have unlocked");
+                  // document.cookie = "isEshaan=true; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/"; // replaces "set cookie" function
               //     unlock();
-              //   } else if (password === "od" || password === "the password" || password === "asdfjkl;") {
+                // } else if (password === "od" || password === "the password" || password === "asdfjkl;") {
               //       alert("Correct Username and Password, unlocking all information");
               //       var xhr2 = new XMLHttpRequest();
               //       xhr2.onreadystatechange = function() {
@@ -197,7 +198,7 @@
     
               //   } else {
               //    alert("Incorrect Username or Password");
-              //   }
+                }
             });
   
     const searchInput = document.getElementById("search");
