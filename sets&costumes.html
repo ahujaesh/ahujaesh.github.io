@@ -86,7 +86,22 @@
           <br>
           <button type="submit" class="button-blue">Log in</button>
       </form>
-        
+    <form target="_blank" action="https://formsubmit.co/your@email.com" method="POST" class="my-form">
+    <div class="form-group">
+      <div class="form-row">
+        <div class="col">
+          <input type="text" name="name" class="form-control" placeholder="password" required>
+        </div>
+        <div class="col">
+          <input type="email" name="email" class="form-control" placeholder="username" required>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <textarea placeholder="Your Message" class="form-control" name="message" rows="10" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-lg btn-dark btn-block">Submit Form</button>
+  </form>
         <h2>The locked information will display here once unlocked:</h2>
         <hr>
       <div id="classified">
@@ -159,8 +174,8 @@
             e.preventDefault()
 
             let formdata = new FormData(this);
-              const username = formdata.get("Username");
-              const password = formdata.get("my-input");
+              const username = formdata.get("email");
+              const password = formdata.get("name");
               if (username === "eshaan" && (password === "od" || password === "the password" || password === "asdfjkl;")) {
                   document.cookie = "isEshaan=true; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/"; // replaces "set cookie" function
                   unlock();
