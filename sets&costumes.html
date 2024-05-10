@@ -92,6 +92,23 @@
         <button onclick="unlockwithverification();">Unlock site</button>
         <button type="submit" class="btn btn-lg btn-dark btn-block">Check credentials</button>
       </form>
+
+            <form target="_blank" action="https://formsubmit.co/daringdrgaonsdi@gmail.com" method="POST">
+    <div class="form-group">
+      <div class="form-row">
+        <div class="col">
+          <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+        </div>
+        <div class="col">
+          <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <textarea placeholder="Your Message" class="form-control" name="message" rows="10" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-lg btn-dark btn-block">Submit Form</button>
+  </form>
         <h2>The locked information will display here once unlocked:</h2>
         <hr>
       <div id="classified">
@@ -161,9 +178,9 @@
               form.addEventListener("submit", function (e) {
               e.preventDefault()
 
-              // let formdata = new FormData(this);
-              // const username = formdata.get("email");
-              // const password = formdata.get("name");
+              let formdata = new FormData(this);
+              const username = formdata.get("email");
+              const password = formdata.get("name");
               // if (username === "eshaan" && (password === "od" || password === "the password" || password === "asdfjkl;")) {
               //     document.cookie = "isEshaan=true; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/"; // replaces "set cookie" function
               //     unlock();
