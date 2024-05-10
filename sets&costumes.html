@@ -4,15 +4,15 @@
     <title>Sets and costumes progress - Daring Dragons DI Team</title>
     <meta name="description" content="Dive into the sets and costumes progress of Daring Dragons Destination Imagination Team. Follow our creative journey and problem-solving endeavors.">    
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="https://ahujaesh.github.io/style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="icon" type="image/x-icon" href="photos/favicon-removebg-preview.webp">
     <meta name="keywords" content="Destination Imagination, Creative Problem Solving, Daring Dragons, Team, Innovation">
     <meta name="author" content="Eshaan Ahuja">
     <meta name="language" content="English">
-    <link rel="apple-touch-icon" href="photos/favicon.jpg">
+    <link rel="apple-touch-icon" href="photos/favicon.webp">
     <meta name="theme-color" content="#8DCFEC">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap">
-    <?php include 'https://ahujaesh.github.io/sets.php'; ?>
+    <?php include 'sets.php'; ?>
     <style>
       .answer {
         padding: 10px;
@@ -79,12 +79,12 @@
         <hr>
       <p>Sorry, we are only allowed to disclose this information to registered individuals. To see this info, please sign in with the login information given by a member of our team. Do not enter any other passwords or sensitive content except for the login given by us, the Daring Dragons Destination Imagination team. This information is not saved anywhere.</p>
       <form class="my-form">
-          <input name="email" type="text" placeholder="Username" required>
+          <input type="text" placeholder="Username">
           <br>
-          <input type="password" placeholder="Password" name="my-input" required>
+          <input type="password" placeholder="Password" name="my-input">
           <br>
           <br>
-          <button type="submit" class="button-blue">Log in</button>
+          <button class="button-blue">Log in</button>
       </form>
         <h2>The locked information will display here once unlocked:</h2>
         <hr>
@@ -130,7 +130,9 @@
             xhr.open("GET", "sets.php", true);
             xhr.send();
         };
-          
+
+
+        
           if (document.cookie.includes("isEshaan=true")) {
             alert("Welcome Master Eshaan, unlocking the site for you sir.");
             const input = prompt("But we do need you to enter your authentication code sir for security."); // Prompting the user for the password
@@ -152,17 +154,16 @@
     
     let form = document.querySelector(".my-form");
 
-              form.addEventListener("submit", function (e) {
-              e.preventDefault()
+            form.addEventListener("submit", function (e) {
+            e.preventDefault()
 
-              let formdata = new FormData(this);
-              const username = formdata.get("email");
-              const password = formdata.get("name");
+            let formdata = new FormData(this);
+              const username = formdata.get("Username");
+              const password = formdata.get("my-input");
               if (username === "eshaan" && (password === "od" || password === "the password" || password === "asdfjkl;")) {
-                  console.log("it should have unlocked");
                   document.cookie = "isEshaan=true; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/"; // replaces "set cookie" function
                   unlock();
-              } else if (password === "od" || password === "the password" || password === "asdfjkl;") {
+                } else if (password === "od" || password === "the password" || password === "asdfjkl;") {
                     alert("Correct Username and Password, unlocking all information");
                     var xhr2 = new XMLHttpRequest();
                     xhr2.onreadystatechange = function() {
@@ -170,12 +171,12 @@
                             document.getElementById("classified").innerHTML = xhr2.responseText; // <-- Corrected variable name
                         }
                     };
-                    xhr2.open("GET", "https://ahujaesh.github.io/sets.php", true); 
+                    xhr2.open("GET", "sets.php", true); 
                     xhr2.send();
     
-              } else {
-               alert("Incorrect Username or Password");
-              }
+                    } else {
+                    alert("Incorrect Username or Password");
+                }
             });
   
     const searchInput = document.getElementById("search");
