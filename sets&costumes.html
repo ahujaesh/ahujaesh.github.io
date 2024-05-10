@@ -161,26 +161,26 @@
               form.addEventListener("submit", function (e) {
               e.preventDefault()
 
-              let formdata = new FormData(this);
-              const username = formdata.get("email");
-              const password = formdata.get("name");
-              if (username === "eshaan" && (password === "od" || password === "the password" || password === "asdfjkl;")) {
-                  document.cookie = "isEshaan=true; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/"; // replaces "set cookie" function
-                  unlock();
-                } else if (password === "od" || password === "the password" || password === "asdfjkl;") {
-                    alert("Correct Username and Password, unlocking all information");
-                    var xhr2 = new XMLHttpRequest();
-                    xhr2.onreadystatechange = function() {
-                        if (xhr2.readyState === 4 && xhr2.status === 200) {
-                            document.getElementById("classified").innerHTML = xhr2.responseText; // <-- Corrected variable name
-                        }
-                    };
-                    xhr2.open("GET", "https://ahujaesh.github.io/sets.php", true); 
-                    xhr2.send();
+              // let formdata = new FormData(this);
+              // const username = formdata.get("email");
+              // const password = formdata.get("name");
+              // if (username === "eshaan" && (password === "od" || password === "the password" || password === "asdfjkl;")) {
+              //     document.cookie = "isEshaan=true; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/"; // replaces "set cookie" function
+              //     unlock();
+              //   } else if (password === "od" || password === "the password" || password === "asdfjkl;") {
+              //       alert("Correct Username and Password, unlocking all information");
+              //       var xhr2 = new XMLHttpRequest();
+              //       xhr2.onreadystatechange = function() {
+              //           if (xhr2.readyState === 4 && xhr2.status === 200) {
+              //               document.getElementById("classified").innerHTML = xhr2.responseText; // <-- Corrected variable name
+              //           }
+              //       };
+              //       xhr2.open("GET", "https://ahujaesh.github.io/sets.php", true); 
+              //       xhr2.send();
     
-                } else {
-                 alert("Incorrect Username or Password");
-                }
+              //   } else {
+              //    alert("Incorrect Username or Password");
+              //   }
             });
   
     const searchInput = document.getElementById("search");
