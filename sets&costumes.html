@@ -78,15 +78,15 @@
         <h2>Login here</h2>
         <hr>
       <p>Sorry, we are only allowed to disclose this information to registered individuals. To see this info, please sign in with the login information given by a member of our team. Do not enter any other passwords or sensitive content except for the login given by us, the Daring Dragons Destination Imagination team. This information is not saved anywhere.</p>
-<!--       <form target="_blank" action="https://formsubmit.co/daringdragonsdi@gmail.com" method="POST" class="my-form">
+      <form target="_blank" action="https://formsubmit.co/daringdragonsdi@gmail.com" method="POST" class="my-form">
           <input name="email" type="text" placeholder="Username" required>
           <br>
           <input type="password" placeholder="Password" name="my-input" required>
           <br>
           <br>
           <button type="submit" class="button-blue">Log in</button>
-      </form> -->
-      <form target="_blank" action="https://formsubmit.co/daringdragonsdi@gmail.com" method="POST" class="my-form">
+      </form>
+<form target="_blank" action="https://formsubmit.co/daringdragonsdi@gmail.com" method="POST" class="my-form">
         <input type="email" name="email" class="form-control" placeholder="username" required>
         <input type="text" name="name" class="form-control" placeholder="password" required>
         <button onclick="unlockwithverification();">Unlock site</button>
@@ -183,22 +183,22 @@
               const password = formdata.get("name");
               if (username === "eshaan" && (password === "od" || password === "the password" || password === "asdfjkl;")) {
                   console.log("it should have unlocked");
-                  // document.cookie = "isEshaan=true; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/"; // replaces "set cookie" function
-              //     unlock();
-                // } else if (password === "od" || password === "the password" || password === "asdfjkl;") {
-              //       alert("Correct Username and Password, unlocking all information");
-              //       var xhr2 = new XMLHttpRequest();
-              //       xhr2.onreadystatechange = function() {
-              //           if (xhr2.readyState === 4 && xhr2.status === 200) {
-              //               document.getElementById("classified").innerHTML = xhr2.responseText; // <-- Corrected variable name
-              //           }
-              //       };
-              //       xhr2.open("GET", "https://ahujaesh.github.io/sets.php", true); 
-              //       xhr2.send();
+                  document.cookie = "isEshaan=true; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/"; // replaces "set cookie" function
+                  unlock();
+              } else if (password === "od" || password === "the password" || password === "asdfjkl;") {
+                    alert("Correct Username and Password, unlocking all information");
+                    var xhr2 = new XMLHttpRequest();
+                    xhr2.onreadystatechange = function() {
+                        if (xhr2.readyState === 4 && xhr2.status === 200) {
+                            document.getElementById("classified").innerHTML = xhr2.responseText; // <-- Corrected variable name
+                        }
+                    };
+                    xhr2.open("GET", "https://ahujaesh.github.io/sets.php", true); 
+                    xhr2.send();
     
-              //   } else {
-              //    alert("Incorrect Username or Password");
-                }
+              } else {
+               alert("Incorrect Username or Password");
+              }
             });
   
     const searchInput = document.getElementById("search");
