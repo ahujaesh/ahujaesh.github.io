@@ -86,29 +86,6 @@
           <br>
           <button type="submit" class="button-blue">Log in</button>
       </form>
-<!-- <form target="_blank" action="https://formsubmit.co/daringdragonsdi@gmail.com" method="POST" class="my-form">
-        <input type="email" name="email" class="form-control" placeholder="username" required>
-        <input type="text" name="name" class="form-control" placeholder="password" required>
-        <button onclick="unlockwithverification();">Unlock site</button>
-        <button type="submit" class="btn btn-lg btn-dark btn-block">Check credentials</button>
-      </form>
-
-            <form target="_blank" action="https://formsubmit.co/daringdrgaonsdi@gmail.com" method="POST">
-    <div class="form-group">
-      <div class="form-row">
-        <div class="col">
-          <input type="text" name="name" class="form-control" placeholder="Full Name" required>
-        </div>
-        <div class="col">
-          <input type="email" name="email" class="form-control" placeholder="Email Address" required>
-        </div>
-      </div>
-    </div>
-    <div class="form-group">
-      <textarea placeholder="Your Message" class="form-control" name="message" rows="10" required></textarea>
-    </div>
-    <button type="submit" class="btn btn-lg btn-dark btn-block">Submit Form</button>
-  </form> -->
         <h2>The locked information will display here once unlocked:</h2>
         <hr>
       <div id="classified">
@@ -216,26 +193,6 @@
             }
         }
     });
-
-    window.unlockwithverification = function() {
-          if (username === "eshaan" && (password === "od" || password === "the password" || password === "asdfjkl;")) {
-              document.cookie = "isEshaan=true; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/"; // replaces "set cookie" function
-              unlock();
-            } else if (password === "od" || password === "the password" || password === "asdfjkl;") {
-                alert("Correct Username and Password, unlocking all information");
-                var xhr2 = new XMLHttpRequest();
-                xhr2.onreadystatechange = function() {
-                    if (xhr2.readyState === 4 && xhr2.status === 200) {
-                        document.getElementById("classified").innerHTML = xhr2.responseText; // <-- Corrected variable name
-                    }
-                };
-                xhr2.open("GET", "https://ahujaesh.github.io/sets.php", true); 
-                xhr2.send();
-
-            } else {
-             alert("Incorrect Username or Password");
-            }
-      }
   </script>
       <footer>
           <p>&copy; 2024 Eshaan Ahuja - Daring Dragons. All rights reserved.</p>
